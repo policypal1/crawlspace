@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
   background: #ffffff;
   color: var(--white);
-  font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -353,6 +353,10 @@ a {
   display: none;
 }
 
+.mobile-review-section {
+  display: none;
+}
+
 /* =========================
    MOBILE HEADER + HERO
 ========================= */
@@ -472,7 +476,7 @@ a {
 
   .hero-copy {
     width: 100%;
-    padding: 112px 14px 118px;
+    padding: 130px 14px 58px;
     text-align: center;
   }
 
@@ -487,11 +491,15 @@ a {
   }
 
   .hero h1 {
-    width: min(100%, 500px);
+    width: min(100%, 520px);
     margin: 0 auto;
-    font-size: clamp(42px, 12.1vw, 64px);
-    line-height: 0.99;
-    letter-spacing: -0.044em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: clamp(40px, 10.6vw, 58px);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    word-spacing: 0.015em;
+    text-wrap: balance;
     text-shadow: 0 3px 18px rgba(0,0,0,0.22);
   }
 
@@ -500,18 +508,19 @@ a {
   }
 
   .hero-subheadline {
-    width: min(100%, 500px);
-    margin: 26px auto 0;
+    width: min(100%, 470px);
+    margin: 30px auto 0;
     color: #eef3f6;
     font-size: 15px;
-    line-height: 1.6;
-    font-weight: 600;
+    line-height: 1.72;
+    font-weight: 500;
+    letter-spacing: 0;
     text-shadow: 0 2px 14px rgba(0,0,0,0.18);
   }
 
   .hero-actions {
     width: 100%;
-    margin-top: 34px;
+    margin-top: 46px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 12px;
@@ -595,6 +604,56 @@ a {
   }
 }
 
+  .mobile-review-section {
+    display: block;
+    background: #ffffff;
+    color: var(--navy-deep);
+    padding: 36px 14px 46px;
+  }
+
+  .mobile-review-inner {
+    width: min(100%, 520px);
+    margin: 0 auto;
+  }
+
+  .mobile-review-section .hero-review {
+    width: 100%;
+    margin: 0;
+    padding: 24px 22px 22px;
+    display: block;
+    text-align: left;
+    border-radius: 10px;
+    border: 1px solid #dde7ed;
+    background: #ffffff;
+    box-shadow: 0 16px 38px rgba(18, 44, 62, 0.10);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .mobile-review-section .hero-review::before {
+    background: var(--blue);
+  }
+
+  .mobile-review-section .review-label {
+    color: var(--orange);
+  }
+
+  .mobile-review-section .review-copy {
+    color: #1c2f3e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  .mobile-review-section .review-footer {
+    border-top: 1px solid #e5edf1;
+  }
+
+  .mobile-review-section .review-footer strong {
+    color: var(--navy-deep);
+  }
+
 @media (max-width: 420px) {
   .brand-logo {
     width: 150px;
@@ -607,5 +666,31 @@ a {
 
   .hero-review {
     width: calc(100% - 20px);
+  }
+}
+
+@media (max-width: 700px) {
+  .hero h1 span {
+    display: block;
+    margin-top: 5px;
+  }
+
+  .hero-review {
+    display: none;
+  }
+
+  .mobile-review-section .hero-review {
+    display: block;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 700px) {
+    .hero h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.012em;
+    }
   }
 }
