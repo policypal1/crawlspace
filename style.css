@@ -1,6 +1,12 @@
 :root {
   --navy: #233d57;
-  --blue: #139fe6;
+  --navy-deep: #13283a;
+  --navy-dark: #0d1b28;
+  --blue: #159fe7;
+  --blue-deep: #0c78b4;
+  --orange: #e6a15d;
+  --white: #ffffff;
+  --muted: #cbd7df;
   --border: #e4e9ed;
   --header-height: 88px;
 }
@@ -15,10 +21,20 @@ body {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   background: #ffffff;
+  color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 button,
@@ -26,9 +42,9 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-a {
-  text-decoration: none;
-}
+/* =========================
+   HEADER
+========================= */
 
 .site-header {
   position: relative;
@@ -77,7 +93,7 @@ a {
 }
 
 .header-cta:hover {
-  background: var(--blue);
+  background: var(--blue-deep);
   transform: translateY(-1px);
 }
 
@@ -85,6 +101,176 @@ a {
 .mobile-menu {
   display: none;
 }
+
+/* =========================
+   HERO - DESKTOP
+========================= */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--header-height));
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 20% 42%, rgba(21, 159, 231, 0.09), transparent 32%),
+    linear-gradient(135deg, #0f2333 0%, #172f43 56%, #1a354a 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: linear-gradient(to right, #000 0%, #000 52%, transparent 75%);
+}
+
+.hero-media {
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  right: -1px;
+  width: 48%;
+  height: 100%;
+  overflow: hidden;
+  border-left: 4px solid var(--blue);
+  border-radius: 48% 0 0 48% / 58% 0 0 58%;
+  background:
+    linear-gradient(135deg, #d6e6ef, #6d8798);
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-shade {
+  display: none;
+}
+
+.hero-inner {
+  width: min(1180px, calc(100% - 48px));
+  min-height: calc(100vh - var(--header-height));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.hero-copy {
+  width: min(540px, 46%);
+  padding: 70px 0 88px;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  color: var(--orange);
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.hero-eyebrow span {
+  display: block;
+  width: 36px;
+  height: 2px;
+  flex: 0 0 36px;
+  background: var(--blue);
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 560px;
+  color: var(--white);
+  font-size: clamp(48px, 4.3vw, 72px);
+  line-height: 0.98;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--blue);
+}
+
+.hero-subheadline {
+  max-width: 540px;
+  margin: 28px 0 0;
+  color: #d7e1e8;
+  font-size: 17px;
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.hero-btn {
+  min-height: 54px;
+  padding: 0 24px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-1px);
+}
+
+.hero-btn-primary {
+  background: var(--blue);
+  color: #ffffff;
+  border: 1px solid var(--blue);
+}
+
+.hero-btn-primary:hover {
+  background: var(--blue-deep);
+  border-color: var(--blue-deep);
+}
+
+.hero-btn-secondary {
+  min-width: 222px;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.32);
+  background: rgba(255,255,255,0.03);
+}
+
+.hero-btn-secondary:hover {
+  border-color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.08);
+}
+
+/* The review is part of the MOBILE layout only,
+   matching the reference spacing without copying its content/colors. */
+.hero-review {
+  display: none;
+}
+
+/* =========================
+   MOBILE HEADER + HERO
+========================= */
 
 @media (max-width: 700px) {
   :root {
@@ -145,8 +331,6 @@ a {
     top: calc(100% + 1px);
     right: 0;
     width: min(300px, calc(100vw - 28px));
-    min-height: 0;
-    padding: 0;
     background: #ffffff;
     border: 1px solid var(--border);
     border-radius: 0 0 12px 12px;
@@ -160,10 +344,191 @@ a {
   .mobile-menu-inner {
     min-height: 12px;
   }
+
+  .hero {
+    min-height: 0;
+    background: var(--navy-dark);
+  }
+
+  .hero::before {
+    display: none;
+  }
+
+  .hero-media {
+    inset: 0;
+    z-index: -3;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+    background: linear-gradient(135deg, #688293, #293f50);
+  }
+
+  .hero-media img {
+    object-position: center center;
+  }
+
+  .hero-shade {
+    display: block;
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(5, 15, 23, 0.56) 0%,
+        rgba(5, 15, 23, 0.62) 40%,
+        rgba(5, 15, 23, 0.80) 72%,
+        rgba(5, 15, 23, 0.92) 100%
+      );
+  }
+
+  .hero-inner {
+    width: 100%;
+    min-height: 0;
+    display: block;
+  }
+
+  .hero-copy {
+    width: 100%;
+    padding: 30px 14px 118px;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    display: none;
+  }
+
+  .hero h1 {
+    width: min(100%, 500px);
+    margin: 0 auto;
+    font-size: clamp(42px, 12.1vw, 64px);
+    line-height: 0.99;
+    letter-spacing: -0.048em;
+  }
+
+  .hero h1 span {
+    display: inline;
+  }
+
+  .hero-subheadline {
+    width: min(100%, 500px);
+    margin: 22px auto 0;
+    color: #eef3f6;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  .hero-actions {
+    width: 100%;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    min-height: 56px;
+    border-radius: 9px;
+    font-size: 15px;
+  }
+
+  .hero-btn-primary {
+    background: var(--blue);
+    border-color: var(--blue);
+  }
+
+  .hero-btn-secondary {
+    min-width: 0;
+    background: rgba(8, 24, 35, 0.42);
+    border-color: rgba(230, 161, 93, 0.62);
+  }
+
+  .hero-review {
+    width: calc(100% - 28px);
+    margin: 58px auto 0;
+    padding: 22px 20px 20px;
+    display: block;
+    text-align: left;
+    border-radius: 20px;
+    border: 1px solid rgba(230, 161, 93, 0.38);
+    background: rgba(12, 29, 42, 0.94);
+    box-shadow: 0 22px 52px rgba(0,0,0,0.28);
+    backdrop-filter: blur(7px);
+  }
+
+  .review-label {
+    color: var(--orange);
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .review-copy {
+    margin: 16px 0 18px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 650;
+  }
+
+  .review-footer {
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .review-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    flex: 0 0 38px;
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+    background: var(--blue);
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .review-footer strong,
+  .review-footer span {
+    display: block;
+  }
+
+  .review-footer strong {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .review-footer span {
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
 }
 
 @media (max-width: 420px) {
   .brand-logo {
     width: 150px;
+  }
+
+  .hero-copy {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .hero-review {
+    width: calc(100% - 20px);
   }
 }
