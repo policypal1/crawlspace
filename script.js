@@ -1,9 +1,12 @@
-const header = document.querySelector('.site-header');
+const menuToggle = document.querySelector('.menu-toggle');
+const mobileMenu = document.querySelector('.mobile-menu');
 
-function updateHeaderShadow() {
-  if (!header) return;
-  header.classList.toggle('is-scrolled', window.scrollY > 4);
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = menuToggle.classList.toggle('is-open');
+
+    mobileMenu.classList.toggle('is-open', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+  });
 }
-
-updateHeaderShadow();
-window.addEventListener('scroll', updateHeaderShadow, { passive: true });
