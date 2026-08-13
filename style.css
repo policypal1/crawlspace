@@ -624,55 +624,55 @@ a {
   }
 }
 
-  .mobile-review-section {
-    display: block;
-    background: #ffffff;
-    color: var(--navy-deep);
-    padding: 44px 14px 52px;
-  }
+.mobile-review-section {
+  display: block;
+  background: #ffffff;
+  color: var(--navy-deep);
+  padding: 44px 14px 52px;
+}
 
-  .mobile-review-inner {
-    width: min(100%, 520px);
-    margin: 0 auto;
-  }
+.mobile-review-inner {
+  width: min(100%, 520px);
+  margin: 0 auto;
+}
 
-  .mobile-review-section .hero-review {
-    width: 100%;
-    margin: 0;
-    padding: 24px 22px 22px;
-    display: block;
-    text-align: left;
-    border-radius: 10px;
-    border: 1px solid #dde7ed;
-    background: #ffffff;
-    box-shadow: 0 16px 38px rgba(18, 44, 62, 0.10);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
+.mobile-review-section .hero-review {
+  width: 100%;
+  margin: 0;
+  padding: 24px 22px 22px;
+  display: block;
+  text-align: left;
+  border-radius: 10px;
+  border: 1px solid #dde7ed;
+  background: #ffffff;
+  box-shadow: 0 16px 38px rgba(18, 44, 62, 0.10);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
 
-  .mobile-review-section .hero-review::before {
-    background: var(--blue);
-  }
+.mobile-review-section .hero-review::before {
+  background: var(--blue);
+}
 
-  .mobile-review-section .review-label {
-    color: var(--orange);
-  }
+.mobile-review-section .review-label {
+  color: var(--orange);
+}
 
-  .mobile-review-section .review-copy {
-    color: #1c2f3e;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
-    line-height: 1.7;
-    font-weight: 400;
-  }
+.mobile-review-section .review-copy {
+  color: #1c2f3e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
+}
 
-  .mobile-review-section .review-footer {
-    border-top: 1px solid #e5edf1;
-  }
+.mobile-review-section .review-footer {
+  border-top: 1px solid #e5edf1;
+}
 
-  .mobile-review-section .review-footer strong {
-    color: var(--navy-deep);
-  }
+.mobile-review-section .review-footer strong {
+  color: var(--navy-deep);
+}
 
 @media (max-width: 420px) {
   .brand-logo {
@@ -704,7 +704,6 @@ a {
   }
 }
 
-
 @media (max-width: 700px) {
   .hero-panel-one::after,
   .hero-panel-two::after,
@@ -716,5 +715,50 @@ a {
 @media (min-width: 701px) {
   .mobile-review-section {
     display: none !important;
+  }
+}
+
+/* =========================================================
+   MOBILE-ONLY FIXES
+   Desktop remains unchanged.
+========================================================= */
+@media (max-width: 700px) {
+  /* Remove the forced full-screen height that created
+     the huge empty area below the Call / Text button. */
+  .hero,
+  .hero-inner,
+  .hero-copy {
+    min-height: 0;
+  }
+
+  /* Keep a normal gap after the buttons before the next section. */
+  .hero-copy {
+    padding-bottom: 40px;
+  }
+
+  /* Preserve a deliberate gap above the buttons without using auto-space. */
+  .hero-actions {
+    margin-top: 54px;
+    padding-top: 0;
+  }
+
+  /* Center the hamburger menu and make it fill most of the phone width. */
+  .mobile-menu {
+    left: 50%;
+    right: auto;
+    width: calc(100vw - 32px);
+    max-width: 520px;
+    transform: translateX(-50%);
+    border-radius: 0 0 12px 12px;
+  }
+
+  .mobile-menu-inner {
+    padding: 12px;
+  }
+
+  .mobile-menu-inner a {
+    justify-content: center;
+    text-align: center;
+    min-height: 52px;
   }
 }
