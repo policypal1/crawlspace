@@ -112,8 +112,8 @@ a {
   overflow: hidden;
   isolation: isolate;
   background:
-    radial-gradient(circle at 20% 42%, rgba(21, 159, 231, 0.09), transparent 32%),
-    linear-gradient(135deg, #0f2333 0%, #172f43 56%, #1a354a 100%);
+    radial-gradient(circle at 16% 40%, rgba(21, 159, 231, 0.10), transparent 34%),
+    linear-gradient(135deg, #0f2333 0%, #172f43 58%, #1a354a 100%);
 }
 
 .hero::before {
@@ -121,34 +121,95 @@ a {
   position: absolute;
   inset: 0;
   z-index: -3;
-  opacity: 0.18;
+  opacity: 0.16;
   background-image:
     linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
   background-size: 52px 52px;
-  mask-image: linear-gradient(to right, #000 0%, #000 52%, transparent 75%);
+  mask-image: linear-gradient(to right, #000 0%, #000 44%, transparent 67%);
 }
 
 .hero-media {
   position: absolute;
   z-index: -2;
-  top: 0;
-  right: -1px;
-  width: 48%;
+  inset: 0 0 0 auto;
+  width: 56%;
   height: 100%;
   overflow: hidden;
-  border-left: 4px solid var(--blue);
-  border-radius: 48% 0 0 48% / 58% 0 0 58%;
-  background:
-    linear-gradient(135deg, #d6e6ef, #6d8798);
 }
 
-.hero-media img {
+.hero-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.hero-panel img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
+}
+
+.hero-panel-one {
+  left: 0;
+  width: 46%;
+  clip-path: polygon(20% 0, 100% 0, 79% 100%, 0 100%);
+  z-index: 3;
+}
+
+.hero-panel-one img {
   object-position: center;
+}
+
+.hero-panel-two {
+  left: 30%;
+  width: 48%;
+  clip-path: polygon(20% 0, 100% 0, 79% 100%, 0 100%);
+  z-index: 2;
+}
+
+.hero-panel-two img {
+  object-position: center;
+}
+
+.hero-panel-three {
+  left: 61%;
+  width: 47%;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 1;
+}
+
+.hero-panel-three img {
+  object-position: center;
+}
+
+.hero-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.18));
+  pointer-events: none;
+}
+
+.hero-panel-one::before,
+.hero-panel-two::before,
+.hero-panel-three::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -8%;
+  bottom: -8%;
+  left: 10%;
+  width: 3px;
+  background: rgba(21, 159, 231, 0.88);
+  transform: rotate(9deg);
+  transform-origin: center;
+}
+
+.hero-mobile-bg {
+  display: none;
 }
 
 .hero-shade {
@@ -164,29 +225,8 @@ a {
 }
 
 .hero-copy {
-  width: min(540px, 46%);
-  padding: 118px 0 92px;
-}
-
-.hero-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
-  color: var(--orange);
-  font-size: 12px;
-  line-height: 1.2;
-  font-weight: 900;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
-.hero-eyebrow span {
-  display: block;
-  width: 36px;
-  height: 2px;
-  flex: 0 0 36px;
-  background: var(--blue);
+  width: min(560px, 44%);
+  padding: 128px 0 96px;
 }
 
 .hero h1 {
@@ -197,6 +237,7 @@ a {
   line-height: 0.98;
   font-weight: 800;
   letter-spacing: -0.042em;
+  text-shadow: 0 3px 26px rgba(0,0,0,0.22);
 }
 
 .hero h1 span {
@@ -264,8 +305,6 @@ a {
   background: rgba(255,255,255,0.08);
 }
 
-/* The review is part of the MOBILE layout only,
-   matching the reference spacing without copying its content/colors. */
 .hero-review {
   display: none;
 }
@@ -361,12 +400,18 @@ a {
     z-index: -3;
     width: 100%;
     height: 100%;
-    border: 0;
-    border-radius: 0;
     background: linear-gradient(135deg, #688293, #293f50);
   }
 
-  .hero-media img {
+  .hero-panel {
+    display: none;
+  }
+
+  .hero-mobile-bg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     object-position: center center;
   }
 
@@ -395,10 +440,6 @@ a {
     width: 100%;
     padding: 78px 14px 118px;
     text-align: center;
-  }
-
-  .hero-eyebrow {
-    display: none;
   }
 
   .hero h1 {
@@ -478,20 +519,10 @@ a {
   }
 
   .review-label {
-    color: #dbe7ee;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-
-  .review-label::before {
-    content: "★★★★★";
-    display: block;
-    margin-bottom: 10px;
     color: var(--orange);
-    font-size: 12px;
-    letter-spacing: 0.12em;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
   }
 
   .review-copy {
@@ -507,44 +538,14 @@ a {
   .review-footer {
     padding-top: 17px;
     border-top: 1px solid rgba(255,255,255,0.11);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .review-avatar {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    flex: 0 0 34px;
-    display: grid;
-    place-items: center;
-    color: var(--navy-deep);
-    background: #eef6fa;
-    font-size: 10px;
-    font-weight: 800;
-  }
-
-  .review-footer strong,
-  .review-footer span {
-    display: block;
   }
 
   .review-footer strong {
+    display: block;
     color: #ffffff;
     font-size: 13px;
     line-height: 1.2;
     font-weight: 700;
-  }
-
-  .review-footer span {
-    margin-top: 4px;
-    color: #9fb2bf;
-    font-size: 10px;
-    line-height: 1.2;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
   }
 }
 
