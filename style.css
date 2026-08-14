@@ -5876,3 +5876,555 @@ html {
     gap: 5px;
   }
 }
+
+
+/* =========================================================
+   FINAL POLISH ROUND 2
+========================================================= */
+
+/* ---------------------------------------------------------
+   Inspect / Recommend badge: matching capitalization
+--------------------------------------------------------- */
+
+.diagnosis-visual-note span {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   Restore original About Us layout
+--------------------------------------------------------- */
+
+.about-editorial,
+.about-editorial-inner,
+.about-editorial-header,
+.about-editorial-visual,
+.about-editorial-footer {
+  display: none !important;
+}
+
+.about-section:not(.about-editorial) {
+  display: block !important;
+  padding: 112px 24px !important;
+  background: #ffffff !important;
+  color: var(--navy-deep) !important;
+}
+
+.about-section:not(.about-editorial) .about-inner {
+  width: min(1180px, 100%) !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr) !important;
+  align-items: center !important;
+  gap: clamp(58px, 6vw, 92px) !important;
+}
+
+.about-section:not(.about-editorial) .about-visual {
+  position: relative !important;
+  display: block !important;
+  padding: 0 28px 28px 0 !important;
+}
+
+.about-section:not(.about-editorial) .about-photo {
+  min-height: 520px !important;
+  overflow: hidden !important;
+  border-radius: 16px !important;
+  box-shadow: 0 24px 60px rgba(18, 44, 62, .13) !important;
+}
+
+.about-section:not(.about-editorial) .about-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 520px !important;
+  display: block !important;
+  object-fit: cover !important;
+}
+
+.about-section:not(.about-editorial) .about-badge {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  min-width: 185px !important;
+  padding: 20px !important;
+  border: 6px solid #ffffff !important;
+  border-radius: 10px !important;
+  background: var(--navy-deep) !important;
+  color: #ffffff !important;
+  box-shadow: 0 18px 40px rgba(18, 44, 62, .16) !important;
+}
+
+.about-section:not(.about-editorial) .about-badge strong,
+.about-section:not(.about-editorial) .about-badge span {
+  display: block !important;
+}
+
+.about-section:not(.about-editorial) .about-badge strong {
+  color: var(--blue) !important;
+  font-size: 30px !important;
+  line-height: 1 !important;
+  font-weight: 850 !important;
+}
+
+.about-section:not(.about-editorial) .about-badge span {
+  margin-top: 6px !important;
+  font-size: 11px !important;
+  line-height: 1.3 !important;
+  font-weight: 750 !important;
+}
+
+.about-section:not(.about-editorial) .about-copy {
+  display: block !important;
+  max-width: 620px !important;
+}
+
+.about-section:not(.about-editorial) .about-copy h2 {
+  margin: 0 !important;
+  color: var(--navy-deep) !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: clamp(44px, 4.6vw, 66px) !important;
+  line-height: 1 !important;
+  font-weight: 800 !important;
+  letter-spacing: -.044em !important;
+}
+
+.about-section:not(.about-editorial) .about-copy h2 span {
+  color: var(--blue) !important;
+}
+
+.about-section:not(.about-editorial) .about-lead {
+  margin: 24px 0 0 !important;
+  color: #405969 !important;
+  font-size: 17px !important;
+  line-height: 1.65 !important;
+  font-weight: 650 !important;
+}
+
+.about-section:not(.about-editorial) .about-body {
+  margin: 16px 0 0 !important;
+  color: #667a87 !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  font-weight: 500 !important;
+}
+
+.about-section:not(.about-editorial) .about-points {
+  margin-top: 30px !important;
+  padding-top: 25px !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  border-top: 1px solid #dfe8ed !important;
+}
+
+.about-section:not(.about-editorial) .about-points strong,
+.about-section:not(.about-editorial) .about-points span {
+  display: block !important;
+}
+
+
+/* ---------------------------------------------------------
+   Mobile diagnosis headline: use more width
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .diagnosis-header {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .diagnosis-header h2 {
+    width: 100% !important;
+    max-width: none !important;
+    font-size: clamp(36px, 9.6vw, 46px) !important;
+    letter-spacing: -.038em !important;
+    text-wrap: pretty !important;
+  }
+
+  .diagnosis-header h2 span {
+    display: inline !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   Mobile project hierarchy: featured large again
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .project-featured-media {
+    grid-template-columns: 1fr !important;
+    min-height: 0 !important;
+  }
+
+  .project-featured-media::after {
+    top: 50% !important;
+    bottom: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: auto !important;
+    height: 3px !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .project-featured .project-image {
+    height: 235px !important;
+  }
+
+  .project-featured .project-image-title {
+    font-size: 12px !important;
+    padding: 8px 10px !important;
+  }
+
+  .project-card-media {
+    height: 185px !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   Mobile Why Us: headline -> image -> bullet reasons
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .why-reference-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+  }
+
+  .why-reference-copy {
+    display: contents !important;
+  }
+
+  .why-reference-copy .why-eyebrow {
+    order: 1;
+  }
+
+  .why-reference-copy h2 {
+    order: 2;
+  }
+
+  .why-reference-intro {
+    order: 3;
+    margin-bottom: 30px !important;
+  }
+
+  .why-reference-visual {
+    order: 4;
+    margin-bottom: 34px !important;
+  }
+
+  .why-reference-list {
+    order: 5;
+    margin-top: 0 !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   Restore original About on mobile
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .about-section:not(.about-editorial) {
+    padding: 72px 14px 78px !important;
+  }
+
+  .about-section:not(.about-editorial) .about-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 38px !important;
+  }
+
+  .about-section:not(.about-editorial) .about-visual {
+    padding: 0 16px 16px 0 !important;
+  }
+
+  .about-section:not(.about-editorial) .about-photo,
+  .about-section:not(.about-editorial) .about-photo img {
+    min-height: 360px !important;
+  }
+
+  .about-section:not(.about-editorial) .about-photo {
+    border-radius: 12px !important;
+  }
+
+  .about-section:not(.about-editorial) .about-badge {
+    min-width: 150px !important;
+    padding: 16px !important;
+    border-width: 5px !important;
+  }
+
+  .about-section:not(.about-editorial) .about-badge strong {
+    font-size: 25px !important;
+  }
+
+  .about-section:not(.about-editorial) .about-copy h2 {
+    font-size: clamp(39px, 10.5vw, 50px) !important;
+  }
+
+  .about-section:not(.about-editorial) .about-lead {
+    margin-top: 18px !important;
+    font-size: 15px !important;
+    line-height: 1.58 !important;
+  }
+
+  .about-section:not(.about-editorial) .about-body {
+    font-size: 13px !important;
+    line-height: 1.62 !important;
+  }
+
+  .about-section:not(.about-editorial) .about-points {
+    margin-top: 24px !important;
+    padding-top: 20px !important;
+    gap: 10px !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   Quote form: less generic
+--------------------------------------------------------- */
+
+.quote-form-wrap {
+  position: relative;
+  overflow: hidden;
+  padding: 0 !important;
+  border-radius: 16px !important;
+}
+
+.quote-form-wrap::before {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--blue), #66cdf8);
+}
+
+.quote-form {
+  gap: 17px !important;
+}
+
+.quote-form-heading {
+  margin-bottom: 4px;
+  padding: 30px 30px 24px;
+  border-bottom: 1px solid #e2eaf0;
+  background: linear-gradient(180deg, #fbfdfe 0%, #f6fafc 100%);
+}
+
+.quote-form-heading > span {
+  color: var(--blue-deep);
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: .16em;
+}
+
+.quote-form-heading h3 {
+  margin: 9px 0 0;
+  color: var(--navy-deep);
+  font-size: 26px;
+  line-height: 1.1;
+  font-weight: 850;
+  letter-spacing: -.025em;
+}
+
+.quote-form-heading p {
+  margin: 8px 0 0;
+  color: #71838f;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.quote-form > .quote-field-grid,
+.quote-form > label,
+.quote-form > .quote-submit,
+.quote-form > .quote-form-note {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.quote-form > .quote-field-grid:first-of-type {
+  margin-top: 8px;
+}
+
+.quote-form > .quote-submit {
+  margin-top: 3px;
+}
+
+.quote-form > .quote-form-note {
+  margin-bottom: 25px !important;
+}
+
+.quote-form input,
+.quote-form select,
+.quote-form textarea {
+  background: #ffffff !important;
+}
+
+@media (max-width: 700px) {
+  .quote-form-heading {
+    padding: 25px 20px 20px;
+  }
+
+  .quote-form-heading h3 {
+    font-size: 23px;
+  }
+
+  .quote-form > .quote-field-grid,
+  .quote-form > label,
+  .quote-form > .quote-submit,
+  .quote-form > .quote-form-note {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   FAQ: just a clean FAQ title
+--------------------------------------------------------- */
+
+.faq-heading {
+  padding-top: 2px;
+}
+
+.faq-heading .faq-eyebrow,
+.faq-heading > p:last-child {
+  display: none !important;
+}
+
+.faq-heading h2 {
+  font-size: clamp(42px, 4.2vw, 60px) !important;
+  line-height: 1.02 !important;
+}
+
+@media (max-width: 700px) {
+  .faq-heading h2 {
+    font-size: clamp(37px, 9.8vw, 47px) !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   Footer: cleaner and logo-safe
+--------------------------------------------------------- */
+
+.site-footer {
+  background:
+    linear-gradient(180deg, #0b1d2a 0%, #071620 100%) !important;
+}
+
+.footer-main {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 48px 0 38px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 54px;
+}
+
+.footer-logo-wrap {
+  width: 220px;
+  min-height: 82px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.footer-logo-wrap img {
+  width: 100%;
+  max-height: 62px;
+  display: block;
+  object-fit: contain;
+  filter: none !important;
+}
+
+.footer-nav {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px 26px !important;
+}
+
+.footer-nav a {
+  color: #afc1cc !important;
+  font-size: 11px !important;
+  font-weight: 750 !important;
+}
+
+.footer-nav a:hover {
+  color: #ffffff !important;
+}
+
+.footer-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-action > span {
+  color: #75cdf4;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.footer-phone {
+  margin-top: 6px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 850;
+}
+
+.footer-quote {
+  min-height: 42px !important;
+  margin-top: 13px !important;
+  padding: 0 17px !important;
+}
+
+.footer-bottom {
+  width: min(1180px, calc(100% - 48px)) !important;
+  padding: 16px 0 20px !important;
+  color: #6d8391 !important;
+}
+
+@media (max-width: 700px) {
+  .footer-main {
+    width: calc(100% - 28px);
+    padding: 38px 0 30px;
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 27px;
+  }
+
+  .footer-logo-wrap {
+    width: 190px;
+    min-height: 72px;
+  }
+
+  .footer-nav {
+    justify-content: flex-start !important;
+    gap: 12px 20px !important;
+  }
+
+  .footer-action {
+    align-items: flex-start;
+  }
+
+  .footer-bottom {
+    width: calc(100% - 28px) !important;
+  }
+}
