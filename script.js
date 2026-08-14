@@ -224,39 +224,89 @@ if (quoteForm) {
 
 
 /* =========================
-   REVIEW SCROLLER
+   REVIEW SCROLLER - LOOPING
 ========================= */
 
 const reviewsScroller = document.querySelector('#reviewsScroller');
 const reviewsPrev = document.querySelector('.reviews-arrow-prev');
 const reviewsNext = document.querySelector('.reviews-arrow-next');
 
-function getReviewScrollStep() {
-  if (!reviewsScroller) return 340;
+let reviewScrollLocked = false;
 
-  const firstCard = reviewsScroller.querySelector('.review-card');
-  if (!firstCard) return 340;
+function getReviewCards() {
+  if (!reviewsScroller) return [];
+  return Array.from(reviewsScroller.querySelectorAll('.review-card'));
+}
+
+function getReviewScrollStep() {
+  const cards = getReviewCards();
+  if (!reviewsScroller || !cards.length) return 340;
 
   const styles = window.getComputedStyle(reviewsScroller);
   const gap = parseFloat(styles.gap || styles.columnGap || '0') || 0;
 
-  return firstCard.getBoundingClientRect().width + gap;
+  return cards[0].getBoundingClientRect().width + gap;
 }
 
-if (reviewsPrev && reviewsScroller) {
-  reviewsPrev.addEventListener('click', () => {
-    reviewsScroller.scrollBy({
-      left: -getReviewScrollStep(),
-      behavior: 'smooth'
-    });
+function loopReviewsNext() {
+  if (!reviewsScroller || reviewScrollLocked) return;
+
+  const cards = getReviewCards();
+  if (!cards.length) return;
+
+  reviewScrollLocked = true;
+
+  const step = getReviewScrollStep();
+
+  reviewsScroller.scrollTo({
+    left: step,
+    behavior: 'smooth'
   });
+
+  window.setTimeout(() => {
+    const firstCard = reviewsScroller.querySelector('.review-card');
+
+    if (firstCard) {
+      reviewsScroller.appendChild(firstCard);
+    }
+
+    reviewsScroller.scrollLeft = 0;
+    reviewScrollLocked = false;
+  }, 420);
 }
 
-if (reviewsNext && reviewsScroller) {
-  reviewsNext.addEventListener('click', () => {
-    reviewsScroller.scrollBy({
-      left: getReviewScrollStep(),
-      behavior: 'smooth'
+function loopReviewsPrev() {
+  if (!reviewsScroller || reviewScrollLocked) return;
+
+  const cards = getReviewCards();
+  if (!cards.length) return;
+
+  reviewScrollLocked = true;
+
+  const lastCard = cards[cards.length - 1];
+  const step = getReviewScrollStep();
+
+  reviewsScroller.insertBefore(lastCard, reviewsScroller.firstElementChild);
+  reviewsScroller.scrollLeft = step;
+
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
+      reviewsScroller.scrollTo({
+        left: 0,
+        behavior: 'smooth'
+      });
     });
   });
+
+  window.setTimeout(() => {
+    reviewScrollLocked = false;
+  }, 420);
+}
+
+if (reviewsNext) {
+  reviewsNext.addEventListener('click', loopReviewsNext);
+}
+
+if (reviewsPrev) {
+  reviewsPrev.addEventListener('click', loopReviewsPrev);
 }
