@@ -61,7 +61,6 @@ const problemCards = Array.from(document.querySelectorAll('.problem-card-v2'));
 const selectedProblemInput = document.querySelector('#selectedProblem');
 const carouselPrev = document.querySelector('.carousel-arrow-prev');
 const carouselNext = document.querySelector('.carousel-arrow-next');
-const carouselCount = document.querySelector('#carouselCount');
 
 function selectProblem(card) {
   if (!card) return;
@@ -97,42 +96,44 @@ function getScrollStep() {
   return card.getBoundingClientRect().width + gap;
 }
 
-function updateCarouselState() {
-  if (!problemCarousel || !problemCards.length) return;
-
-  if (!mobileCarouselActive()) {
-    if (carouselPrev) carouselPrev.disabled = true;
-    if (carouselNext) carouselNext.disabled = true;
-    if (carouselCount) carouselCount.textContent = `1 / ${problemCards.length}`;
-    return;
-  }
+function getCurrentCarouselIndex() {
+  if (!problemCarousel || !problemCards.length) return 0;
 
   const step = getScrollStep();
-  const index = Math.max(
+
+  return Math.max(
     0,
     Math.min(
       problemCards.length - 1,
       Math.round(problemCarousel.scrollLeft / step)
     )
   );
+}
 
-  if (carouselCount) {
-    carouselCount.textContent = `${index + 1} / ${problemCards.length}`;
-  }
+function scrollToCarouselIndex(index) {
+  if (!problemCarousel || !problemCards.length) return;
 
-  const maxScroll =
-    problemCarousel.scrollWidth -
-    problemCarousel.clientWidth -
-    2;
+  const wrappedIndex =
+    (index + problemCards.length) %
+    problemCards.length;
 
+  problemCarousel.scrollTo({
+    left: wrappedIndex * getScrollStep(),
+    behavior: 'smooth'
+  });
+}
+
+function updateCarouselState() {
+  if (!problemCarousel || !problemCards.length) return;
+
+  /* Arrows intentionally stay active on mobile so
+     7 -> 1 and 1 -> 7 loop continuously. */
   if (carouselPrev) {
-    carouselPrev.disabled =
-      problemCarousel.scrollLeft <= 2;
+    carouselPrev.disabled = !mobileCarouselActive();
   }
 
   if (carouselNext) {
-    carouselNext.disabled =
-      problemCarousel.scrollLeft >= maxScroll;
+    carouselNext.disabled = !mobileCarouselActive();
   }
 }
 
@@ -140,10 +141,12 @@ if (carouselPrev && problemCarousel) {
   carouselPrev.addEventListener('click', () => {
     if (!mobileCarouselActive()) return;
 
-    problemCarousel.scrollBy({
-      left: -getScrollStep(),
-      behavior: 'smooth'
-    });
+    const currentIndex =
+      getCurrentCarouselIndex();
+
+    scrollToCarouselIndex(
+      currentIndex - 1
+    );
   });
 }
 
@@ -151,10 +154,12 @@ if (carouselNext && problemCarousel) {
   carouselNext.addEventListener('click', () => {
     if (!mobileCarouselActive()) return;
 
-    problemCarousel.scrollBy({
-      left: getScrollStep(),
-      behavior: 'smooth'
-    });
+    const currentIndex =
+      getCurrentCarouselIndex();
+
+    scrollToCarouselIndex(
+      currentIndex + 1
+    );
   });
 }
 

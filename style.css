@@ -2910,3 +2910,256 @@ button {
     height: 390px;
   }
 }
+
+
+/* =========================================================
+   LATEST LAYOUT FIXES
+   Center desktop nav
+   Mobile diagnosis: headline > image > steps
+   Remove carousel helper/count text
+========================================================= */
+
+/* Center the desktop navigation between logo and quote button. */
+@media (min-width: 701px) {
+  .header-inner {
+    position: relative;
+  }
+
+  .desktop-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+  .brand-logo {
+    width: 165px;
+  }
+
+  .desktop-nav {
+    gap: 14px;
+  }
+
+  .desktop-nav a {
+    font-size: 11px;
+  }
+
+  .header-cta {
+    min-height: 42px;
+    padding: 0 17px;
+    font-size: 12px;
+  }
+}
+
+/* Old helper/count row is removed from markup, but hide defensively. */
+.carousel-mobile-meta {
+  display: none !important;
+}
+
+
+/* -------------------------
+   Diagnosis: desktop
+------------------------- */
+
+.diagnosis-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr);
+  grid-template-areas:
+    "visual header"
+    "visual process";
+  grid-template-rows: auto 1fr;
+  align-items: stretch;
+  gap: 0 clamp(58px, 6vw, 92px);
+}
+
+.diagnosis-header {
+  grid-area: header;
+  align-self: end;
+  max-width: 600px;
+  padding-top: 14px;
+}
+
+.diagnosis-visual {
+  grid-area: visual;
+  min-height: 680px;
+  height: 100%;
+}
+
+.diagnosis-photo-card {
+  min-height: 680px;
+  height: 100%;
+}
+
+.diagnosis-process {
+  grid-area: process;
+  max-width: 600px;
+  align-self: start;
+}
+
+.diagnosis-header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(46px, 4.55vw, 68px);
+  line-height: 1.01;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.diagnosis-header h2 span {
+  display: block;
+  color: var(--blue);
+}
+
+.diagnosis-header .diagnosis-intro {
+  max-width: 540px;
+  margin: 20px 0 0;
+  color: #bfd0dc;
+  font-size: 14px;
+  line-height: 1.58;
+  font-weight: 500;
+}
+
+.diagnosis-process .diagnosis-steps {
+  margin-top: 27px;
+}
+
+.diagnosis-process .diagnosis-step {
+  grid-template-columns: 52px 1fr;
+  gap: 16px;
+  padding: 21px 0;
+}
+
+.diagnosis-process .diagnosis-step-copy strong {
+  font-size: 16px;
+  line-height: 1.28;
+}
+
+.diagnosis-process .diagnosis-step-copy p {
+  display: block !important;
+  max-width: 470px;
+  margin: 5px 0 0;
+  color: #93adbd;
+  font-size: 11.5px;
+  line-height: 1.48;
+  font-weight: 500;
+}
+
+/* Hide obsolete wrapper rules from the previous layout. */
+.diagnosis-content {
+  display: none !important;
+}
+
+
+/* -------------------------
+   Diagnosis: tablet
+------------------------- */
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .diagnosis-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0 40px;
+  }
+
+  .diagnosis-visual,
+  .diagnosis-photo-card {
+    min-height: 610px;
+  }
+
+  .diagnosis-header h2 {
+    font-size: clamp(39px, 5.4vw, 53px);
+  }
+
+  .diagnosis-process .diagnosis-step {
+    padding: 18px 0;
+  }
+}
+
+
+/* -------------------------
+   Diagnosis: mobile
+   Headline first, then image, then process
+------------------------- */
+
+@media (max-width: 700px) {
+  .diagnosis-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "visual"
+      "process";
+    grid-template-rows: auto auto auto;
+    gap: 0;
+  }
+
+  .diagnosis-header {
+    grid-area: header;
+    max-width: none;
+    padding: 0 0 30px;
+  }
+
+  .diagnosis-header h2 {
+    font-size: clamp(38px, 10.6vw, 49px);
+    line-height: 1.01;
+  }
+
+  .diagnosis-header .diagnosis-intro {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .diagnosis-visual {
+    grid-area: visual;
+    min-height: 430px;
+    height: 430px;
+  }
+
+  .diagnosis-photo-card {
+    min-height: 430px;
+    height: 430px;
+  }
+
+  .diagnosis-process {
+    grid-area: process;
+    max-width: none;
+    padding-top: 28px;
+  }
+
+  .diagnosis-process .diagnosis-steps {
+    margin-top: 0;
+  }
+
+  .diagnosis-process .diagnosis-step {
+    grid-template-columns: 40px 1fr;
+    gap: 12px;
+    padding: 18px 0;
+  }
+
+  .diagnosis-process .diagnosis-step-copy strong {
+    font-size: 15px;
+  }
+
+  .diagnosis-process .diagnosis-step-copy p {
+    margin-top: 5px;
+    font-size: 11.5px;
+    line-height: 1.48;
+  }
+}
+
+@media (max-width: 390px) {
+  .diagnosis-visual,
+  .diagnosis-photo-card {
+    min-height: 390px;
+    height: 390px;
+  }
+}
