@@ -181,3 +181,43 @@ if (problemCarousel) {
 window.addEventListener('resize', updateCarouselState);
 
 updateCarouselState();
+
+
+/* =========================
+   QUOTE FORM
+   Carry the selected problem into the final form.
+   Submission endpoint still needs to be connected.
+========================= */
+
+const quoteForm = document.querySelector('#quoteForm');
+const quoteProblem = document.querySelector('#quoteProblem');
+
+function syncSelectedProblemToQuote() {
+  if (!selectedProblemInput || !quoteProblem) return;
+
+  const selectedValue = selectedProblemInput.value;
+
+  if (!selectedValue) return;
+
+  const matchingOption = Array.from(quoteProblem.options).find(
+    (option) => option.value === selectedValue
+  );
+
+  if (matchingOption) {
+    quoteProblem.value = selectedValue;
+  }
+}
+
+problemCards.forEach((card) => {
+  card.addEventListener('click', syncSelectedProblemToQuote);
+});
+
+if (quoteForm) {
+  quoteForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    alert(
+      'The form design is ready, but the submission endpoint still needs to be connected before launch.'
+    );
+  });
+}
