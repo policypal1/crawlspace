@@ -3591,3 +3591,303 @@ button {
     font-size: 21px;
   }
 }
+
+
+/* =========================================================
+   SECTION 5 COMPACT PROJECT LAYOUT
+========================================================= */
+
+.project-featured {
+  overflow: hidden;
+}
+
+.project-topline {
+  padding: 22px 24px 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  border-bottom: 1px solid #e3ebef;
+  background: #ffffff;
+}
+
+.project-topline h3 {
+  margin: 0;
+  color: var(--navy-deep);
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -.03em;
+}
+
+.project-topline-facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.project-topline-facts span {
+  padding: 8px 10px;
+  border-radius: 5px;
+  background: #f1f7fa;
+  color: #5e7381;
+  font-size: 11px;
+  line-height: 1.25;
+  font-weight: 650;
+}
+
+.project-topline-facts strong {
+  color: var(--navy-deep);
+  font-weight: 800;
+}
+
+.project-featured-info,
+.project-facts,
+.project-location {
+  display: none !important;
+}
+
+.project-card-heading {
+  padding: 18px 20px 16px;
+  border-bottom: 1px solid #e3ebef;
+  background: #ffffff;
+}
+
+.project-card-heading h3 {
+  margin: 0;
+  color: var(--navy-deep);
+  font-size: 18px;
+  line-height: 1.22;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+.project-card-content {
+  display: none !important;
+}
+
+
+/* =========================================================
+   SECTION 6: WHY US
+========================================================= */
+
+.why-section {
+  position: relative;
+  padding: 104px 24px 112px;
+  background:
+    linear-gradient(
+      180deg,
+      #f7fafc 0%,
+      #eef4f7 100%
+    );
+  color: var(--navy-deep);
+}
+
+.why-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(1180px, calc(100% - 48px));
+  height: 1px;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #d9e5eb 16%,
+      #d9e5eb 84%,
+      transparent
+    );
+}
+
+.why-inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.why-heading {
+  max-width: 720px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.why-eyebrow {
+  margin: 0 0 14px;
+  color: var(--blue-deep);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: .18em;
+}
+
+.why-heading h2 {
+  margin: 0;
+  color: var(--navy-deep);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(42px, 4.4vw, 64px);
+  line-height: 1.01;
+  font-weight: 800;
+  letter-spacing: -.042em;
+}
+
+.why-heading h2 span {
+  color: var(--blue);
+}
+
+.why-heading > p:last-child {
+  max-width: 620px;
+  margin: 18px auto 0;
+  color: #697d8a;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.why-card {
+  min-height: 150px;
+  padding: 22px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border: 1px solid #d9e5eb;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(18, 44, 62, .045);
+}
+
+.why-check {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.why-card h3 {
+  margin: 2px 0 0;
+  color: var(--navy-deep);
+  font-size: 16px;
+  line-height: 1.28;
+  font-weight: 800;
+  letter-spacing: -.015em;
+}
+
+.why-card p {
+  margin: 7px 0 0;
+  color: #70838f;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+
+/* -------------------------
+   Tablet
+------------------------- */
+
+@media (max-width: 980px) and (min-width: 701px) {
+  .project-topline {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .project-topline-facts {
+    justify-content: flex-start;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* -------------------------
+   Mobile
+------------------------- */
+
+@media (max-width: 700px) {
+  .project-topline {
+    padding: 18px 17px 16px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .project-topline h3 {
+    font-size: 24px;
+  }
+
+  .project-topline-facts {
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .project-topline-facts span {
+    padding: 7px 8px;
+    font-size: 10px;
+  }
+
+  .project-card-heading {
+    padding: 16px 17px 14px;
+  }
+
+  .project-card-heading h3 {
+    font-size: 17px;
+  }
+
+  .why-section {
+    padding: 72px 14px 78px;
+  }
+
+  .why-section::before {
+    width: calc(100% - 28px);
+  }
+
+  .why-heading {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .why-heading h2 {
+    font-size: clamp(39px, 10.5vw, 50px);
+  }
+
+  .why-heading > p:last-child {
+    margin: 15px 0 0;
+    font-size: 14px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .why-card {
+    min-height: 0;
+    padding: 17px 16px;
+  }
+
+  .why-card h3 {
+    font-size: 15px;
+  }
+
+  .why-card p {
+    margin-top: 5px;
+    font-size: 11.5px;
+  }
+}
