@@ -3891,3 +3891,469 @@ button {
     font-size: 11.5px;
   }
 }
+
+
+/* =========================================================
+   PROJECT SECTION - IMAGE OVERLAY TITLES
+========================================================= */
+
+.project-topline,
+.project-card-heading,
+.project-featured-info,
+.project-card-content {
+  display: none !important;
+}
+
+.project-overlay-style {
+  overflow: hidden;
+}
+
+.project-image,
+.project-card-media figure {
+  position: relative;
+}
+
+.project-image-title {
+  position: absolute;
+  z-index: 7;
+  top: 16px;
+  left: 16px;
+  max-width: calc(100% - 32px);
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 5px;
+  background: rgba(58, 68, 76, .82);
+  color: #ffffff;
+  font-size: 11px;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -.005em;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .14);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.project-image figcaption,
+.project-card-media figcaption {
+  z-index: 8;
+}
+
+@media (min-width: 701px) {
+  .project-featured {
+    border-radius: 14px;
+  }
+
+  .project-featured-media {
+    min-height: 390px;
+  }
+
+  .project-image img {
+    min-height: 390px;
+  }
+
+  .project-grid {
+    margin-top: 16px;
+    gap: 16px;
+  }
+
+  .project-card-media {
+    height: 220px;
+  }
+}
+
+@media (max-width: 700px) {
+  .projects-section {
+    padding-bottom: 70px;
+  }
+
+  .project-featured-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-featured-media::after {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: auto;
+    width: 2px;
+    height: auto;
+    transform: translateX(-50%);
+  }
+
+  .project-image {
+    height: 190px;
+  }
+
+  .project-image-title {
+    top: 10px;
+    left: 10px;
+    max-width: calc(100% - 20px);
+    padding: 6px 8px;
+    font-size: 9.5px;
+    line-height: 1.18;
+  }
+
+  .project-image figcaption,
+  .project-card-media figcaption {
+    left: 10px;
+    bottom: 10px;
+    min-width: 54px;
+    padding: 6px 8px;
+    font-size: 8px;
+  }
+
+  .project-card-media {
+    height: 185px;
+  }
+
+  .project-grid {
+    gap: 12px;
+  }
+}
+
+
+/* =========================================================
+   WHY US - REFERENCE LAYOUT
+   Left copy + three reasons, right large image + badge
+========================================================= */
+
+.why-reference-layout {
+  padding: 108px 24px 116px;
+  background: #f8fafb;
+}
+
+.why-reference-layout::before {
+  display: none;
+}
+
+.why-reference-inner {
+  width: min(1180px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+  align-items: center;
+  gap: clamp(64px, 7vw, 104px);
+}
+
+.why-reference-copy {
+  max-width: 590px;
+}
+
+.why-reference-copy .why-eyebrow {
+  margin: 0 0 18px;
+  color: var(--blue-deep);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: .16em;
+}
+
+.why-reference-copy h2 {
+  margin: 0;
+  color: #172d3e;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(48px, 4.7vw, 70px);
+  line-height: .99;
+  font-weight: 800;
+  letter-spacing: -.048em;
+  text-wrap: balance;
+}
+
+.why-reference-copy h2 span {
+  display: block;
+  color: var(--blue);
+}
+
+.why-reference-intro {
+  max-width: 560px;
+  margin: 22px 0 0;
+  color: #566d7c;
+  font-size: 16px;
+  line-height: 1.64;
+  font-weight: 500;
+}
+
+.why-reference-list {
+  margin-top: 34px;
+  display: grid;
+  gap: 23px;
+}
+
+.why-reference-item {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+}
+
+.why-reference-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--blue-deep);
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(12, 120, 180, .14);
+}
+
+.why-reference-icon svg {
+  width: 27px;
+  height: 27px;
+}
+
+.why-reference-item h3 {
+  margin: 1px 0 0;
+  color: #172d3e;
+  font-size: 20px;
+  line-height: 1.24;
+  font-weight: 800;
+  letter-spacing: -.022em;
+}
+
+.why-reference-item p {
+  max-width: 470px;
+  margin: 7px 0 0;
+  color: #617786;
+  font-size: 13px;
+  line-height: 1.52;
+  font-weight: 500;
+}
+
+.why-reference-visual {
+  position: relative;
+  padding: 0 30px 30px 0;
+}
+
+.why-reference-photo {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 26px 65px rgba(23, 45, 62, .14);
+}
+
+.why-reference-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 22, 33, .16),
+      rgba(5, 22, 33, 0) 45%
+    );
+}
+
+.why-reference-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.why-reference-badge {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  bottom: 0;
+  width: min(285px, 58%);
+  min-height: 142px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 7px solid #ffffff;
+  border-radius: 10px;
+  background:
+    linear-gradient(
+      135deg,
+      #0d82bd 0%,
+      var(--blue) 100%
+    );
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 22px 48px rgba(23, 45, 62, .18);
+}
+
+.why-reference-badge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .15;
+  background-image:
+    radial-gradient(circle, #ffffff 1.5px, transparent 1.5px);
+  background-size: 23px 23px;
+}
+
+.why-reference-badge strong,
+.why-reference-badge span {
+  position: relative;
+  z-index: 2;
+}
+
+.why-reference-badge strong {
+  font-size: 42px;
+  line-height: .95;
+  font-weight: 850;
+  letter-spacing: -.04em;
+}
+
+.why-reference-badge span {
+  max-width: 180px;
+  margin-top: 9px;
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+
+/* Hide the old Why Us grid */
+.why-heading,
+.why-grid,
+.why-card {
+  display: none !important;
+}
+
+
+/* -------------------------
+   Tablet
+------------------------- */
+
+@media (max-width: 980px) and (min-width: 701px) {
+  .why-reference-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 46px;
+  }
+
+  .why-reference-copy h2 {
+    font-size: clamp(42px, 5.4vw, 58px);
+  }
+
+  .why-reference-photo,
+  .why-reference-photo img {
+    min-height: 470px;
+  }
+
+  .why-reference-item {
+    grid-template-columns: 50px 1fr;
+    gap: 14px;
+  }
+
+  .why-reference-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .why-reference-item h3 {
+    font-size: 17px;
+  }
+
+  .why-reference-item p {
+    font-size: 12px;
+  }
+}
+
+
+/* -------------------------
+   Mobile
+------------------------- */
+
+@media (max-width: 700px) {
+  .why-reference-layout {
+    padding: 72px 14px 80px;
+  }
+
+  .why-reference-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 42px;
+  }
+
+  .why-reference-copy {
+    max-width: none;
+  }
+
+  .why-reference-copy .why-eyebrow {
+    margin-bottom: 14px;
+    font-size: 10px;
+  }
+
+  .why-reference-copy h2 {
+    font-size: clamp(39px, 10.7vw, 50px);
+    line-height: 1.01;
+  }
+
+  .why-reference-intro {
+    margin-top: 17px;
+    font-size: 14px;
+    line-height: 1.56;
+  }
+
+  .why-reference-list {
+    margin-top: 28px;
+    gap: 20px;
+  }
+
+  .why-reference-item {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .why-reference-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+  }
+
+  .why-reference-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .why-reference-item h3 {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .why-reference-item p {
+    margin-top: 5px;
+    font-size: 11.5px;
+    line-height: 1.48;
+  }
+
+  .why-reference-visual {
+    padding: 0 18px 18px 0;
+  }
+
+  .why-reference-photo,
+  .why-reference-photo img {
+    min-height: 380px;
+  }
+
+  .why-reference-photo {
+    border-radius: 12px;
+  }
+
+  .why-reference-badge {
+    width: min(220px, 64%);
+    min-height: 112px;
+    padding: 16px 14px;
+    border-width: 5px;
+    border-radius: 8px;
+  }
+
+  .why-reference-badge strong {
+    font-size: 34px;
+  }
+
+  .why-reference-badge span {
+    margin-top: 6px;
+    font-size: 10px;
+  }
+}
