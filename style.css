@@ -4,7 +4,7 @@
   --navy-dark: #0d1b28;
   --blue: #159fe7;
   --blue-deep: #0c78b4;
-  --orange: #e6a15d;
+  --orange: #159fe7;
   --white: #ffffff;
   --muted: #cbd7df;
   --border: #e4e9ed;
@@ -1833,5 +1833,325 @@ button {
 
   .inspection-actions > span {
     text-align: center;
+  }
+}
+
+
+/* =========================================================
+   SECTION 3 CORRECTION
+   Blue-only. Desktop grid. Mobile carousel.
+========================================================= */
+
+/* Review restored between trust bar and problem section */
+.featured-review-section {
+  padding: 48px 24px 54px;
+  background: #ffffff;
+  color: var(--navy-deep);
+}
+
+.featured-review-inner {
+  width: min(760px, 100%);
+  margin: 0 auto;
+}
+
+.featured-review-card {
+  position: relative;
+  padding: 28px 30px 26px;
+  border: 1px solid #dce7ed;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 14px 36px rgba(18, 44, 62, 0.08);
+}
+
+.featured-review-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 62px;
+  height: 3px;
+  background: var(--blue);
+}
+
+.featured-review-stars {
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 850;
+  letter-spacing: .14em;
+}
+
+.featured-review-copy {
+  margin: 16px 0 20px;
+  color: #213747;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.featured-review-footer {
+  padding-top: 16px;
+  border-top: 1px solid #e6edf1;
+}
+
+.featured-review-footer strong {
+  color: var(--navy-deep);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* Problem section */
+.problem-section-v3 {
+  padding: 92px 24px 104px;
+  background:
+    radial-gradient(circle at 92% 6%, rgba(21, 159, 231, .09), transparent 28%),
+    linear-gradient(180deg, #f8fbfd 0%, #f3f7f9 100%);
+}
+
+.problem-section-v3 .problem-inner {
+  width: min(1220px, 100%);
+}
+
+.problem-section-v3 .problem-heading-wrap {
+  max-width: 790px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.problem-section-v3 .section-eyebrow {
+  color: var(--blue-deep);
+}
+
+.problem-section-v3 .problem-intro {
+  max-width: 700px;
+}
+
+/* DESKTOP = regular four-card grid */
+.problem-section-v3 .problem-carousel-shell {
+  position: relative;
+}
+
+.problem-section-v3 .problem-carousel {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  overflow: visible;
+  padding: 0;
+  scroll-snap-type: none;
+}
+
+.problem-section-v3 .problem-card-v2 {
+  width: 100%;
+  min-width: 0;
+  flex: none;
+  scroll-snap-align: none;
+  border-radius: 13px;
+}
+
+/* Blue-only card accents */
+.problem-section-v3 .problem-card-wedge {
+  background: linear-gradient(180deg, #27afea 0%, var(--blue-deep) 100%);
+  opacity: .96;
+}
+
+.problem-section-v3 .problem-card-strip {
+  height: 8px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--blue-deep) 100%);
+}
+
+.problem-section-v3 .problem-service-line {
+  color: var(--blue-deep);
+}
+
+.problem-section-v3 .problem-card-v2.is-selected {
+  border-color: var(--blue);
+  box-shadow:
+    0 0 0 2px rgba(21, 159, 231, .15),
+    0 18px 42px rgba(13, 40, 58, .11);
+}
+
+.problem-section-v3 .problem-card-v2.is-selected .problem-card-wedge {
+  background: var(--blue);
+}
+
+.problem-section-v3 .problem-card-media {
+  height: 175px;
+}
+
+.problem-section-v3 .problem-card-body {
+  min-height: 188px;
+  padding: 21px 20px 20px;
+}
+
+.problem-section-v3 .problem-card-body strong {
+  font-size: 18px;
+}
+
+.problem-section-v3 .problem-card-body small {
+  font-size: 13px;
+  line-height: 1.52;
+}
+
+.problem-section-v3 .problem-service-line {
+  padding-top: 18px;
+  font-size: 10px;
+}
+
+/* No carousel controls on desktop */
+.problem-section-v3 .carousel-arrow,
+.problem-section-v3 .carousel-mobile-meta {
+  display: none;
+}
+
+/* There is intentionally no selection footer / continue button. */
+.problem-section-v3 .problem-footer,
+.problem-section-v3 .problem-footer-v2 {
+  display: none !important;
+}
+
+/* Any old inspection-plan block is intentionally not part of this version. */
+.inspection-section {
+  display: none !important;
+}
+
+@media (max-width: 1050px) and (min-width: 701px) {
+  .problem-section-v3 .problem-carousel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .problem-section-v3 .problem-card-media {
+    height: 205px;
+  }
+}
+
+/* MOBILE = swipe carousel with visible arrows */
+@media (max-width: 700px) {
+  .featured-review-section {
+    padding: 38px 14px 44px;
+  }
+
+  .featured-review-card {
+    padding: 24px 22px 22px;
+    border-radius: 10px;
+  }
+
+  .featured-review-card::before {
+    left: 22px;
+    width: 54px;
+  }
+
+  .featured-review-copy {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .problem-section-v3 {
+    padding: 68px 0 78px;
+  }
+
+  .problem-section-v3 .problem-inner {
+    width: 100%;
+  }
+
+  .problem-section-v3 .problem-heading-wrap {
+    width: calc(100% - 28px);
+    margin: 0 auto 30px;
+    text-align: left;
+  }
+
+  .problem-section-v3 .problem-heading-wrap h2 {
+    font-size: clamp(35px, 10vw, 46px);
+    line-height: 1.03;
+  }
+
+  .problem-section-v3 .problem-intro {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .problem-section-v3 .problem-carousel-shell {
+    position: relative;
+    padding: 0;
+  }
+
+  .problem-section-v3 .problem-carousel {
+    display: flex;
+    grid-template-columns: none;
+    gap: 13px;
+    overflow-x: auto;
+    padding: 5px 42px 14px 14px;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 14px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    overscroll-behavior-inline: contain;
+  }
+
+  .problem-section-v3 .problem-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .problem-section-v3 .problem-card-v2 {
+    flex: 0 0 min(82vw, 330px);
+    width: auto;
+    scroll-snap-align: start;
+  }
+
+  .problem-section-v3 .problem-card-media {
+    height: 184px;
+  }
+
+  .problem-section-v3 .problem-card-body {
+    min-height: 180px;
+    padding: 20px 19px 19px;
+  }
+
+  .problem-section-v3 .problem-card-body strong {
+    font-size: 18px;
+  }
+
+  /* Visible touch controls */
+  .problem-section-v3 .carousel-arrow {
+    position: absolute;
+    z-index: 20;
+    top: 164px;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    background: var(--blue);
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(13, 40, 58, .22);
+    transform: translateY(-50%);
+  }
+
+  .problem-section-v3 .carousel-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .problem-section-v3 .carousel-arrow-prev {
+    left: 6px;
+  }
+
+  .problem-section-v3 .carousel-arrow-next {
+    right: 6px;
+  }
+
+  .problem-section-v3 .carousel-arrow:disabled {
+    opacity: .38;
+  }
+
+  .problem-section-v3 .carousel-mobile-meta {
+    width: calc(100% - 28px);
+    margin: 4px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #6e818e;
+    font-size: 11px;
+    line-height: 1.4;
+    font-weight: 750;
   }
 }
