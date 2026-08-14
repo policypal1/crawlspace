@@ -254,7 +254,7 @@ a {
 
 .hero-copy {
   width: min(760px, 66%);
-  padding: 164px 0 96px;
+  padding: 176px 0 96px;
 }
 
 .hero-copy-glass {
@@ -353,6 +353,64 @@ a {
 
 .mobile-review-section {
   display: none;
+}
+
+/* =========================
+   DESKTOP HIGHLIGHTS BAR
+========================= */
+
+.desktop-highlights {
+  display: none;
+}
+
+@media (min-width: 701px) {
+  .desktop-highlights {
+    display: block;
+    background: linear-gradient(180deg, var(--blue), var(--blue-deep));
+    color: #ffffff;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .desktop-highlights-inner {
+    width: 100%;
+    max-width: 1568px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .desktop-highlight-item {
+    min-height: 112px;
+    padding: 24px 20px 22px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgba(255,255,255,0.18);
+  }
+
+  .desktop-highlight-item:first-child {
+    border-left: 1px solid rgba(255,255,255,0.18);
+  }
+
+  .desktop-highlight-title {
+    display: block;
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .desktop-highlight-subtitle {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.96);
+  }
 }
 
 /* =========================
@@ -494,7 +552,7 @@ a {
   .hero-copy {
     width: 100%;
     min-height: calc(100svh - var(--header-height));
-    padding: 116px 14px 10px;
+    padding: 126px 14px 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -723,26 +781,21 @@ a {
    Desktop remains unchanged.
 ========================================================= */
 @media (max-width: 700px) {
-  /* Remove the forced full-screen height that created
-     the huge empty area below the Call / Text button. */
   .hero,
   .hero-inner,
   .hero-copy {
     min-height: 0;
   }
 
-  /* Keep a normal gap after the buttons before the next section. */
   .hero-copy {
     padding-bottom: 40px;
   }
 
-  /* Preserve a deliberate gap above the buttons without using auto-space. */
   .hero-actions {
     margin-top: 54px;
     padding-top: 0;
   }
 
-  /* Center the hamburger menu and make it fill most of the phone width. */
   .mobile-menu {
     left: 50%;
     right: auto;
@@ -760,5 +813,9 @@ a {
     justify-content: center;
     text-align: center;
     min-height: 52px;
+  }
+
+  .desktop-highlights {
+    display: none !important;
   }
 }
