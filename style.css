@@ -2640,3 +2640,273 @@ button {
     text-align: center;
   }
 }
+
+
+/* =========================================================
+   HEADER NAV + SECTION 4 SIMPLIFICATION
+========================================================= */
+
+/* Desktop section navigation */
+.header-inner {
+  gap: 28px;
+}
+
+.desktop-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.desktop-nav a {
+  position: relative;
+  padding: 10px 0;
+  color: var(--navy-deep);
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 750;
+  transition: color .18s ease;
+}
+
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 3px;
+  height: 2px;
+  background: var(--blue);
+  transition: right .18s ease;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a:focus-visible {
+  color: var(--blue-deep);
+}
+
+.desktop-nav a:hover::after,
+.desktop-nav a:focus-visible::after {
+  right: 0;
+}
+
+/* The card can still be tapped, but no literal "Selected" label. */
+.problem-selected-badge {
+  display: none !important;
+}
+
+.problem-section-v3 .problem-card-v2.is-selected {
+  border-color: var(--blue);
+  box-shadow:
+    0 0 0 2px rgba(21, 159, 231, .12),
+    0 14px 34px rgba(13, 40, 58, .09);
+}
+
+
+/* -------------------------
+   Simplified diagnosis section
+------------------------- */
+
+.diagnosis-section {
+  padding-top: 104px;
+  padding-bottom: 104px;
+}
+
+.diagnosis-inner {
+  grid-template-columns: minmax(0, 1.03fr) minmax(0, .97fr);
+  align-items: stretch;
+  gap: clamp(58px, 6vw, 92px);
+}
+
+.diagnosis-visual {
+  min-height: 660px;
+  height: 100%;
+}
+
+.diagnosis-photo-card {
+  min-height: 660px;
+  height: 100%;
+}
+
+.diagnosis-photo-overlay {
+  background:
+    linear-gradient(
+      to top,
+      rgba(6, 20, 30, .26) 0%,
+      rgba(6, 20, 30, .06) 42%,
+      rgba(6, 20, 30, .02) 72%
+    );
+}
+
+/* Old developer-facing placeholder caption is gone. */
+.diagnosis-photo-label,
+.diagnosis-photo-kicker {
+  display: none !important;
+}
+
+.diagnosis-content {
+  max-width: 600px;
+  min-height: 660px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.diagnosis-eyebrow,
+.diagnosis-action {
+  display: none !important;
+}
+
+.diagnosis-content h2 {
+  font-size: clamp(46px, 4.55vw, 68px);
+  line-height: 1.01;
+}
+
+.diagnosis-intro {
+  max-width: 540px;
+  margin-top: 22px;
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+.diagnosis-steps {
+  margin-top: 34px;
+}
+
+.diagnosis-step {
+  grid-template-columns: 54px 1fr;
+  gap: 18px;
+  padding: 25px 0;
+}
+
+.diagnosis-step-copy strong {
+  font-size: 17px;
+}
+
+.diagnosis-step-copy p {
+  display: none !important;
+}
+
+
+/* -------------------------
+   Header + section 4 tablet
+------------------------- */
+
+@media (max-width: 1000px) and (min-width: 701px) {
+  .desktop-nav {
+    gap: 18px;
+  }
+
+  .desktop-nav a {
+    font-size: 12px;
+  }
+
+  .diagnosis-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 42px;
+  }
+
+  .diagnosis-visual,
+  .diagnosis-photo-card,
+  .diagnosis-content {
+    min-height: 600px;
+  }
+}
+
+
+/* -------------------------
+   Mobile menu + section 4
+------------------------- */
+
+@media (max-width: 700px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-inner {
+    gap: 3px;
+  }
+
+  .mobile-menu-inner a {
+    color: var(--navy-deep);
+    background: transparent;
+  }
+
+  .mobile-menu-inner .mobile-menu-quote {
+    margin-top: 8px;
+    min-height: 54px;
+    border-radius: 6px;
+    background: var(--blue);
+    color: #ffffff;
+  }
+
+  .mobile-menu-inner .mobile-menu-quote:hover,
+  .mobile-menu-inner .mobile-menu-quote:focus-visible {
+    background: var(--blue-deep);
+    color: #ffffff;
+  }
+
+  .diagnosis-section {
+    padding: 66px 14px 72px;
+  }
+
+  .diagnosis-inner {
+    gap: 38px;
+  }
+
+  .diagnosis-visual {
+    min-height: 430px;
+  }
+
+  .diagnosis-photo-card {
+    min-height: 430px;
+    height: 430px;
+  }
+
+  .diagnosis-content {
+    min-height: 0;
+    max-width: none;
+    justify-content: flex-start;
+  }
+
+  .diagnosis-content h2 {
+    font-size: clamp(38px, 10.6vw, 49px);
+    line-height: 1.01;
+  }
+
+  .diagnosis-intro {
+    margin-top: 17px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .diagnosis-steps {
+    margin-top: 25px;
+  }
+
+  .diagnosis-step {
+    grid-template-columns: 40px 1fr;
+    gap: 12px;
+    padding: 18px 0;
+  }
+
+  .diagnosis-step-copy strong {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .diagnosis-visual-note {
+    right: 14px;
+    top: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .diagnosis-visual {
+    min-height: 390px;
+  }
+
+  .diagnosis-photo-card {
+    min-height: 390px;
+    height: 390px;
+  }
+}
