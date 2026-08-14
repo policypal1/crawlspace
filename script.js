@@ -221,3 +221,42 @@ if (quoteForm) {
     );
   });
 }
+
+
+/* =========================
+   REVIEW SCROLLER
+========================= */
+
+const reviewsScroller = document.querySelector('#reviewsScroller');
+const reviewsPrev = document.querySelector('.reviews-arrow-prev');
+const reviewsNext = document.querySelector('.reviews-arrow-next');
+
+function getReviewScrollStep() {
+  if (!reviewsScroller) return 340;
+
+  const firstCard = reviewsScroller.querySelector('.review-card');
+  if (!firstCard) return 340;
+
+  const styles = window.getComputedStyle(reviewsScroller);
+  const gap = parseFloat(styles.gap || styles.columnGap || '0') || 0;
+
+  return firstCard.getBoundingClientRect().width + gap;
+}
+
+if (reviewsPrev && reviewsScroller) {
+  reviewsPrev.addEventListener('click', () => {
+    reviewsScroller.scrollBy({
+      left: -getReviewScrollStep(),
+      behavior: 'smooth'
+    });
+  });
+}
+
+if (reviewsNext && reviewsScroller) {
+  reviewsNext.addEventListener('click', () => {
+    reviewsScroller.scrollBy({
+      left: getReviewScrollStep(),
+      behavior: 'smooth'
+    });
+  });
+}

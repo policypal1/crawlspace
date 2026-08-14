@@ -5090,3 +5090,309 @@ button {
     gap: 18px;
   }
 }
+
+
+/* =========================================================
+   FINAL POLISH PASS
+========================================================= */
+
+/* -------------------------
+   Diagnosis badge
+------------------------- */
+
+.diagnosis-visual-note {
+  left: 22px !important;
+  right: auto !important;
+  top: 22px !important;
+  min-width: 0 !important;
+  padding: 12px 15px !important;
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  border-radius: 8px !important;
+  background: rgba(9, 28, 41, .82) !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,.16) !important;
+}
+
+.diagnosis-visual-note span,
+.diagnosis-visual-note strong {
+  margin: 0 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+  line-height: 1 !important;
+}
+
+.diagnosis-visual-note span {
+  color: #84d8fb !important;
+  font-size: 10px !important;
+  font-weight: 850 !important;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.diagnosis-visual-note span::after {
+  content: "•";
+  margin-left: 8px;
+  color: rgba(255,255,255,.38);
+}
+
+.diagnosis-visual-note strong {
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: 750 !important;
+}
+
+
+/* -------------------------
+   Project overlays
+------------------------- */
+
+.project-image-title {
+  max-width: calc(100% - 32px);
+  padding: 9px 12px;
+  background: rgba(57, 66, 72, .84);
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.18;
+  font-weight: 800;
+}
+
+.project-featured .project-image-title {
+  font-size: clamp(15px, 1.3vw, 19px);
+  padding: 10px 13px;
+}
+
+@media (max-width: 700px) {
+  .project-image-title {
+    max-width: calc(100% - 20px);
+    font-size: 10px;
+    padding: 7px 8px;
+  }
+
+  .project-featured .project-image-title {
+    font-size: 11px;
+    padding: 7px 9px;
+  }
+}
+
+
+/* -------------------------
+   WHY US: dark section
+------------------------- */
+
+.why-reference-layout {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(21,159,231,.12), transparent 28%),
+    linear-gradient(135deg, #0b1c29 0%, #132f43 100%) !important;
+  color: #ffffff;
+}
+
+.why-reference-copy .why-eyebrow {
+  color: #78d5fb !important;
+}
+
+.why-reference-copy h2,
+.why-reference-item h3 {
+  color: #ffffff !important;
+}
+
+.why-reference-copy h2 span {
+  color: var(--blue) !important;
+}
+
+.why-reference-intro {
+  color: #bed0dc !important;
+}
+
+.why-reference-item p {
+  color: #9eb4c3 !important;
+}
+
+.why-reference-icon {
+  background: rgba(21,159,231,.14) !important;
+  border: 1px solid rgba(89,196,240,.28);
+  color: #8edbfb !important;
+  box-shadow: none !important;
+}
+
+.why-reference-photo {
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 30px 70px rgba(0,0,0,.26) !important;
+}
+
+
+/* -------------------------
+   Reviews: even scrollable cards
+------------------------- */
+
+.reviews-section {
+  background: #f4f8fa !important;
+}
+
+.reviews-heading > p:last-child {
+  display: none !important;
+}
+
+.reviews-scroller-shell {
+  position: relative;
+}
+
+.reviews-grid {
+  display: flex !important;
+  gap: 16px !important;
+  overflow-x: auto !important;
+  padding: 8px 4px 18px !important;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.reviews-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.review-card,
+.review-card-featured {
+  flex: 0 0 calc((100% - 32px) / 3);
+  min-width: 0;
+  min-height: 285px !important;
+  transform: none !important;
+  scroll-snap-align: start;
+  border-color: #dae5eb !important;
+}
+
+.review-card blockquote {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  font-weight: 500;
+}
+
+.review-card footer strong,
+.review-card footer span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+.reviews-arrow {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d8e4ea;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--navy-deep);
+  box-shadow: 0 10px 26px rgba(18,44,62,.1);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.reviews-arrow svg {
+  width: 19px;
+  height: 19px;
+}
+
+.reviews-arrow-prev {
+  left: -22px;
+}
+
+.reviews-arrow-next {
+  right: -22px;
+}
+
+.reviews-arrow:hover {
+  color: #ffffff;
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+@media (max-width: 980px) {
+  .review-card,
+  .review-card-featured {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+}
+
+@media (max-width: 700px) {
+  .reviews-grid {
+    padding: 4px 38px 14px 0 !important;
+  }
+
+  .review-card,
+  .review-card-featured {
+    flex-basis: min(82vw, 325px);
+    min-width: min(82vw, 325px) !important;
+  }
+
+  .reviews-arrow {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+  }
+
+  .reviews-arrow-prev {
+    left: -8px;
+  }
+
+  .reviews-arrow-next {
+    right: -8px;
+  }
+}
+
+
+/* -------------------------
+   FAQ: cleaner, simpler typography
+------------------------- */
+
+.faq-heading h2,
+.faq-item summary,
+.faq-answer p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+}
+
+.faq-heading h2 {
+  letter-spacing: -.035em !important;
+}
+
+.faq-heading > p:last-child {
+  color: #70828e !important;
+}
+
+.faq-item summary {
+  min-height: 72px !important;
+  font-size: 15px !important;
+  font-weight: 750 !important;
+}
+
+.faq-plus {
+  width: 32px !important;
+  height: 32px !important;
+  flex: 0 0 32px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  transform-origin: 50% 50% !important;
+}
+
+.faq-item[open] .faq-plus {
+  transform: rotate(45deg) !important;
+}
+
+.faq-answer p {
+  font-size: 13px !important;
+  line-height: 1.62 !important;
+}
+
+
+/* Quote is intentionally before FAQ now. */
+.quote-section + .faq-section {
+  border-top: 0;
+}
