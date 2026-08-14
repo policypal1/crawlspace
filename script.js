@@ -50,85 +50,142 @@ if (menuToggle && mobileMenu) {
   });
 }
 
-
 /* =========================
-   PROBLEM SELECTOR
+   IMAGE PROBLEM CAROUSEL
 ========================= */
 
-const problemCards = document.querySelectorAll('.problem-card');
+const problemCarousel = document.querySelector('#problemCarousel');
+const problemCards = Array.from(document.querySelectorAll('.problem-card-v2'));
 const selectedProblemInput = document.querySelector('#selectedProblem');
-const problemSelectionMessage = document.querySelector(
-  '#problemSelectionMessage'
-);
+const problemSelectionMessage = document.querySelector('#problemSelectionMessage');
 const problemContinue = document.querySelector('#problemContinue');
+const carouselPrev = document.querySelector('.carousel-arrow-prev');
+const carouselNext = document.querySelector('.carousel-arrow-next');
+const carouselCount = document.querySelector('#carouselCount');
 
-function selectProblem(selectedCard) {
-  if (!selectedCard) return;
+const inspectionSection = document.querySelector('#quote');
+const inspectionTitle = document.querySelector('#inspectionTitle');
+const inspectionCopy = document.querySelector('#inspectionCopy');
+const inspectionConcern = document.querySelector('#inspectionConcern');
+const inspectionChecks = document.querySelector('#inspectionChecks');
+const inspectionServices = document.querySelector('#inspectionServices');
 
-  const selectedValue =
-    selectedCard.dataset.problem || '';
+function splitData(value) {
+  return (value || '').split('|').map(item => item.trim()).filter(Boolean);
+}
 
-  problemCards.forEach((card) => {
-    const isSelected =
-      card === selectedCard;
+function renderList(container, values, tagName = 'li') {
+  if (!container) return;
+  container.innerHTML = '';
 
-    card.classList.toggle(
-      'is-selected',
-      isSelected
-    );
+  values.forEach(value => {
+    const item = document.createElement(tagName);
+    item.textContent = value;
+    container.appendChild(item);
+  });
+}
 
-    card.setAttribute(
-      'aria-pressed',
-      String(isSelected)
-    );
+function updateInspectionPlan(card) {
+  if (!card) return;
+
+  const problem = card.dataset.problem || 'Selected crawl space concern';
+  const title = card.dataset.planTitle || 'We’ll inspect the problem first.';
+  const copy = card.dataset.planCopy || '';
+  const services = splitData(card.dataset.services);
+  const checks = splitData(card.dataset.checks);
+
+  if (inspectionTitle) inspectionTitle.textContent = title;
+  if (inspectionCopy) inspectionCopy.textContent = copy;
+  if (inspectionConcern) inspectionConcern.textContent = problem;
+
+  renderList(inspectionChecks, checks, 'li');
+  renderList(inspectionServices, services, 'span');
+}
+
+function selectProblem(card) {
+  if (!card) return;
+
+  problemCards.forEach(item => {
+    const selected = item === card;
+    item.classList.toggle('is-selected', selected);
+    item.setAttribute('aria-pressed', String(selected));
   });
 
-  if (selectedProblemInput) {
-    selectedProblemInput.value =
-      selectedValue;
-  }
+  const problem = card.dataset.problem || '';
 
+  if (selectedProblemInput) selectedProblemInput.value = problem;
   if (problemSelectionMessage) {
-    problemSelectionMessage.textContent =
-      `Selected: ${selectedValue}`;
+    problemSelectionMessage.textContent = `${problem} selected. We’ll tailor the next section around this concern.`;
   }
 
   if (problemContinue) {
-    problemContinue.classList.remove(
-      'is-disabled'
-    );
-
-    problemContinue.setAttribute(
-      'aria-disabled',
-      'false'
-    );
-
-    problemContinue.removeAttribute(
-      'tabindex'
-    );
+    problemContinue.disabled = false;
+    problemContinue.classList.remove('is-disabled');
   }
+
+  updateInspectionPlan(card);
 }
 
-problemCards.forEach((card) => {
-  card.addEventListener(
-    'click',
-    () => {
-      selectProblem(card);
-    }
-  );
+problemCards.forEach(card => {
+  card.addEventListener('click', () => selectProblem(card));
 });
 
 if (problemContinue) {
-  problemContinue.addEventListener(
-    'click',
-    (event) => {
-      if (
-        problemContinue.getAttribute(
-          'aria-disabled'
-        ) === 'true'
-      ) {
-        event.preventDefault();
-      }
-    }
-  );
+  problemContinue.addEventListener('click', () => {
+    if (problemContinue.disabled || !inspectionSection) return;
+    inspectionSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 }
+
+function getScrollStep() {
+  if (!problemCards.length) return 320;
+  const first = problemCards[0];
+  const styles = window.getComputedStyle(problemCarousel);
+  const gap = parseFloat(styles.columnGap || styles.gap || 0) || 0;
+  return first.getBoundingClientRect().width + gap;
+}
+
+function updateCarouselState() {
+  if (!problemCarousel || !problemCards.length) return;
+
+  const step = getScrollStep();
+  const index = Math.max(0, Math.min(
+    problemCards.length - 1,
+    Math.round(problemCarousel.scrollLeft / step)
+  ));
+
+  if (carouselCount) {
+    carouselCount.textContent = `${index + 1} / ${problemCards.length}`;
+  }
+
+  const maxScroll = problemCarousel.scrollWidth - problemCarousel.clientWidth - 2;
+  if (carouselPrev) carouselPrev.disabled = problemCarousel.scrollLeft <= 2;
+  if (carouselNext) carouselNext.disabled = problemCarousel.scrollLeft >= maxScroll;
+}
+
+if (carouselPrev && problemCarousel) {
+  carouselPrev.addEventListener('click', () => {
+    problemCarousel.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+  });
+}
+
+if (carouselNext && problemCarousel) {
+  carouselNext.addEventListener('click', () => {
+    problemCarousel.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+  });
+}
+
+if (problemCarousel) {
+  let ticking = false;
+  problemCarousel.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      updateCarouselState();
+      ticking = false;
+    });
+  });
+}
+
+window.addEventListener('resize', updateCarouselState);
+updateCarouselState();
