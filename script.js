@@ -13,7 +13,10 @@ function setMenu(open) {
 if (menuToggle && mobileMenu) {
   menuToggle.addEventListener('click', (event) => {
     event.stopPropagation();
-    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+
+    const isOpen =
+      menuToggle.getAttribute('aria-expanded') === 'true';
+
     setMenu(!isOpen);
   });
 
@@ -45,4 +48,87 @@ if (menuToggle && mobileMenu) {
       setMenu(false);
     }
   });
+}
+
+
+/* =========================
+   PROBLEM SELECTOR
+========================= */
+
+const problemCards = document.querySelectorAll('.problem-card');
+const selectedProblemInput = document.querySelector('#selectedProblem');
+const problemSelectionMessage = document.querySelector(
+  '#problemSelectionMessage'
+);
+const problemContinue = document.querySelector('#problemContinue');
+
+function selectProblem(selectedCard) {
+  if (!selectedCard) return;
+
+  const selectedValue =
+    selectedCard.dataset.problem || '';
+
+  problemCards.forEach((card) => {
+    const isSelected =
+      card === selectedCard;
+
+    card.classList.toggle(
+      'is-selected',
+      isSelected
+    );
+
+    card.setAttribute(
+      'aria-pressed',
+      String(isSelected)
+    );
+  });
+
+  if (selectedProblemInput) {
+    selectedProblemInput.value =
+      selectedValue;
+  }
+
+  if (problemSelectionMessage) {
+    problemSelectionMessage.textContent =
+      `Selected: ${selectedValue}`;
+  }
+
+  if (problemContinue) {
+    problemContinue.classList.remove(
+      'is-disabled'
+    );
+
+    problemContinue.setAttribute(
+      'aria-disabled',
+      'false'
+    );
+
+    problemContinue.removeAttribute(
+      'tabindex'
+    );
+  }
+}
+
+problemCards.forEach((card) => {
+  card.addEventListener(
+    'click',
+    () => {
+      selectProblem(card);
+    }
+  );
+});
+
+if (problemContinue) {
+  problemContinue.addEventListener(
+    'click',
+    (event) => {
+      if (
+        problemContinue.getAttribute(
+          'aria-disabled'
+        ) === 'true'
+      ) {
+        event.preventDefault();
+      }
+    }
+  );
 }
