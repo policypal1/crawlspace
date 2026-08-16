@@ -7903,3 +7903,87 @@ html {
       url("map.png") center / cover no-repeat !important;
   }
 }
+
+/* =========================================================
+   DESKTOP FINAL TWEAKS
+   Bring back large map with white overlay card.
+========================================================= */
+@media (min-width: 701px) {
+  .service-area-inner {
+    width: min(1180px, calc(100% - 48px)) !important;
+    margin: 0 auto !important;
+    display: block !important;
+    position: relative !important;
+  }
+
+  .service-area-visual {
+    width: 100% !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .service-area-map-placeholder {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 620px !important;
+    margin: 0 !important;
+    border-radius: 22px !important;
+    overflow: hidden !important;
+    box-shadow: 0 24px 64px rgba(3, 18, 41, .12) !important;
+    background: #ffffff !important;
+  }
+
+  .service-area-map-placeholder iframe {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+    display: block !important;
+  }
+
+  .service-area-copy {
+    position: absolute !important;
+    top: 34px !important;
+    left: 34px !important;
+    z-index: 3 !important;
+    width: min(470px, calc(100% - 68px)) !important;
+    max-width: 470px !important;
+    margin: 0 !important;
+    padding: 28px 26px 24px !important;
+    border-radius: 20px !important;
+    background: rgba(255, 255, 255, .94) !important;
+    box-shadow: 0 22px 50px rgba(3, 18, 41, .12) !important;
+    backdrop-filter: blur(3px);
+    text-align: left !important;
+  }
+
+  .service-area-copy h2 {
+    max-width: none !important;
+    margin: 0 !important;
+    color: #031229 !important;
+    font-size: clamp(44px, 5vw, 74px) !important;
+    line-height: .94 !important;
+    letter-spacing: -.05em !important;
+  }
+
+  .service-area-copy h2 span {
+    color: #031229 !important;
+  }
+
+  .service-area-places {
+    max-width: none !important;
+    margin: 24px 0 0 !important;
+    color: #3F4A50 !important;
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+    font-weight: 600 !important;
+  }
+
+  /* Slightly dim the quote map background, but keep it visible. */
+  .quote-section {
+    background:
+      linear-gradient(rgba(3, 18, 41, .45), rgba(3, 18, 41, .45)),
+      url("map.png") center / cover no-repeat !important;
+  }
+}
