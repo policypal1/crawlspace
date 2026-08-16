@@ -7758,3 +7758,69 @@ html {
     display: none !important;
   }
 }
+
+/* =========================================================
+   DESKTOP POLISH PASS 5
+   Restore service-area layout + lighten image overlays.
+========================================================= */
+@media (min-width: 701px) {
+  /* Let the uploaded background images show through more clearly. */
+  .diagnosis-section {
+    background:
+      linear-gradient(rgba(3, 18, 41, .54), rgba(3, 18, 41, .54)),
+      url("31ab9dc9-4697-4e87-aa24-f4fe1e259906.png") center / cover no-repeat !important;
+  }
+
+  .why-reference-layout {
+    background:
+      linear-gradient(rgba(3, 18, 41, .52), rgba(3, 18, 41, .52)),
+      url("e1bccc11-a02d-41cc-924d-1aa85057033d.png") center / cover no-repeat !important;
+  }
+
+  .about-section:not(.about-editorial) {
+    background:
+      linear-gradient(rgba(3, 18, 41, .55), rgba(3, 18, 41, .55)),
+      url("yoo.png") center / cover no-repeat !important;
+  }
+
+  /* Restore the original service-area composition: copy left, map right. */
+  .service-area-inner {
+    width: min(1180px, 100%) !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr) !important;
+    align-items: center !important;
+    gap: clamp(56px, 6vw, 84px) !important;
+  }
+
+  .service-area-copy {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+
+  .service-area-copy h2 {
+    max-width: 520px !important;
+  }
+
+  .service-area-places {
+    max-width: 520px;
+    margin: 22px 0 0 !important;
+    color: #3F4A50 !important;
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    font-weight: 600 !important;
+  }
+
+  .service-area-visual {
+    width: auto !important;
+  }
+
+  .service-area-map-placeholder {
+    width: 100% !important;
+    min-height: 560px !important;
+    margin: 0 !important;
+    border-radius: 18px !important;
+  }
+}
