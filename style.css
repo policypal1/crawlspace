@@ -8003,3 +8003,153 @@ html {
     line-height: .96 !important;
   }
 }
+
+/* =========================================================
+   DESKTOP COMPLETION PASS
+   Trust bar typography + project-help strip only.
+========================================================= */
+@media (min-width: 701px) {
+  /* Word-first trust bar under the hero, matching the reference structure. */
+  .trust-bar {
+    background: #1A5A97 !important;
+    border-top: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .trust-bar-inner {
+    width: min(1280px, 100%) !important;
+    max-width: none !important;
+  }
+
+  .trust-item {
+    min-height: 112px !important;
+    padding: 18px 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0 !important;
+    text-align: center !important;
+    border-right: 1px solid rgba(255,255,255,.18) !important;
+  }
+
+  .trust-item:first-child {
+    border-left: 1px solid rgba(255,255,255,.18) !important;
+  }
+
+  .trust-icon {
+    display: none !important;
+  }
+
+  .trust-copy {
+    display: flex !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .trust-copy strong {
+    color: #ffffff !important;
+    font-size: clamp(30px, 2.6vw, 42px) !important;
+    line-height: .95 !important;
+    font-weight: 850 !important;
+    letter-spacing: -.04em !important;
+  }
+
+  .trust-copy small {
+    margin-top: 8px !important;
+    color: rgba(255,255,255,.90) !important;
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    font-weight: 850 !important;
+    letter-spacing: .075em !important;
+  }
+
+  /* Slim CTA strip directly above About. */
+  .project-help-strip {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background: #1A5A97;
+    color: #ffffff;
+    border-top: 1px solid rgba(255,255,255,.10);
+    border-bottom: 1px solid rgba(3,18,41,.14);
+  }
+
+  .project-help-strip::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 34%;
+    height: 100%;
+    background:
+      linear-gradient(90deg, rgba(3,18,41,0), rgba(3,18,41,.20)),
+      url("e1bccc11-a02d-41cc-924d-1aa85057033d.png") center / cover no-repeat;
+    clip-path: polygon(22% 0, 100% 0, 100% 100%, 0 100%);
+    opacity: .72;
+    pointer-events: none;
+  }
+
+  .project-help-inner {
+    position: relative;
+    z-index: 2;
+    width: min(1180px, calc(100% - 48px));
+    min-height: 126px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 24px 0;
+  }
+
+  .project-help-copy {
+    display: flex;
+    flex-direction: column;
+    max-width: 650px;
+  }
+
+  .project-help-copy strong {
+    color: #ffffff;
+    font-size: clamp(28px, 2.8vw, 40px);
+    line-height: 1;
+    font-weight: 850;
+    letter-spacing: -.035em;
+  }
+
+  .project-help-copy span {
+    margin-top: 9px;
+    color: rgba(255,255,255,.88);
+    font-size: 13px;
+    line-height: 1.45;
+    font-weight: 650;
+  }
+
+  .project-help-phone {
+    flex: 0 0 auto;
+    min-height: 48px;
+    padding: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,.42);
+    border-radius: 7px;
+    background: rgba(3,18,41,.16);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: background .18s ease, border-color .18s ease;
+  }
+
+  .project-help-phone:hover {
+    background: #031229;
+    border-color: #031229;
+  }
+}
+
+/* This pass is desktop-only; mobile gets handled next. */
+@media (max-width: 700px) {
+  .project-help-strip {
+    display: none !important;
+  }
+}
