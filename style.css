@@ -6802,3 +6802,730 @@ html {
     display: none !important;
   }
 }
+
+
+/* =========================================================
+   OFFICIAL BRAND PALETTE + DESKTOP SECTION PASS
+   2026-08-16
+   Desktop only. Existing mobile styling is intentionally unchanged.
+========================================================= */
+
+@media (min-width: 701px) {
+  /* Official palette:
+     Navy      #031229
+     Blue      #1A5A97
+     Gray      #8F999F
+     Charcoal  #3F4A50
+     Brown     #A56832
+  */
+  body {
+    --navy: #031229;
+    --navy-deep: #031229;
+    --navy-dark: #031229;
+    --blue: #1A5A97;
+    --blue-deep: #031229;
+    --orange: #A56832;
+    --white: #ffffff;
+    --muted: #8F999F;
+    --border: rgba(143, 153, 159, .30);
+    --page-bg: #ffffff;
+  }
+
+  /* -------------------------------------------------------
+     Header
+  ------------------------------------------------------- */
+  .site-header {
+    background: #ffffff !important;
+    border-bottom-color: rgba(143, 153, 159, .28) !important;
+    box-shadow: 0 5px 20px rgba(3, 18, 41, .06) !important;
+  }
+
+  .desktop-nav a {
+    color: #031229 !important;
+  }
+
+  .desktop-nav a::after {
+    background: #1A5A97 !important;
+  }
+
+  .desktop-nav a:hover,
+  .desktop-nav a:focus-visible {
+    color: #1A5A97 !important;
+  }
+
+  .header-cta {
+    background: #031229 !important;
+    color: #ffffff !important;
+  }
+
+  .header-cta:hover {
+    background: #1A5A97 !important;
+  }
+
+  /* -------------------------------------------------------
+     Hero
+  ------------------------------------------------------- */
+  .hero,
+  .hero-media {
+    background: #031229 !important;
+  }
+
+  .hero::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 18, 41, .90) 0%,
+        rgba(3, 18, 41, .76) 28%,
+        rgba(3, 18, 41, .48) 48%,
+        rgba(3, 18, 41, .24) 70%,
+        rgba(3, 18, 41, .18) 100%
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(3, 18, 41, .18) 0%,
+        rgba(3, 18, 41, .08) 55%,
+        rgba(3, 18, 41, .38) 100%
+      ) !important;
+  }
+
+  .hero-panel-one::after,
+  .hero-panel-two::after,
+  .hero-panel-three::after {
+    background: #1A5A97 !important;
+    filter: drop-shadow(0 0 7px rgba(26, 90, 151, .28)) !important;
+  }
+
+  .hero h1 span {
+    color: #1A5A97 !important;
+  }
+
+  .hero-subheadline {
+    color: #ffffff !important;
+  }
+
+  .hero-btn-primary {
+    background: #1A5A97 !important;
+    border-color: #1A5A97 !important;
+    box-shadow: 0 10px 24px rgba(26, 90, 151, .20) !important;
+  }
+
+  .hero-btn-primary:hover {
+    background: #031229 !important;
+    border-color: #031229 !important;
+  }
+
+  .hero-btn-secondary {
+    border-color: rgba(143, 153, 159, .62) !important;
+    background: rgba(3, 18, 41, .42) !important;
+    color: #ffffff !important;
+  }
+
+  .hero-btn-secondary:hover {
+    border-color: #ffffff !important;
+    background: rgba(63, 74, 80, .62) !important;
+  }
+
+  /* -------------------------------------------------------
+     Trust bar
+  ------------------------------------------------------- */
+  .trust-bar {
+    background: linear-gradient(180deg, #1A5A97 0%, #031229 100%) !important;
+    border-top-color: rgba(255, 255, 255, .14) !important;
+    box-shadow: 0 12px 30px rgba(3, 18, 41, .14) !important;
+  }
+
+  /* -------------------------------------------------------
+     Problems: WHITE
+     Removes the previous desktop background image.
+  ------------------------------------------------------- */
+  .problem-section-v3 {
+    background: #ffffff !important;
+    color: #031229 !important;
+  }
+
+  .problem-section-v3::before {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+  }
+
+  .problem-section-v3 .problem-heading-wrap h2 {
+    color: #031229 !important;
+  }
+
+  .problem-section-v3 .problem-heading-wrap h2 span {
+    color: #1A5A97 !important;
+  }
+
+  .problem-section-v3 .section-eyebrow {
+    color: #1A5A97 !important;
+  }
+
+  .problem-section-v3 .problem-intro {
+    color: #3F4A50 !important;
+  }
+
+  .problem-section-v3 .problem-card-v2 {
+    border-color: rgba(143, 153, 159, .34) !important;
+    background: #ffffff !important;
+    color: #031229 !important;
+    box-shadow: 0 12px 30px rgba(3, 18, 41, .07) !important;
+  }
+
+  .problem-section-v3 .problem-card-v2:hover {
+    border-color: #1A5A97 !important;
+    box-shadow: 0 18px 40px rgba(3, 18, 41, .11) !important;
+  }
+
+  .problem-section-v3 .problem-card-body strong {
+    color: #031229 !important;
+  }
+
+  .problem-section-v3 .problem-card-body small {
+    color: #3F4A50 !important;
+  }
+
+  .problem-section-v3 .problem-card-wedge {
+    background: #1A5A97 !important;
+    opacity: 1 !important;
+  }
+
+  /*
+    Close the sub-pixel seam between the blue wedge/image area and
+    the horizontal blue strip. The strip overlaps the media by 2px,
+    while remaining an 8px net-height element.
+  */
+  .problem-section-v3 .problem-card-strip {
+    position: relative !important;
+    z-index: 5 !important;
+    height: 10px !important;
+    margin-top: -2px !important;
+    background: #1A5A97 !important;
+  }
+
+  .problem-section-v3 .problem-service-line {
+    color: #A56832 !important;
+  }
+
+  .problem-section-v3 .problem-card-v2.is-selected {
+    border-color: #1A5A97 !important;
+    box-shadow:
+      0 0 0 2px rgba(26, 90, 151, .14),
+      0 14px 34px rgba(3, 18, 41, .09) !important;
+  }
+
+  .problem-section-v3 .problem-card-v2.is-selected .problem-card-wedge {
+    background: #1A5A97 !important;
+  }
+
+  /* -------------------------------------------------------
+     Don't guess the fix: DARK
+  ------------------------------------------------------- */
+  .diagnosis-section {
+    background:
+      radial-gradient(circle at 10% 15%, rgba(26, 90, 151, .20), transparent 28%),
+      #031229 !important;
+    color: #ffffff !important;
+  }
+
+  .diagnosis-section::before,
+  .diagnosis-section::after {
+    border-color: rgba(143, 153, 159, .14) !important;
+  }
+
+  .diagnosis-header h2 {
+    color: #ffffff !important;
+  }
+
+  .diagnosis-header h2 span,
+  .diagnosis-step-number {
+    color: #1A5A97 !important;
+  }
+
+  .diagnosis-header .diagnosis-intro,
+  .diagnosis-process .diagnosis-step-copy p {
+    color: #8F999F !important;
+  }
+
+  .diagnosis-steps,
+  .diagnosis-step {
+    border-color: rgba(143, 153, 159, .24) !important;
+  }
+
+  .diagnosis-photo-card {
+    background: #3F4A50 !important;
+    border-color: rgba(143, 153, 159, .24) !important;
+    box-shadow: 0 30px 70px rgba(3, 18, 41, .30) !important;
+  }
+
+  .diagnosis-photo-card::before {
+    background: #1A5A97 !important;
+  }
+
+  .diagnosis-visual-note {
+    background: #031229 !important;
+    border-color: rgba(26, 90, 151, .58) !important;
+    box-shadow:
+      0 14px 34px rgba(3, 18, 41, .30),
+      0 0 0 3px rgba(26, 90, 151, .10) !important;
+  }
+
+  .diagnosis-visual-note span {
+    background: #1A5A97 !important;
+    color: #ffffff !important;
+  }
+
+  .diagnosis-visual-note strong,
+  .diagnosis-process .diagnosis-step-copy strong {
+    color: #ffffff !important;
+  }
+
+  /* -------------------------------------------------------
+     Projects: WHITE
+  ------------------------------------------------------- */
+  .projects-section {
+    background: #ffffff !important;
+    color: #031229 !important;
+  }
+
+  .projects-section::before {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(143, 153, 159, .32) 16%,
+      rgba(143, 153, 159, .32) 84%,
+      transparent
+    ) !important;
+  }
+
+  .projects-heading h2,
+  .project-card-heading h3,
+  .project-topline h3 {
+    color: #031229 !important;
+  }
+
+  .projects-heading h2 span,
+  .projects-eyebrow {
+    color: #1A5A97 !important;
+  }
+
+  .projects-heading > p:last-child {
+    color: #3F4A50 !important;
+  }
+
+  .project-featured,
+  .project-card {
+    border-color: rgba(143, 153, 159, .30) !important;
+    background: #ffffff !important;
+    box-shadow: 0 18px 48px rgba(3, 18, 41, .08) !important;
+  }
+
+  .project-featured-media,
+  .project-card-media {
+    background: rgba(143, 153, 159, .24) !important;
+  }
+
+  .project-image-title {
+    background: rgba(63, 74, 80, .92) !important;
+    border-color: rgba(255, 255, 255, .20) !important;
+  }
+
+  .project-image figcaption,
+  .project-card-media figcaption {
+    background: rgba(63, 74, 80, .94) !important;
+  }
+
+  .project-image-after figcaption,
+  .project-card-media figure:nth-child(2) figcaption {
+    background: #1A5A97 !important;
+  }
+
+  /* -------------------------------------------------------
+     Why Us: DARK
+  ------------------------------------------------------- */
+  .why-reference-layout {
+    background:
+      radial-gradient(circle at 88% 12%, rgba(26, 90, 151, .18), transparent 28%),
+      #031229 !important;
+    color: #ffffff !important;
+  }
+
+  .why-reference-copy .why-eyebrow,
+  .why-reference-copy h2 span {
+    color: #1A5A97 !important;
+  }
+
+  .why-reference-copy h2,
+  .why-reference-item h3 {
+    color: #ffffff !important;
+  }
+
+  .why-reference-intro,
+  .why-reference-item p {
+    color: #8F999F !important;
+  }
+
+  .why-reference-icon {
+    background: rgba(26, 90, 151, .20) !important;
+    border-color: rgba(26, 90, 151, .50) !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  .why-reference-photo {
+    border-color: rgba(143, 153, 159, .22) !important;
+    box-shadow: 0 30px 70px rgba(3, 18, 41, .30) !important;
+  }
+
+  .why-reference-badge {
+    background: #1A5A97 !important;
+    border-color: #031229 !important;
+    box-shadow: 0 22px 48px rgba(3, 18, 41, .28) !important;
+  }
+
+  /* -------------------------------------------------------
+     Service Area: WHITE
+     The content now sits inside the map placeholder.
+     The restrictive "Primary Areas" item and temporary pins/labels
+     are hidden until the actual service-area map is supplied.
+  ------------------------------------------------------- */
+  .service-area-section {
+    background: #ffffff !important;
+    color: #031229 !important;
+  }
+
+  .service-area-inner {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    align-items: stretch !important;
+  }
+
+  .service-area-copy,
+  .service-area-visual {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  .service-area-visual {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .service-area-copy {
+    position: relative !important;
+    z-index: 4 !important;
+    align-self: start !important;
+    justify-self: start !important;
+    width: min(500px, calc(100% - 56px)) !important;
+    max-width: none !important;
+    margin: 28px !important;
+    padding: 26px !important;
+    border: 1px solid rgba(143, 153, 159, .32) !important;
+    border-radius: 14px !important;
+    background: rgba(255, 255, 255, .96) !important;
+    box-shadow: 0 18px 45px rgba(3, 18, 41, .12) !important;
+  }
+
+  .service-area-eyebrow,
+  .service-area-intro,
+  .service-area-map-label,
+  .service-area-pin {
+    display: none !important;
+  }
+
+  .service-area-points .service-area-point:first-child {
+    display: none !important;
+  }
+
+  .service-area-copy h2 {
+    color: #031229 !important;
+  }
+
+  .service-area-copy h2 span {
+    color: #1A5A97 !important;
+  }
+
+  .service-area-points {
+    margin-top: 22px !important;
+  }
+
+  .service-area-point {
+    border-color: rgba(143, 153, 159, .30) !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  .service-area-point strong {
+    color: #031229 !important;
+  }
+
+  .service-area-point span {
+    color: #3F4A50 !important;
+  }
+
+  .service-area-map-placeholder {
+    min-height: 520px !important;
+    border-color: rgba(143, 153, 159, .32) !important;
+    background: #ffffff !important;
+    box-shadow: 0 22px 60px rgba(3, 18, 41, .08) !important;
+  }
+
+  .service-area-map-grid {
+    background-image:
+      linear-gradient(rgba(143, 153, 159, .14) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(143, 153, 159, .14) 1px, transparent 1px) !important;
+  }
+
+  /* -------------------------------------------------------
+     About Crawl Space Pros: DARK
+  ------------------------------------------------------- */
+  .about-section:not(.about-editorial) {
+    background: #031229 !important;
+    color: #ffffff !important;
+  }
+
+  .about-section:not(.about-editorial) .about-eyebrow,
+  .about-section:not(.about-editorial) .about-copy h2 span,
+  .about-section:not(.about-editorial) .about-badge strong {
+    color: #1A5A97 !important;
+  }
+
+  .about-section:not(.about-editorial) .about-copy h2,
+  .about-section:not(.about-editorial) .about-lead,
+  .about-section:not(.about-editorial) .about-points strong {
+    color: #ffffff !important;
+  }
+
+  .about-section:not(.about-editorial) .about-body,
+  .about-section:not(.about-editorial) .about-points span {
+    color: #8F999F !important;
+  }
+
+  .about-section:not(.about-editorial) .about-points {
+    border-top-color: rgba(143, 153, 159, .30) !important;
+  }
+
+  .about-section:not(.about-editorial) .about-photo {
+    border: 1px solid rgba(143, 153, 159, .20) !important;
+    box-shadow: 0 28px 64px rgba(3, 18, 41, .30) !important;
+  }
+
+  .about-section:not(.about-editorial) .about-badge {
+    background: #3F4A50 !important;
+    border-color: #031229 !important;
+    color: #ffffff !important;
+    box-shadow: 0 18px 40px rgba(3, 18, 41, .30) !important;
+  }
+
+  .about-section:not(.about-editorial) .about-badge span {
+    color: #ffffff !important;
+  }
+
+  /* -------------------------------------------------------
+     Reviews: WHITE
+  ------------------------------------------------------- */
+  .reviews-section {
+    background: #ffffff !important;
+    color: #031229 !important;
+  }
+
+  .reviews-heading h2 {
+    color: #031229 !important;
+  }
+
+  .reviews-heading h2 span,
+  .reviews-eyebrow,
+  .review-stars {
+    color: #1A5A97 !important;
+  }
+
+  .review-card,
+  .review-card-featured {
+    border-color: rgba(143, 153, 159, .30) !important;
+    background: #ffffff !important;
+    box-shadow: 0 12px 32px rgba(3, 18, 41, .06) !important;
+  }
+
+  .review-card blockquote {
+    color: #3F4A50 !important;
+  }
+
+  .review-card footer {
+    border-top-color: rgba(143, 153, 159, .24) !important;
+  }
+
+  .review-card footer strong {
+    color: #031229 !important;
+  }
+
+  .review-card footer span {
+    color: #8F999F !important;
+  }
+
+  .reviews-arrow {
+    border-color: rgba(143, 153, 159, .30) !important;
+    background: #ffffff !important;
+    color: #031229 !important;
+    box-shadow: 0 10px 26px rgba(3, 18, 41, .10) !important;
+  }
+
+  .reviews-arrow:hover {
+    background: #1A5A97 !important;
+    border-color: #1A5A97 !important;
+    color: #ffffff !important;
+  }
+
+  /* -------------------------------------------------------
+     Quote: DARK
+  ------------------------------------------------------- */
+  .quote-section {
+    background:
+      radial-gradient(circle at 12% 5%, rgba(26, 90, 151, .18), transparent 28%),
+      #031229 !important;
+    color: #ffffff !important;
+  }
+
+  .quote-copy .quote-eyebrow {
+    color: #1A5A97 !important;
+  }
+
+  .quote-copy h2 {
+    color: #ffffff !important;
+  }
+
+  .quote-copy > p:not(.quote-eyebrow),
+  .quote-contact span {
+    color: #8F999F !important;
+  }
+
+  .quote-contact {
+    border-top-color: rgba(143, 153, 159, .24) !important;
+  }
+
+  .quote-contact a {
+    color: #ffffff !important;
+  }
+
+  .quote-form-wrap {
+    border-color: rgba(143, 153, 159, .28) !important;
+    background: #ffffff !important;
+    box-shadow: 0 28px 70px rgba(3, 18, 41, .30) !important;
+  }
+
+  .quote-form-wrap::before {
+    background: linear-gradient(90deg, #1A5A97, #A56832) !important;
+  }
+
+  .quote-form-heading {
+    border-bottom-color: rgba(143, 153, 159, .25) !important;
+    background: #ffffff !important;
+  }
+
+  .quote-form-heading > span {
+    color: #1A5A97 !important;
+  }
+
+  .quote-form-heading h3 {
+    color: #031229 !important;
+  }
+
+  .quote-form-heading p,
+  .quote-form label > span,
+  .quote-form-note {
+    color: #3F4A50 !important;
+  }
+
+  .quote-form input,
+  .quote-form select,
+  .quote-form textarea {
+    border-color: rgba(143, 153, 159, .35) !important;
+    background: #ffffff !important;
+    color: #031229 !important;
+  }
+
+  .quote-form input:focus,
+  .quote-form select:focus,
+  .quote-form textarea:focus {
+    border-color: #1A5A97 !important;
+    box-shadow: 0 0 0 3px rgba(26, 90, 151, .12) !important;
+  }
+
+  .quote-submit {
+    background: #1A5A97 !important;
+  }
+
+  .quote-submit:hover {
+    background: #031229 !important;
+  }
+
+  /* -------------------------------------------------------
+     FAQ: WHITE
+  ------------------------------------------------------- */
+  .faq-section {
+    background: #ffffff !important;
+    color: #031229 !important;
+  }
+
+  .faq-heading h2,
+  .faq-item summary {
+    color: #031229 !important;
+  }
+
+  .faq-list,
+  .faq-item {
+    border-color: rgba(143, 153, 159, .30) !important;
+  }
+
+  .faq-answer p {
+    color: #3F4A50 !important;
+  }
+
+  .faq-plus {
+    background: rgba(26, 90, 151, .10) !important;
+    color: #1A5A97 !important;
+  }
+
+  /* -------------------------------------------------------
+     Footer: DARK
+  ------------------------------------------------------- */
+  .site-footer {
+    background: #031229 !important;
+    border-top-color: rgba(143, 153, 159, .18) !important;
+  }
+
+  .footer-nav a,
+  .footer-legal a {
+    color: #8F999F !important;
+  }
+
+  .footer-nav a:hover,
+  .footer-legal a:hover,
+  .footer-credit a:hover {
+    color: #ffffff !important;
+  }
+
+  .footer-action > span,
+  .footer-credit a {
+    color: #1A5A97 !important;
+  }
+
+  .footer-phone {
+    color: #ffffff !important;
+  }
+
+  .footer-quote {
+    border-color: rgba(143, 153, 159, .28) !important;
+    background: #3F4A50 !important;
+    color: #ffffff !important;
+  }
+
+  .footer-quote:hover {
+    background: #1A5A97 !important;
+  }
+
+  .footer-bottom {
+    border-top-color: rgba(143, 153, 159, .18) !important;
+    color: #8F999F !important;
+  }
+}
