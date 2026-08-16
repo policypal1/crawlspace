@@ -7645,3 +7645,116 @@ html {
     margin-top: 0 !important;
   }
 }
+
+/* =========================================================
+   DESKTOP POLISH PASS 4
+   Latest requested desktop-only tweaks.
+========================================================= */
+@media (min-width: 701px) {
+  /* Use the three uploaded background assets across the dark sections. */
+  .diagnosis-section {
+    background:
+      linear-gradient(rgba(3, 18, 41, .80), rgba(3, 18, 41, .80)),
+      url("31ab9dc9-4697-4e87-aa24-f4fe1e259906.png") center / cover no-repeat !important;
+  }
+
+  .why-reference-layout {
+    background:
+      linear-gradient(rgba(3, 18, 41, .80), rgba(3, 18, 41, .80)),
+      url("e1bccc11-a02d-41cc-924d-1aa85057033d.png") center / cover no-repeat !important;
+  }
+
+  .about-section:not(.about-editorial) {
+    background:
+      linear-gradient(rgba(3, 18, 41, .82), rgba(3, 18, 41, .82)),
+      url("yoo.png") center / cover no-repeat !important;
+  }
+
+  /* Diagnosis section text pops more clearly. */
+  .diagnosis-header h2,
+  .diagnosis-header h2 span,
+  .diagnosis-intro,
+  .diagnosis-visual-note span,
+  .diagnosis-visual-note strong {
+    color: #ffffff !important;
+  }
+
+  /* Keep only the larger body copy muted on dark sections. */
+  .why-reference-copy h2,
+  .why-reference-copy h2 span,
+  .why-reference-badge strong,
+  .why-reference-badge span,
+  .about-section:not(.about-editorial) .about-copy h2,
+  .about-section:not(.about-editorial) .about-copy h2 span,
+  .about-section:not(.about-editorial) .about-badge strong,
+  .about-section:not(.about-editorial) .about-badge span,
+  .about-section:not(.about-editorial) .about-points strong,
+  .about-section:not(.about-editorial) .about-lead {
+    color: #ffffff !important;
+  }
+
+  .why-reference-intro,
+  .why-reference-item p,
+  .about-section:not(.about-editorial) .about-body,
+  .about-section:not(.about-editorial) .about-points span {
+    color: #aeb8c0 !important;
+  }
+
+  .about-section:not(.about-editorial) .about-badge {
+    background: rgba(255,255,255,.10) !important;
+    border-color: rgba(255,255,255,.12) !important;
+    backdrop-filter: blur(8px);
+  }
+
+  /* Service area centered and expanded with the map taking more room. */
+  .service-area-inner {
+    grid-template-columns: 1fr !important;
+    gap: 26px !important;
+  }
+
+  .service-area-copy {
+    width: 100% !important;
+    max-width: 1040px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .service-area-copy h2 {
+    max-width: none !important;
+  }
+
+  .service-area-copy h2,
+  .service-area-copy h2 span {
+    color: #031229 !important;
+  }
+
+  .service-area-places {
+    margin: 14px auto 0;
+    color: #3F4A50;
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 600;
+  }
+
+  .service-area-visual {
+    width: 100%;
+  }
+
+  .service-area-map-placeholder {
+    width: min(1120px, 100%) !important;
+    min-height: 620px !important;
+    margin: 0 auto !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+  }
+
+  /* Keep the small hidden helper text hidden. */
+  .service-area-intro,
+  .service-area-points,
+  .service-area-eyebrow,
+  .service-area-map-label,
+  .service-area-map-grid,
+  .service-area-pin {
+    display: none !important;
+  }
+}
