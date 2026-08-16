@@ -7824,3 +7824,82 @@ html {
     border-radius: 18px !important;
   }
 }
+
+/* =========================================================
+   DESKTOP FINAL MAP + QUOTE BACKGROUND FIX
+   Only the two requested corrections.
+========================================================= */
+@media (min-width: 701px) {
+  /* Service area: true two-column layout, no overlapping copy card. */
+  .service-area-inner {
+    width: min(1180px, 100%) !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr) !important;
+    gap: clamp(56px, 6vw, 84px) !important;
+    align-items: center !important;
+  }
+
+  .service-area-copy,
+  .service-area-visual {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .service-area-copy {
+    position: static !important;
+    z-index: auto !important;
+    align-self: center !important;
+    justify-self: stretch !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-align: left !important;
+  }
+
+  .service-area-copy h2 {
+    max-width: 520px !important;
+  }
+
+  .service-area-places {
+    max-width: 520px !important;
+    margin: 22px 0 0 !important;
+  }
+
+  .service-area-visual {
+    position: static !important;
+    z-index: auto !important;
+    width: 100% !important;
+  }
+
+  .service-area-map-placeholder {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 560px !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .service-area-map-placeholder iframe {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    display: block !important;
+    border: 0 !important;
+  }
+
+  /* Quote / estimate section gets the supplied map.png background. */
+  .quote-section {
+    background:
+      linear-gradient(rgba(3, 18, 41, .38), rgba(3, 18, 41, .38)),
+      url("map.png") center / cover no-repeat !important;
+  }
+}
