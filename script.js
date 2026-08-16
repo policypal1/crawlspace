@@ -310,3 +310,66 @@ if (reviewsNext) {
 if (reviewsPrev) {
   reviewsPrev.addEventListener('click', loopReviewsPrev);
 }
+
+
+/* =========================
+   DESKTOP CONTENT PASS
+   Exact requested copy removals + service-area map.
+========================= */
+
+function applyDesktopContentPass() {
+  if (!window.matchMedia('(min-width: 701px)').matches) return;
+
+  const problemIntro = document.querySelector('.problem-section-v3 .problem-intro');
+  if (problemIntro) problemIntro.remove();
+
+  const projectsEyebrow = document.querySelector('.projects-eyebrow');
+  if (projectsEyebrow) projectsEyebrow.remove();
+
+  const projectsIntro = document.querySelector('.projects-heading > p:last-child');
+  if (projectsIntro) projectsIntro.remove();
+
+  const whyEyebrow = document.querySelector('.why-reference-copy .why-eyebrow');
+  if (whyEyebrow) whyEyebrow.remove();
+
+  const serviceAreaIntro = document.querySelector('.service-area-intro');
+  if (serviceAreaIntro) serviceAreaIntro.remove();
+
+  const serviceAreaEyebrow = document.querySelector('.service-area-eyebrow');
+  if (serviceAreaEyebrow) serviceAreaEyebrow.remove();
+
+  const serviceAreaPoints = document.querySelector('.service-area-points');
+  if (serviceAreaPoints) serviceAreaPoints.remove();
+
+  const mapPlaceholder = document.querySelector('.service-area-map-placeholder');
+  if (mapPlaceholder) {
+    mapPlaceholder.innerHTML = `
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1384362.9813303542!2d-120.48435068011459!3d47.58681922257448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485e5ffe7c3b0f9%3A0x944278686c5ff3ba!2sWashington!5e0!3m2!1sen!2sus!4v1786920325181!5m2!1sen!2sus"
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        title="Crawl Space Pros service area map"
+      ></iframe>`;
+  }
+
+  const reviewEyebrow = document.querySelector('.reviews-eyebrow');
+  if (reviewEyebrow) reviewEyebrow.remove();
+
+  const quoteIntro = document.querySelector('.quote-copy > p:not(.quote-eyebrow)');
+  if (quoteIntro) quoteIntro.remove();
+
+  const quoteContactLabel = document.querySelector('.quote-contact > span');
+  if (quoteContactLabel) quoteContactLabel.textContent = 'Prefer to text or call.';
+
+  const footerEstimate = document.querySelector('.footer-action > span');
+  if (footerEstimate) footerEstimate.remove();
+
+  const footerQuote = document.querySelector('.footer-quote');
+  if (footerQuote) footerQuote.remove();
+}
+
+applyDesktopContentPass();

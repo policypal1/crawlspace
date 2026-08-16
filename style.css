@@ -7529,3 +7529,119 @@ html {
     color: #8F999F !important;
   }
 }
+
+/* =========================================================
+   DESKTOP POLISH PASS 3
+   Requested 2026-08-16 changes only.
+========================================================= */
+@media (min-width: 701px) {
+  /* Top-bar Get Quote matches the blue CTAs. */
+  .header-cta {
+    background: #1A5A97 !important;
+  }
+
+  .header-cta:hover {
+    background: #031229 !important;
+  }
+
+  /* Problem intro removed in JS; keep defensive styling. */
+  .problem-section-v3 .problem-intro {
+    display: none !important;
+  }
+
+  /* More circle detail behind the diagnosis section. */
+  .diagnosis-section {
+    background:
+      radial-gradient(circle at 10% 15%, rgba(26, 90, 151, .20), transparent 28%),
+      radial-gradient(circle at 91% 13%, transparent 0 108px, rgba(143, 153, 159, .12) 109px 110px, transparent 111px),
+      radial-gradient(circle at 82% 72%, transparent 0 172px, rgba(26, 90, 151, .13) 173px 174px, transparent 175px),
+      radial-gradient(circle at 18% 84%, transparent 0 128px, rgba(143, 153, 159, .10) 129px 130px, transparent 131px),
+      radial-gradient(circle at 63% 25%, transparent 0 72px, rgba(26, 90, 151, .09) 73px 74px, transparent 75px),
+      #031229 !important;
+  }
+
+  /* Keep dark-section accent words different, but much easier to read. */
+  .diagnosis-header h2 span,
+  .why-reference-copy h2 span,
+  .about-section:not(.about-editorial) .about-copy h2 span,
+  .about-section:not(.about-editorial) .about-badge strong {
+    color: #8F999F !important;
+  }
+
+  /* Project heading is only "See the difference." */
+  .projects-eyebrow,
+  .projects-heading > p:last-child {
+    display: none !important;
+  }
+
+  /* Uploaded blue background image for Local crawl space work. */
+  .why-reference-layout {
+    background:
+      linear-gradient(rgba(3, 18, 41, .78), rgba(3, 18, 41, .78)),
+      url("1234.png") center / cover no-repeat !important;
+  }
+
+  .why-reference-copy .why-eyebrow {
+    display: none !important;
+  }
+
+  /* Service area: heading + real map only. */
+  .service-area-copy {
+    width: min(480px, calc(100% - 56px)) !important;
+  }
+
+  .service-area-eyebrow,
+  .service-area-intro,
+  .service-area-points,
+  .service-area-map-label,
+  .service-area-map-grid,
+  .service-area-pin {
+    display: none !important;
+  }
+
+  .service-area-map-placeholder {
+    min-height: 520px !important;
+    background: #ffffff !important;
+  }
+
+  .service-area-map-placeholder iframe {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+    display: block;
+  }
+
+  /* Uploaded blue background image for Small company. Personal service. */
+  .about-section:not(.about-editorial) {
+    background:
+      linear-gradient(rgba(3, 18, 41, .80), rgba(3, 18, 41, .80)),
+      url("123.png") center / cover no-repeat !important;
+  }
+
+  /* Reviews: headline only. */
+  .reviews-eyebrow {
+    display: none !important;
+  }
+
+  /* Quote: remove intro sentence and colored top rule. */
+  .quote-copy > p:not(.quote-eyebrow) {
+    display: none !important;
+  }
+
+  .quote-form-wrap::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* Footer: phone number only in the action column. */
+  .footer-action > span,
+  .footer-quote {
+    display: none !important;
+  }
+
+  .footer-phone {
+    margin-top: 0 !important;
+  }
+}
