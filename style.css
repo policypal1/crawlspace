@@ -7987,3 +7987,19 @@ html {
       url("map.png") center / cover no-repeat !important;
   }
 }
+
+/* =========================================================
+   DESKTOP FINAL SERVICE-AREA CARD WIDTH FIX
+========================================================= */
+@media (min-width: 701px) {
+  .service-area-copy {
+    width: min(540px, calc(100% - 68px)) !important;
+    max-width: 540px !important;
+    padding: 30px 30px 26px !important;
+  }
+
+  .service-area-copy h2 {
+    font-size: clamp(42px, 4.6vw, 68px) !important;
+    line-height: .96 !important;
+  }
+}
