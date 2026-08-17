@@ -373,3 +373,152 @@ function applyDesktopContentPass() {
 }
 
 applyDesktopContentPass();
+
+/* =========================================================
+   MOBILE SCROLL-UP GET QUOTE
+   Requested 2026-08-17.
+   This block is self-contained so style.css stays untouched.
+========================================================= */
+
+(function initMobileScrollQuote() {
+  const style = document.createElement('style');
+  style.setAttribute('data-mobile-scroll-quote', '');
+
+  style.textContent = `
+    .mobile-scroll-quote {
+      display: none;
+    }
+
+    @media (max-width: 700px) {
+      .mobile-scroll-quote {
+        position: fixed;
+        z-index: 1950;
+        left: 50%;
+        bottom: max(18px, env(safe-area-inset-bottom));
+        min-width: 150px;
+        min-height: 50px;
+        padding: 0 24px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, .20);
+        border-radius: 999px;
+        background: #1A5A97;
+        color: #ffffff;
+        box-shadow: 0 14px 36px rgba(3, 18, 41, .28);
+        font-size: 14px;
+        line-height: 1;
+        font-weight: 850;
+        text-decoration: none;
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, 18px);
+        transition:
+          opacity .46s ease,
+          transform .46s cubic-bezier(.22, 1, .36, 1);
+      }
+
+      .mobile-scroll-quote.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mobile-scroll-quote {
+        transition: none !important;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+
+  const mobileScrollQuote = document.createElement('a');
+  mobileScrollQuote.className = 'mobile-scroll-quote';
+  mobileScrollQuote.href = '#quote';
+  mobileScrollQuote.textContent = 'Get Quote';
+  mobileScrollQuote.setAttribute(
+    'aria-label',
+    'Get a free crawl space estimate'
+  );
+
+  document.body.appendChild(mobileScrollQuote);
+
+  const quoteSectionForStickyCta = document.querySelector('#quote');
+
+  let stickyQuoteLastY = window.scrollY;
+  let stickyQuoteTicking = false;
+
+  function setStickyQuoteVisible(visible) {
+    mobileScrollQuote.classList.toggle('is-visible', visible);
+  }
+
+  function stickyQuoteIsNearQuoteSection() {
+    if (!quoteSectionForStickyCta) return false;
+
+    const rect = quoteSectionForStickyCta.getBoundingClientRect();
+
+    return (
+      rect.top < window.innerHeight * 0.88 &&
+      rect.bottom > 0
+    );
+  }
+
+  function updateMobileStickyQuote() {
+    const currentY = window.scrollY;
+    const delta = currentY - stickyQuoteLastY;
+    const isMobile =
+      window.matchMedia('(max-width: 700px)').matches;
+
+    const menuIsOpen =
+      menuToggle &&
+      menuToggle.getAttribute('aria-expanded') === 'true';
+
+    if (
+      !isMobile ||
+      currentY < 280 ||
+      stickyQuoteIsNearQuoteSection() ||
+      menuIsOpen
+    ) {
+      setStickyQuoteVisible(false);
+    } else if (delta < -4) {
+      setStickyQuoteVisible(true);
+    } else if (delta > 4) {
+      setStickyQuoteVisible(false);
+    }
+
+    stickyQuoteLastY = currentY;
+  }
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (stickyQuoteTicking) return;
+
+      stickyQuoteTicking = true;
+
+      window.requestAnimationFrame(() => {
+        updateMobileStickyQuote();
+        stickyQuoteTicking = false;
+      });
+    },
+    { passive: true }
+  );
+
+  window.addEventListener('resize', () => {
+    stickyQuoteLastY = window.scrollY;
+    updateMobileStickyQuote();
+  });
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      setStickyQuoteVisible(false);
+    });
+  }
+
+  mobileScrollQuote.addEventListener('click', () => {
+    setStickyQuoteVisible(false);
+  });
+})();
+
