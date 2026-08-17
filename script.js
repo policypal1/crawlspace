@@ -16,10 +16,28 @@
     window.addEventListener('resize', update, { passive: true });
   }
 
+  function centerFirstProblemCard() {
+    const carousel = document.querySelector('#problemCarousel');
+    const firstCard = carousel?.querySelector('.problem-card-v2');
+    if (!carousel || !firstCard || !window.matchMedia('(max-width: 700px)').matches) return;
+
+    requestAnimationFrame(() => {
+      firstCard.scrollIntoView({
+        behavior: 'auto',
+        block: 'nearest',
+        inline: 'center'
+      });
+    });
+  }
+
   initMobileScrollQuote();
 
   const original = document.createElement('script');
   original.src = ORIGINAL_SCRIPT;
   original.async = false;
+  original.onload = () => {
+    centerFirstProblemCard();
+    window.addEventListener('resize', centerFirstProblemCard, { passive: true });
+  };
   document.head.appendChild(original);
 })();
