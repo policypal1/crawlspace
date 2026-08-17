@@ -16,21 +16,36 @@
   overflow: hidden !important;
   padding: 0 !important;
   background: #1A5A97 !important;
+  background-image: none !important;
+}
+
+.project-help-banner::before,
+.project-help-banner::after,
+.project-help-banner-inner::before,
+.project-help-banner-inner::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
 }
 
 .project-help-banner-inner {
+  position: relative !important;
   display: grid !important;
-  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 420px) !important;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 38%) !important;
   align-items: stretch !important;
   min-height: 170px !important;
+  background: #1A5A97 !important;
+  background-image: none !important;
 }
 
 .project-help-banner-copy {
   display: flex !important;
   align-items: center !important;
-  gap: 20px !important;
-  padding: 34px 44px !important;
+  justify-content: center !important;
+  gap: 18px !important;
+  padding: 34px 46px !important;
   color: #ffffff !important;
+  text-align: center !important;
 }
 
 .project-help-banner-icon {
@@ -50,11 +65,15 @@
   height: 22px;
 }
 
+.project-help-banner-text {
+  text-align: center !important;
+}
+
 .project-help-banner-text strong {
   display: block;
   margin: 0;
   color: #ffffff;
-  font-size: clamp(32px, 3vw, 38px);
+  font-size: clamp(31px, 2.6vw, 38px);
   line-height: 1.05;
   font-weight: 850;
   letter-spacing: -0.035em;
@@ -64,25 +83,29 @@
   display: block;
   margin-top: 8px;
   color: rgba(255,255,255,.98);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.45;
   font-weight: 700;
 }
 
 .project-help-banner-photo {
-  position: relative;
-  min-height: 170px;
-  background-image: url("https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/hero-clean.webp");
-  background-size: cover;
-  background-position: center;
-  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+  position: relative !important;
+  min-height: 170px !important;
+  background: url("https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/hero-clean.webp") center / cover no-repeat !important;
+  background-image: url("https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/hero-clean.webp") !important;
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%) !important;
+}
+
+.project-help-banner-photo::before,
+.project-help-banner-photo::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
 }
 
 .project-help-banner-phone {
   display: none !important;
 }
-
-/* Remove the extra blue line on mobile footer by hiding the logo altogether. */
 
 @media (max-width: 700px) {
   /* Restore the original mobile hero exactly from the base stylesheet.
