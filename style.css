@@ -61,3 +61,11 @@
     line-height: 1.2 !important;
   }
 }
+
+/* FINAL MOBILE DIAGNOSIS BACKGROUND CLEANUP */
+@media (max-width: 700px) {
+  /* Keep the section dark blue, but remove the mobile image/texture background. */
+  .diagnosis-section {
+    background: #031229 !important;
+  }
+}
