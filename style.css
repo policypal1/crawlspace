@@ -270,3 +270,110 @@
     font-weight: 700 !important;
   }
 }
+
+
+/* =========================================================
+   ROUND TWO FINISHING PASS
+   2026-08-18
+   ========================================================= */
+
+/* Sharper desktop help strip photo with no extra blue line. */
+@media (min-width: 701px) {
+  .project-help-strip {
+    background:
+      linear-gradient(rgba(3, 18, 41, .36), rgba(3, 18, 41, .36)),
+      url("https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/hero-clean.webp") center center / cover no-repeat !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+  }
+
+  .project-help-strip::after {
+    display: none !important;
+  }
+
+  .project-help-inner {
+    min-height: 146px !important;
+  }
+
+  .project-help-copy strong,
+  .project-help-copy span,
+  .project-help-phone {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 700px) {
+  /* Make the Why Us heading breathe more and avoid the compact stacked look. */
+  .why-eyebrow {
+    margin-bottom: 12px !important;
+  }
+
+  #whyHeading {
+    max-width: 100% !important;
+    font-size: clamp(34px, 9vw, 44px) !important;
+    line-height: 1.04 !important;
+    letter-spacing: -.04em !important;
+  }
+
+  #whyHeading span {
+    display: block !important;
+    margin-top: 4px !important;
+  }
+
+  .why-reference-intro {
+    max-width: 100% !important;
+  }
+
+  /* Pull the quote section tighter and remove the blue eyebrow treatment. */
+  .quote-inner {
+    gap: 18px !important;
+  }
+
+  .quote-eyebrow {
+    display: none !important;
+  }
+
+  .quote-form-heading span {
+    display: none !important;
+  }
+
+  .quote-form-heading {
+    padding-bottom: 6px !important;
+  }
+
+  .quote-copy {
+    margin-bottom: 0 !important;
+  }
+
+  .quote-form {
+    padding-bottom: 20px !important;
+  }
+
+  .quote-submit {
+    margin-bottom: 16px !important;
+  }
+
+  .quote-contact-bottom {
+    margin-top: 4px !important;
+    padding-top: 10px !important;
+    border-top: 1px solid rgba(3,18,41,.10) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 14px !important;
+  }
+
+  .quote-contact-bottom span {
+    color: #5f7280 !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+  }
+
+  .quote-contact-bottom a {
+    color: #1A5A97 !important;
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    white-space: nowrap !important;
+  }
+}
