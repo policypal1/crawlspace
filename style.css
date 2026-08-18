@@ -377,3 +377,78 @@
     white-space: nowrap !important;
   }
 }
+
+
+/* =========================================================
+   FINAL MICRO POLISH
+   2026-08-18
+   ========================================================= */
+
+/* Desktop help strip: crisp hero image and a blue accent that runs flat,
+   then rises at a true 45-degree angle instead of spanning the full width. */
+@media (min-width: 701px) {
+  .project-help-strip {
+    position: relative !important;
+    overflow: hidden !important;
+    background:
+      linear-gradient(rgba(3, 18, 41, .34), rgba(3, 18, 41, .34)),
+      url("https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/hero-clean.webp") center center / cover no-repeat !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+  }
+
+  .project-help-strip::after {
+    display: none !important;
+  }
+
+  .project-help-strip::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 64% !important;
+    height: 58px !important;
+    background: #159fe7 !important;
+    clip-path: polygon(
+      0 calc(100% - 2px),
+      calc(100% - 58px) calc(100% - 2px),
+      calc(100% - 2px) 0,
+      100% 0,
+      calc(100% - 56px) 100%,
+      0 100%
+    ) !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+  }
+
+  .project-help-inner {
+    position: relative !important;
+    z-index: 4 !important;
+  }
+}
+
+@media (max-width: 700px) {
+  /* Restore the original quote treatment and keep the call/text option above the form. */
+  .quote-eyebrow {
+    display: block !important;
+  }
+
+  .quote-form-heading > span {
+    display: inline-block !important;
+  }
+
+  .quote-contact-bottom {
+    display: none !important;
+  }
+
+  /* Make the three About proof points easier to read without moving the layout. */
+  .about-points strong {
+    font-size: 18px !important;
+    line-height: 1.08 !important;
+  }
+
+  .about-points span {
+    font-size: 11.5px !important;
+    line-height: 1.35 !important;
+  }
+}
