@@ -1,490 +1,63 @@
-@import url("https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/style.css");
+@import url("https://cdn.jsdelivr.net/gh/policypal1/crawlspace@33c540bbf21e51aac76215f60af4f56d9a4e2f2a/style.css");
 
 /* =========================================================
-   FINAL DESKTOP + MOBILE FINISHING PASS
-   2026-08-18
+   TARGETED FINAL FIXES
+   Desktop help strip + mobile estimate form only.
+   Everything else inherits unchanged from the current main commit.
    ========================================================= */
 
-/* Keep the project labels off on both desktop and mobile. */
-.project-image-title {
-  display: none !important;
-}
-
-/* Use an actual crawl space photo in the desktop help strip. */
+/* DESKTOP ONLY */
 @media (min-width: 701px) {
-  .project-help-strip::after {
-    background:
-      linear-gradient(rgba(3, 18, 41, .20), rgba(3, 18, 41, .20)),
-      url("crawlspace-after.webp") center 58% / cover no-repeat !important;
-    opacity: .90 !important;
-  }
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 700px) {
-  /* Keep the review stars clean. */
-  .featured-review-stars {
-    background: transparent !important;
-    color: #1A5A97 !important;
-  }
-
-  /* Floating quote CTA. Same square corner language as the site buttons. */
-  .desktop-quote {
-    position: fixed !important;
-    left: 14px !important;
-    right: 14px !important;
-    bottom: calc(12px + env(safe-area-inset-bottom)) !important;
-    z-index: 1900 !important;
-    width: auto !important;
-    max-width: 520px !important;
-    min-height: 56px !important;
-    margin: 0 auto !important;
-    padding: 0 24px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border: 1px solid rgba(255,255,255,.16) !important;
-    border-radius: 8px !important;
-    background: #1A5A97 !important;
-    color: #ffffff !important;
-    box-shadow: 0 14px 34px rgba(3,18,41,.24) !important;
-    font-size: 14px !important;
-    font-weight: 850 !important;
-    letter-spacing: .01em !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    transform: translateY(16px) !important;
-    transition: opacity .22s ease, transform .22s ease, visibility .22s ease !important;
-  }
-
-  .desktop-quote.mobile-scroll-quote-visible {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    transform: translateY(0) !important;
-  }
-
-  .site-header:has(.mobile-menu.is-open) .desktop-quote {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-  }
-
-  /* Remove the extra inspection note on mobile. */
-  .diagnosis-visual-note {
-    display: none !important;
-  }
-
-  /* Remove the extra projects sentence on mobile. */
-  .projects-subcopy {
-    display: none !important;
-  }
-
-  /* Give the Why Us content a clean, even inset instead of hugging the left edge. */
-  .why-reference-inner {
-    width: calc(100% - 32px) !important;
-    max-width: none !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .why-reference-copy {
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 2px !important;
-    padding-right: 2px !important;
-  }
-
-  /* Center the quote area and form on small screens. */
-  .quote-inner {
-    width: calc(100% - 28px) !important;
-    max-width: none !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .quote-copy,
-  .quote-form-wrap,
-  .quote-form {
-    width: 100% !important;
-    max-width: 560px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .quote-form-wrap {
-    align-self: center !important;
-  }
-
-  /* Compact mobile footer. */
-  .site-footer {
-    background: #031229 !important;
-  }
-
-  .footer-main {
-    width: calc(100% - 28px) !important;
-    margin: 0 auto !important;
-    padding: 22px 0 12px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 13px !important;
-  }
-
-  .footer-logo-wrap {
-    order: 1 !important;
-    align-self: flex-start !important;
-    width: 132px !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-  }
-
-  .footer-logo-wrap img {
-    display: block !important;
-    width: 100% !important;
-    max-height: 42px !important;
-    object-fit: contain !important;
-    object-position: left center !important;
-  }
-
-  .footer-center {
-    order: 2 !important;
-    width: 100% !important;
-    display: grid !important;
-    gap: 9px !important;
-  }
-
-  .footer-nav {
-    width: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    flex-wrap: wrap !important;
-    gap: 7px 14px !important;
-  }
-
-  .footer-nav a {
-    width: auto !important;
-    min-height: 0 !important;
-    padding: 0 !important;
-    display: inline !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    color: #d7e3ea !important;
-    font-size: 10.5px !important;
-    line-height: 1.3 !important;
-    font-weight: 700 !important;
-  }
-
-  .footer-legal {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    flex-wrap: wrap !important;
-    gap: 6px 12px !important;
-  }
-
-  .footer-legal a {
-    color: #8F999F !important;
-    font-size: 9.5px !important;
-    line-height: 1.25 !important;
-    font-weight: 650 !important;
-  }
-
-  .footer-action {
-    order: 3 !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 11px 0 0 !important;
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) auto !important;
-    align-items: center !important;
-    gap: 10px !important;
-    border: 0 !important;
-    border-top: 1px solid rgba(255,255,255,.10) !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-  }
-
-  .footer-action > span {
-    display: none !important;
-  }
-
-  .footer-phone {
-    margin: 0 !important;
-    color: #ffffff !important;
-    font-size: 16px !important;
-    line-height: 1.15 !important;
-    font-weight: 800 !important;
-    white-space: nowrap !important;
-  }
-
-  .footer-quote {
-    width: auto !important;
-    min-width: 94px !important;
-    min-height: 38px !important;
-    margin: 0 !important;
-    padding: 0 14px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border: 0 !important;
-    border-radius: 7px !important;
-    background: #1A5A97 !important;
-    color: #ffffff !important;
-    box-shadow: none !important;
-    font-size: 11px !important;
-    font-weight: 800 !important;
-  }
-
-  .footer-bottom {
-    width: calc(100% - 28px) !important;
-    margin: 0 auto !important;
-    padding: 9px 0 calc(80px + env(safe-area-inset-bottom)) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 3px !important;
-    border-top: 1px solid rgba(255,255,255,.06) !important;
-    color: #8F999F !important;
-    font-size: 9px !important;
-    line-height: 1.25 !important;
-  }
-
-  .footer-credit {
-    display: inline-block !important;
-  }
-
-  .footer-credit a {
-    color: #9dc4e7 !important;
-    font-weight: 700 !important;
-  }
-}
-
-
-/* =========================================================
-   ROUND TWO FINISHING PASS
-   2026-08-18
-   ========================================================= */
-
-/* Sharper desktop help strip photo with no extra blue line. */
-@media (min-width: 701px) {
-  .project-help-strip {
-    background:
-      linear-gradient(rgba(3, 18, 41, .36), rgba(3, 18, 41, .36)),
-      url("https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/hero-clean.webp") center center / cover no-repeat !important;
-    border-top: 0 !important;
-    border-bottom: 0 !important;
-  }
-
-  .project-help-strip::after {
-    display: none !important;
-  }
-
-  .project-help-inner {
-    min-height: 146px !important;
-  }
-
-  .project-help-copy strong,
-  .project-help-copy span,
-  .project-help-phone {
-    position: relative;
-    z-index: 2;
-  }
-}
-
-@media (max-width: 700px) {
-  /* Make the Why Us heading breathe more and avoid the compact stacked look. */
-  .why-eyebrow {
-    margin-bottom: 12px !important;
-  }
-
-  #whyHeading {
-    max-width: 100% !important;
-    font-size: clamp(34px, 9vw, 44px) !important;
-    line-height: 1.04 !important;
-    letter-spacing: -.04em !important;
-  }
-
-  #whyHeading span {
-    display: block !important;
-    margin-top: 4px !important;
-  }
-
-  .why-reference-intro {
-    max-width: 100% !important;
-  }
-
-  /* Pull the quote section tighter and remove the blue eyebrow treatment. */
-  .quote-inner {
-    gap: 18px !important;
-  }
-
-  .quote-eyebrow {
-    display: none !important;
-  }
-
-  .quote-form-heading span {
-    display: none !important;
-  }
-
-  .quote-form-heading {
-    padding-bottom: 6px !important;
-  }
-
-  .quote-copy {
-    margin-bottom: 0 !important;
-  }
-
-  .quote-form {
-    padding-bottom: 20px !important;
-  }
-
-  .quote-submit {
-    margin-bottom: 16px !important;
-  }
-
-  .quote-contact-bottom {
-    margin-top: 4px !important;
-    padding-top: 10px !important;
-    border-top: 1px solid rgba(3,18,41,.10) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 14px !important;
-  }
-
-  .quote-contact-bottom span {
-    color: #5f7280 !important;
-    font-size: 12px !important;
-    font-weight: 700 !important;
-  }
-
-  .quote-contact-bottom a {
-    color: #1A5A97 !important;
-    font-size: 18px !important;
-    font-weight: 800 !important;
-    white-space: nowrap !important;
-  }
-}
-
-
-/* =========================================================
-   FINAL MICRO POLISH
-   2026-08-18
-   ========================================================= */
-
-/* Desktop help strip: crisp hero image and a blue accent that runs flat,
-   then rises at a true 45-degree angle instead of spanning the full width. */
-@media (min-width: 701px) {
-  .project-help-strip {
-    position: relative !important;
-    overflow: hidden !important;
-    background:
-      linear-gradient(rgba(3, 18, 41, .34), rgba(3, 18, 41, .34)),
-      url("https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/hero-clean.webp") center center / cover no-repeat !important;
-    border-top: 0 !important;
-    border-bottom: 0 !important;
-  }
-
-  .project-help-strip::after {
-    display: none !important;
-  }
-
+  /* Make the blue accent run straight across the full help strip. */
   .project-help-strip::before {
     content: "" !important;
     position: absolute !important;
     left: 0 !important;
+    right: 0 !important;
     bottom: 0 !important;
-    width: 64% !important;
-    height: 58px !important;
+    width: 100% !important;
+    height: 5px !important;
     background: #159fe7 !important;
-    clip-path: polygon(
-      0 calc(100% - 2px),
-      calc(100% - 58px) calc(100% - 2px),
-      calc(100% - 2px) 0,
-      100% 0,
-      calc(100% - 56px) 100%,
-      0 100%
-    ) !important;
+    clip-path: none !important;
     z-index: 3 !important;
     pointer-events: none !important;
   }
 
-  .project-help-inner {
-    position: relative !important;
-    z-index: 4 !important;
-  }
-}
-
-@media (max-width: 700px) {
-  /* Restore the original quote treatment and keep the call/text option above the form. */
-  .quote-eyebrow {
-    display: block !important;
-  }
-
-  .quote-form-heading > span {
-    display: inline-block !important;
-  }
-
-  .quote-contact-bottom {
-    display: none !important;
-  }
-
-  /* Make the three About proof points easier to read without moving the layout. */
-  .about-points strong {
-    font-size: 18px !important;
-    line-height: 1.08 !important;
-  }
-
-  .about-points span {
-    font-size: 11.5px !important;
-    line-height: 1.35 !important;
-  }
-}
-
-
-/* =========================================================
-   DESKTOP-ONLY COPY + PROCESS POLISH
-   2026-08-18
-   ========================================================= */
-
-/* Default visibility keeps mobile exactly as it was. */
-.desktop-step-number,
-.desktop-diagnosis-copy,
-.desktop-about-lead {
-  display: none;
-}
-
-@media (min-width: 701px) {
-  /* Hero: only the word "by" switches back to white on desktop. */
-  .hero h1 .hero-by {
+  /* Make the Call / Text CTA stand out more without changing the strip layout. */
+  .project-help-phone {
+    min-height: 54px !important;
+    padding: 0 24px !important;
+    border: 1px solid rgba(255,255,255,.72) !important;
+    background: #1A5A97 !important;
     color: #ffffff !important;
+    box-shadow: 0 10px 26px rgba(3,18,41,.24) !important;
+    font-size: 14px !important;
+    font-weight: 850 !important;
   }
 
-  /* Desktop process uses 1, 2, 3, 4 and a consistent "We..." rhythm. */
-  .desktop-step-number {
-    display: inline !important;
+  .project-help-phone:hover,
+  .project-help-phone:focus-visible {
+    background: #031229 !important;
+    border-color: #ffffff !important;
+    transform: translateY(-1px) !important;
   }
+}
 
-  .mobile-step-number,
-  .mobile-diagnosis-copy,
-  .mobile-about-lead {
-    display: none !important;
-  }
-
-  .desktop-diagnosis-copy,
-  .desktop-about-lead {
+/* MOBILE ONLY */
+@media (max-width: 700px) {
+  /* Restore the helper copy between the quote heading and call/text option. */
+  .quote-copy > p:not(.quote-eyebrow) {
     display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 17px 0 0 !important;
+  }
+
+  /* Give the Request My Free Estimate CTA the same comfortable button spacing. */
+  .quote-submit {
+    width: 100% !important;
+    min-height: 60px !important;
+    padding: 0 24px !important;
+    line-height: 1.2 !important;
   }
 }
