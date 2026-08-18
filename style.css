@@ -452,3 +452,39 @@
     line-height: 1.35 !important;
   }
 }
+
+
+/* =========================================================
+   DESKTOP-ONLY COPY + PROCESS POLISH
+   2026-08-18
+   ========================================================= */
+
+/* Default visibility keeps mobile exactly as it was. */
+.desktop-step-number,
+.desktop-diagnosis-copy,
+.desktop-about-lead {
+  display: none;
+}
+
+@media (min-width: 701px) {
+  /* Hero: only the word "by" switches back to white on desktop. */
+  .hero h1 .hero-by {
+    color: #ffffff !important;
+  }
+
+  /* Desktop process uses 1, 2, 3, 4 and a consistent "We..." rhythm. */
+  .desktop-step-number {
+    display: inline !important;
+  }
+
+  .mobile-step-number,
+  .mobile-diagnosis-copy,
+  .mobile-about-lead {
+    display: none !important;
+  }
+
+  .desktop-diagnosis-copy,
+  .desktop-about-lead {
+    display: block !important;
+  }
+}
