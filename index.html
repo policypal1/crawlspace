@@ -8,6 +8,49 @@
   <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/b9c34fec-3561-472c-8195-e6789ea01a0d.png">
   <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/b9c34fec-3561-472c-8195-e6789ea01a0d.png">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Final requested alignment fixes only */
+    .about-points > .about-point {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      min-width: 0 !important;
+    }
+
+    .about-points > .about-point .why-reference-icon {
+      flex: 0 0 auto !important;
+      margin: 0 !important;
+    }
+
+    .about-point-copy {
+      min-width: 0 !important;
+    }
+
+    .about-point-copy strong,
+    .about-point-copy span {
+      display: block !important;
+    }
+
+    .quote-submit {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      box-sizing: border-box !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      transform: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .about-points > .about-point {
+        gap: 9px !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -285,23 +328,23 @@
           <p class="about-lead desktop-about-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <p class="about-lead mobile-about-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <div class="about-points">
-            <div>
-              <strong>10+ Years</strong><span>Experience</span>
-              <div class="why-reference-icon" aria-hidden="true" style="margin:12px auto 0;">
+            <div class="about-point">
+              <div class="why-reference-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 19 6v5c0 4.6-2.8 8-7 10-4.2-2-7-5.4-7-10V6l7-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
+              <div class="about-point-copy"><strong>10+ Years</strong><span>Experience</span></div>
             </div>
-            <div>
-              <strong>Local</strong><span>Southwest Washington</span>
-              <div class="why-reference-icon" aria-hidden="true" style="margin:12px auto 0;">
+            <div class="about-point">
+              <div class="why-reference-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h4l2-5 4 10 2-5h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
+              <div class="about-point-copy"><strong>Local</strong><span>Southwest Washington</span></div>
             </div>
-            <div>
-              <strong>Direct</strong><span>Communication</span>
-              <div class="why-reference-icon" aria-hidden="true" style="margin:12px auto 0;">
+            <div class="about-point">
+              <div class="why-reference-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none"><path d="M4 11.5 12 5l8 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 10.5V20h11v-9.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 20v-5h6v5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
               </div>
+              <div class="about-point-copy"><strong>Direct</strong><span>Communication</span></div>
             </div>
           </div>
         </div>
