@@ -135,10 +135,18 @@
     }
 
     @media (min-width: 701px) {
+      #why-us .promise-reference-list .why-reference-item {
+        padding: 18px 20px !important;
+        border: 1px solid rgba(140, 206, 255, 0.22) !important;
+        border-radius: 18px !important;
+        background: rgba(26, 90, 151, 0.68) !important;
+        box-shadow: 0 14px 30px rgba(3, 18, 41, 0.18) !important;
+      }
+
       #why-us .promise-reference-list .why-reference-item:last-child {
-        grid-column: 1 / -1 !important;
-        width: min(100%, 540px) !important;
-        justify-self: center !important;
+        grid-column: auto !important;
+        width: auto !important;
+        justify-self: stretch !important;
       }
     }
 
@@ -200,6 +208,17 @@
       }
     }
 
+
+
+    /* Keep Why Choose Us. on one line across desktop and mobile. */
+    #why-us #whyHeading {
+      white-space: nowrap !important;
+    }
+
+    #why-us #whyHeading span {
+      display: inline !important;
+      margin-top: 0 !important;
+    }
 
     /* About Crawl Space Pros: promise copy + matching white icon treatment. */
     #about .about-inner {
