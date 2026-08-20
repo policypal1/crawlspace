@@ -195,6 +195,35 @@
       }
     }
 
+
+    #why-us .promise-reference-list .promise-icon-img {
+      display: block !important;
+      width: 44px !important;
+      height: 44px !important;
+      object-fit: contain !important;
+    }
+
+    @media (min-width: 701px) {
+      #why-us .promise-reference-list .why-reference-item:last-child {
+        grid-column: 1 / -1 !important;
+        width: calc(50% - 12px) !important;
+        justify-self: center !important;
+      }
+    }
+
+    @media (max-width: 700px) {
+      #why-us .promise-reference-list .why-reference-item:last-child {
+        grid-column: auto !important;
+        width: 100% !important;
+        justify-self: stretch !important;
+      }
+
+      #why-us .promise-reference-list .promise-icon-img {
+        width: 38px !important;
+        height: 38px !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -409,45 +438,21 @@
           <div class="why-reference-list promise-reference-list">
             <article class="why-reference-item">
               <div class="why-reference-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="7.4" r="2.35" stroke="currentColor" stroke-width="1.8"/>
-                  <circle cx="6.3" cy="9" r="1.7" stroke="currentColor" stroke-width="1.8"/>
-                  <circle cx="17.7" cy="9" r="1.7" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="M9 18.7v-1.1c0-1.7 1.4-3 3-3s3 1.3 3 3v1.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M2.9 18v-.7c0-1.5 1.2-2.7 2.7-2.7.8 0 1.5.3 2 .8M21.1 18v-.7c0-1.5-1.2-2.7-2.7-2.7-.8 0-1.5.3-2 .8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M4.1 19.6h3.7M16.2 19.6h3.7M9.8 19.6h4.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
+                <img class="promise-icon-img" src="family-icon.webp" alt="">
               </div>
               <div><h3>Family Owned</h3><p>We treat our customers and their homes like our own</p></div>
             </article>
 
             <article class="why-reference-item">
               <div class="why-reference-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 4.2v15.6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
-                  <path d="M15.9 7.5c-.8-1.1-2.2-1.7-3.9-1.7-2.2 0-3.8 1.1-3.8 2.8 0 4 7.6 2.1 7.6 5.8 0 1.8-1.7 3-4.1 3-1.8 0-3.4-.6-4.6-1.9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div><h3>Honest &amp; Fair Pricing</h3><p>Quality Work without inflated prices</p></div>
-            </article>
-
-            <article class="why-reference-item">
-              <div class="why-reference-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M7.2 13.4 9.9 9.7c.6-.8 1.4-1.4 2.4-1.7l2.3-.8c.6-.2 1.1.4.9 1l-.6 2.2h1.9c2 0 3.5 1.6 3.5 3.5 0 1.6-1.1 3-2.7 3.4l-4 .9c-.8.2-1.6.3-2.4.3H7.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M4.2 12.8h2.9c.7 0 1.2.5 1.2 1.2v4.3c0 .7-.5 1.2-1.2 1.2H4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <img class="promise-icon-img" src="workmanship-icon.webp" alt="">
               </div>
               <div><h3>Quality Workmanship</h3><p>We do the job right, not just the job fast.</p></div>
             </article>
 
             <article class="why-reference-item">
               <div class="why-reference-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M9.2 12.4 6.8 10c-.8-.8-2-.8-2.8 0l-.6.6c-.8.8-.8 2 0 2.8l2.6 2.6c.8.8 2 .8 2.8 0l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M14.8 12.4 17.2 10c.8-.8 2-.8 2.8 0l.6.6c.8.8.8 2 0 2.8L18 16c-.8.8-2 .8-2.8 0l-1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="m8.9 12.7 2-2c.7-.7 1.9-.7 2.6 0l1.6 1.6c.5.5 1.2.7 1.9.5l1.2-.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <img class="promise-icon-img" src="handshake-icon.webp" alt="">
               </div>
               <div><h3>Experienced &amp; Reliable</h3><p>We show up, communicate, and stand behind our work</p></div>
             </article>
