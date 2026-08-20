@@ -51,7 +51,7 @@
       }
     }
 
-    /* Our Promise section: only the requested Why Us section changes below. */
+    /* Our Promise section reverted to the simpler bullet-point layout. */
     #why-us .promise-reference-inner {
       display: block !important;
       width: min(1180px, 100%) !important;
@@ -70,23 +70,23 @@
 
     #why-us .promise-reference-list {
       width: 100% !important;
-      margin-top: 42px !important;
+      margin-top: 38px !important;
       display: grid !important;
       grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-      gap: 24px !important;
+      gap: 28px 46px !important;
     }
 
     #why-us .promise-reference-list .why-reference-item {
       min-width: 0 !important;
       display: grid !important;
-      grid-template-columns: 68px minmax(0, 1fr) !important;
+      grid-template-columns: 42px minmax(0, 1fr) !important;
       align-items: start !important;
-      gap: 18px !important;
-      padding: 24px 24px 22px !important;
-      border: 1px solid #dbe6ed !important;
-      border-radius: 16px !important;
-      background: linear-gradient(180deg, #ffffff 0%, #f7fbfd 100%) !important;
-      box-shadow: 0 16px 36px rgba(16, 41, 63, 0.08) !important;
+      gap: 16px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
     }
 
     #why-us .promise-reference-list .why-reference-item > div:last-child {
@@ -95,56 +95,60 @@
 
     #why-us .promise-reference-list .why-reference-item h3 {
       margin: 0 !important;
-      color: #172d3e !important;
-      font-size: 20px !important;
-      line-height: 1.22 !important;
+      color: #ffffff !important;
+      font-size: 22px !important;
+      line-height: 1.18 !important;
       font-weight: 800 !important;
+      letter-spacing: -0.01em !important;
     }
 
     #why-us .promise-reference-list .why-reference-item p {
-      margin: 10px 0 0 !important;
-      color: #5a6d7b !important;
+      margin: 9px 0 0 !important;
+      color: rgba(255,255,255,0.84) !important;
       font-size: 15px !important;
       line-height: 1.58 !important;
       font-weight: 500 !important;
     }
 
     #why-us .promise-reference-list .why-reference-icon {
-      width: 68px !important;
-      height: 68px !important;
-      min-width: 68px !important;
+      width: 42px !important;
+      height: 42px !important;
+      min-width: 42px !important;
       margin: 0 !important;
       display: grid !important;
       place-items: center !important;
       align-self: start !important;
       border: 0 !important;
-      border-radius: 14px !important;
-      background: linear-gradient(180deg, #ecf6fd 0%, #f6fbff 100%) !important;
-      color: #1A5A97 !important;
-      box-shadow: inset 0 0 0 1px rgba(26, 90, 151, 0.08) !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      color: #ffffff !important;
+      box-shadow: none !important;
+      overflow: visible !important;
     }
 
-    #why-us .promise-reference-list .why-reference-icon svg {
+    #why-us .promise-reference-list .promise-icon-img {
+      display: block !important;
       width: 36px !important;
       height: 36px !important;
-      stroke: currentColor !important;
+      object-fit: contain !important;
+      filter: none !important;
+    }
+
+    @media (min-width: 701px) {
+      #why-us .promise-reference-list .why-reference-item:last-child {
+        grid-column: 1 / -1 !important;
+        width: min(100%, 540px) !important;
+        justify-self: center !important;
+      }
     }
 
     @media (max-width: 980px) and (min-width: 701px) {
       #why-us .promise-reference-list {
-        gap: 20px !important;
+        gap: 24px 34px !important;
       }
 
-      #why-us .promise-reference-list .why-reference-item {
-        padding: 22px 22px 20px !important;
-        grid-template-columns: 62px minmax(0, 1fr) !important;
-        gap: 16px !important;
-      }
-
-      #why-us .promise-reference-list .why-reference-icon {
-        width: 62px !important;
-        height: 62px !important;
-        min-width: 62px !important;
+      #why-us .promise-reference-list .why-reference-item h3 {
+        font-size: 20px !important;
       }
     }
 
@@ -159,68 +163,40 @@
       }
 
       #why-us .promise-reference-list {
-        margin-top: 30px !important;
+        margin-top: 28px !important;
         grid-template-columns: 1fr !important;
-        gap: 16px !important;
+        gap: 22px !important;
       }
 
-      #why-us .promise-reference-list .why-reference-item {
-        grid-template-columns: 58px minmax(0, 1fr) !important;
+      #why-us .promise-reference-list .why-reference-item,
+      #why-us .promise-reference-list .why-reference-item:last-child {
+        grid-column: auto !important;
+        width: 100% !important;
+        justify-self: stretch !important;
+        grid-template-columns: 38px minmax(0, 1fr) !important;
         gap: 14px !important;
-        padding: 18px 18px 17px !important;
-        border-radius: 14px !important;
       }
 
       #why-us .promise-reference-list .why-reference-icon {
-        width: 58px !important;
-        height: 58px !important;
-        min-width: 58px !important;
-        border-radius: 12px !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
       }
 
-      #why-us .promise-reference-list .why-reference-icon svg {
+      #why-us .promise-reference-list .promise-icon-img {
         width: 32px !important;
         height: 32px !important;
       }
 
       #why-us .promise-reference-list .why-reference-item h3 {
-        font-size: 17px !important;
-        line-height: 1.24 !important;
+        font-size: 18px !important;
+        line-height: 1.22 !important;
       }
 
       #why-us .promise-reference-list .why-reference-item p {
-        margin-top: 8px !important;
+        margin-top: 7px !important;
         font-size: 13px !important;
         line-height: 1.5 !important;
-      }
-    }
-
-
-    #why-us .promise-reference-list .promise-icon-img {
-      display: block !important;
-      width: 42px !important;
-      height: 42px !important;
-      object-fit: contain !important;
-    }
-
-    @media (min-width: 701px) {
-      #why-us .promise-reference-list .why-reference-item:last-child {
-        grid-column: 1 / -1 !important;
-        width: calc(50% - 12px) !important;
-        justify-self: center !important;
-      }
-    }
-
-    @media (max-width: 700px) {
-      #why-us .promise-reference-list .why-reference-item:last-child {
-        grid-column: auto !important;
-        width: 100% !important;
-        justify-self: stretch !important;
-      }
-
-      #why-us .promise-reference-list .promise-icon-img {
-        width: 36px !important;
-        height: 36px !important;
       }
     }
 
@@ -438,49 +414,49 @@
           <div class="why-reference-list promise-reference-list">
             <article class="why-reference-item">
               <div class="why-reference-icon" aria-hidden="true">
-                <img class="promise-icon-img" src="family-icon.webp" alt="">
+                <img class="promise-icon-img" src="family-icon-white.webp" alt="">
               </div>
               <div><h3>Family Owned</h3><p>We treat our customers and their homes like our own</p></div>
             </article>
 
             <article class="why-reference-item">
               <div class="why-reference-icon" aria-hidden="true">
-                <img class="promise-icon-img" src="pricing-icon.webp" alt="">
+                <img class="promise-icon-img" src="pricing-icon-white.webp" alt="">
               </div>
               <div><h3>Honest &amp; Fair Pricing</h3><p>Quality Work without inflated prices</p></div>
             </article>
 
             <article class="why-reference-item">
               <div class="why-reference-icon" aria-hidden="true">
-                <img class="promise-icon-img" src="workmanship-icon.webp" alt="">
+                <img class="promise-icon-img" src="workmanship-icon-white.webp" alt="">
               </div>
               <div><h3>Quality Workmanship</h3><p>We do the job right, not just the job fast.</p></div>
             </article>
 
             <article class="why-reference-item">
               <div class="why-reference-icon" aria-hidden="true">
-                <img class="promise-icon-img" src="handshake-icon.webp" alt="">
+                <img class="promise-icon-img" src="handshake-icon-white.webp" alt="">
               </div>
               <div><h3>Experienced &amp; Reliable</h3><p>We show up, communicate, and stand behind our work</p></div>
             </article>
 
             <article class="why-reference-item">
               <div class="why-reference-icon" aria-hidden="true">
-                <img class="promise-icon-img" src="license-icon.webp" alt="">
+                <img class="promise-icon-img" src="license-icon-white.webp" alt="">
               </div>
               <div><h3>Licensed, bonded &amp; insured</h3><p>Professional work with the proper coverage behind it.</p></div>
             </article>
 
             <article class="why-reference-item">
               <div class="why-reference-icon" aria-hidden="true">
-                <img class="promise-icon-img" src="cause-icon.webp" alt="">
+                <img class="promise-icon-img" src="cause-icon-white.webp" alt="">
               </div>
               <div><h3>We find the cause before recommending the fix</h3><p>The repair plan is based on what is actually happening underneath the home.</p></div>
             </article>
 
             <article class="why-reference-item">
               <div class="why-reference-icon" aria-hidden="true">
-                <img class="promise-icon-img" src="local-service-icon.webp" alt="">
+                <img class="promise-icon-img" src="local-service-icon-white.webp" alt="">
               </div>
               <div><h3>Direct local service</h3><p>You get clear communication from a small company serving Southwest Washington.</p></div>
             </article>
@@ -514,28 +490,32 @@
     </section>
 
     <section class="about-section" id="about" aria-labelledby="aboutHeading">
-      <div class="about-inner about-inner-no-visual">
+      <div class="about-inner">
+        <div class="about-visual">
+          <div class="about-photo"><img src="https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/IMG_1825.JPG" alt="Crawl Space Pros office setup" loading="lazy"></div>
+          <div class="about-badge"><strong>Local</strong><span>Family Owned Company</span></div>
+        </div>
         <div class="about-copy">
           <p class="about-eyebrow">ABOUT CRAWL SPACE PROS</p>
           <h2 id="aboutHeading">Small company. <span>Personal service.</span></h2>
-          <p class="about-lead desktop-about-lead about-promise-copy"><strong>Our Promise</strong><span>We promise to treat your home like our own, do the job right, and always treat you with honesty and respect. We believe quality work should come at a reasonable price, and that doing business the right way still matters.</span><span>Thank you for trusting our family with yours.</span></p>
-          <p class="about-lead mobile-about-lead about-promise-copy"><strong>Our Promise</strong><span>We promise to treat your home like our own, do the job right, and always treat you with honesty and respect. We believe quality work should come at a reasonable price, and that doing business the right way still matters.</span><span>Thank you for trusting our family with yours.</span></p>
+          <p class="about-lead desktop-about-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="about-lead mobile-about-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <div class="about-points">
             <div class="about-point">
               <div class="why-reference-icon" aria-hidden="true">
-                <img class="promise-icon-img" src="workmanship-icon.webp" alt="">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 19 6v5c0 4.6-2.8 8-7 10-4.2-2-7-5.4-7-10V6l7-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <div class="about-point-copy"><strong>10+ Years</strong><span>Experience</span></div>
             </div>
             <div class="about-point">
               <div class="why-reference-icon" aria-hidden="true">
-                <img class="promise-icon-img" src="local-service-icon.webp" alt="">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h4l2-5 4 10 2-5h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <div class="about-point-copy"><strong>Local</strong><span>Southwest Washington</span></div>
             </div>
             <div class="about-point">
               <div class="why-reference-icon" aria-hidden="true">
-                <img class="promise-icon-img" src="handshake-icon.webp" alt="">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 11.5 12 5l8 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 10.5V20h11v-9.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 20v-5h6v5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
               </div>
               <div class="about-point-copy"><strong>Direct</strong><span>Communication</span></div>
             </div>
