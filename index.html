@@ -68,15 +68,6 @@
       padding: 0 !important;
     }
 
-    #why-us #whyHeading {
-      white-space: nowrap !important;
-    }
-
-    #why-us #whyHeading span {
-      display: inline !important;
-      margin-top: 0 !important;
-    }
-
     #why-us .promise-reference-list {
       width: 100% !important;
       margin-top: 38px !important;
@@ -137,59 +128,17 @@
 
     #why-us .promise-reference-list .promise-icon-img {
       display: block !important;
+      width: 36px !important;
+      height: 36px !important;
       object-fit: contain !important;
       filter: none !important;
     }
 
-    /* Individual icon sizing so each mark feels visually balanced. */
-    #why-us .promise-reference-list .why-reference-item:nth-child(1) .promise-icon-img {
-      width: 36px !important;
-      height: 36px !important;
-    }
-
-    #why-us .promise-reference-list .why-reference-item:nth-child(2) .promise-icon-img {
-      width: 38px !important;
-      height: 38px !important;
-    }
-
-    #why-us .promise-reference-list .why-reference-item:nth-child(3) .promise-icon-img {
-      width: 37px !important;
-      height: 37px !important;
-    }
-
-    #why-us .promise-reference-list .why-reference-item:nth-child(4) .promise-icon-img {
-      width: 35px !important;
-      height: 35px !important;
-    }
-
-    #why-us .promise-reference-list .why-reference-item:nth-child(5) .promise-icon-img {
-      width: 33px !important;
-      height: 33px !important;
-    }
-
-    #why-us .promise-reference-list .why-reference-item:nth-child(6) .promise-icon-img {
-      width: 36px !important;
-      height: 36px !important;
-    }
-
-    #why-us .promise-reference-list .why-reference-item:nth-child(7) .promise-icon-img {
-      width: 31px !important;
-      height: 31px !important;
-    }
-
     @media (min-width: 701px) {
-      #why-us .promise-reference-list .why-reference-item {
-        padding: 18px 20px !important;
-        border: 1px solid rgba(138, 205, 255, 0.24) !important;
-        border-radius: 18px !important;
-        background: rgba(26, 90, 151, 0.60) !important;
-        box-shadow: 0 14px 32px rgba(3, 18, 41, 0.17) !important;
-      }
-
       #why-us .promise-reference-list .why-reference-item:last-child {
-        grid-column: auto !important;
-        width: auto !important;
-        justify-self: stretch !important;
+        grid-column: 1 / -1 !important;
+        width: min(100%, 540px) !important;
+        justify-self: center !important;
       }
     }
 
@@ -213,12 +162,6 @@
         padding: 0 2px !important;
       }
 
-      #why-us #whyHeading {
-        white-space: nowrap !important;
-        font-size: clamp(28px, 8.8vw, 34px) !important;
-        line-height: 1.08 !important;
-      }
-
       #why-us .promise-reference-list {
         margin-top: 28px !important;
         grid-template-columns: 1fr !important;
@@ -232,11 +175,6 @@
         justify-self: stretch !important;
         grid-template-columns: 38px minmax(0, 1fr) !important;
         gap: 14px !important;
-        padding: 0 !important;
-        border: 0 !important;
-        border-radius: 0 !important;
-        background: transparent !important;
-        box-shadow: none !important;
       }
 
       #why-us .promise-reference-list .why-reference-icon {
@@ -245,13 +183,10 @@
         min-width: 38px !important;
       }
 
-      #why-us .promise-reference-list .why-reference-item:nth-child(1) .promise-icon-img { width: 32px !important; height: 32px !important; }
-      #why-us .promise-reference-list .why-reference-item:nth-child(2) .promise-icon-img { width: 34px !important; height: 34px !important; }
-      #why-us .promise-reference-list .why-reference-item:nth-child(3) .promise-icon-img { width: 32px !important; height: 32px !important; }
-      #why-us .promise-reference-list .why-reference-item:nth-child(4) .promise-icon-img { width: 31px !important; height: 31px !important; }
-      #why-us .promise-reference-list .why-reference-item:nth-child(5) .promise-icon-img { width: 29px !important; height: 29px !important; }
-      #why-us .promise-reference-list .why-reference-item:nth-child(6) .promise-icon-img { width: 31px !important; height: 31px !important; }
-      #why-us .promise-reference-list .why-reference-item:nth-child(7) .promise-icon-img { width: 28px !important; height: 28px !important; }
+      #why-us .promise-reference-list .promise-icon-img {
+        width: 32px !important;
+        height: 32px !important;
+      }
 
       #why-us .promise-reference-list .why-reference-item h3 {
         font-size: 18px !important;
@@ -333,14 +268,6 @@
 
 
 
-
-    /* Mobile only: hide the OUR PROMISE eyebrow above Why Choose Us. */
-    @media (max-width: 700px) {
-      #why-us .why-eyebrow {
-        display: none !important;
-      }
-    }
-
   </style>
 </head>
 <body>
@@ -415,7 +342,7 @@
           <span class="trust-copy"><strong>Experienced</strong><small>10+ YEARS EXPERIENCE</small></span>
         </div>
         <div class="trust-item">
-          <span class="trust-copy"><strong>Owner Operated</strong><small>SMALL INDEPENDENT COMPANY</small></span>
+          <span class="trust-copy"><strong>Owner Operated</strong><small>SMALL LOCAL COMPANY</small></span>
         </div>
         <div class="trust-item">
           <span class="trust-copy"><strong>Local</strong><small>SOUTHWEST WASHINGTON</small></span>
@@ -442,7 +369,7 @@
         <div class="problem-carousel-shell">
           <button class="carousel-arrow carousel-arrow-prev" type="button" aria-label="Previous problem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="problem-carousel" id="problemCarousel" aria-label="Crawl space problem selector">
-            <button class="problem-card problem-card-v2" type="button" data-problem="Standing Water or Poor Drainage" aria-pressed="false"><span class="problem-card-media"><img src="problem-drainage.webp" alt="Crawl space drainage problem" loading="lazy"><span class="problem-card-wedge" aria-hidden="true"></span></span><span class="problem-card-strip" aria-hidden="true"></span><span class="problem-card-body"><strong>Standing Water or Poor Drainage</strong><small>Puddles after rain, wet areas, or water that keeps collecting underneath the home.</small><span class="problem-service-line">Crawl Space &amp; Basement Drain System</span></span></button>
+            <button class="problem-card problem-card-v2" type="button" data-problem="Standing Water or Poor Drainage" aria-pressed="false"><span class="problem-card-media"><img src="problem-drainage.webp" alt="Crawl space drainage problem" loading="lazy"><span class="problem-card-wedge" aria-hidden="true"></span></span><span class="problem-card-strip" aria-hidden="true"></span><span class="problem-card-body"><strong>Standing Water or Poor Drainage</strong><small>Puddles after rain, wet areas, or water that keeps collecting underneath the home.</small><span class="problem-service-line">Crawl Space and Basement Drain System</span></span></button>
             <button class="problem-card problem-card-v2" type="button" data-problem="Old, Torn, or Missing Vapor Barrier" aria-pressed="false"><span class="problem-card-media"><img src="problem-vapor.webp" alt="Crawl space vapor barrier" loading="lazy"><span class="problem-card-wedge" aria-hidden="true"></span></span><span class="problem-card-strip" aria-hidden="true"></span><span class="problem-card-body"><strong>Old or Torn Vapor Barrier</strong><small>Torn plastic, exposed soil, loose seams, or an older barrier that is no longer doing its job.</small><span class="problem-service-line">Vapor Barrier</span></span></button>
             <button class="problem-card problem-card-v2" type="button" data-problem="Damaged or Falling Insulation" aria-pressed="false"><span class="problem-card-media"><img src="https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/problem-insulation.webp" alt="Crawl space insulation" loading="lazy"><span class="problem-card-wedge" aria-hidden="true"></span></span><span class="problem-card-strip" aria-hidden="true"></span><span class="problem-card-body"><strong>Damaged or Falling Insulation</strong><small>Insulation that is wet, dirty, missing, or hanging down from the floor above.</small><span class="problem-service-line">Insulation</span></span></button>
             <button class="problem-card problem-card-v2" type="button" data-problem="Sagging, Soft, or Uneven Floors" aria-pressed="false"><span class="problem-card-media"><img src="problem-structural.webp" alt="Crawl space structural support" loading="lazy"><span class="problem-card-wedge" aria-hidden="true"></span></span><span class="problem-card-strip" aria-hidden="true"></span><span class="problem-card-body"><strong>Sagging or Soft Floors</strong><small>Bouncy, uneven, or soft spots that may be coming from support problems below.</small><span class="problem-service-line">Post &amp; Beam Repairs</span></span></button>
@@ -583,9 +510,9 @@
 
             <article class="why-reference-item">
               <div class="why-reference-icon" aria-hidden="true">
-                <img class="promise-icon-img" src="local-service-icon-white.webp" alt="">
+                <img class="promise-icon-img" src="license-icon-white.webp" alt="">
               </div>
-              <div><h3>Direct local service</h3><p>You get clear communication from a small company serving Southwest Washington.</p></div>
+              <div><h3>Licensed, bonded &amp; insured</h3><p>Professional work with the proper coverage behind it.</p></div>
             </article>
 
             <article class="why-reference-item">
@@ -597,9 +524,9 @@
 
             <article class="why-reference-item">
               <div class="why-reference-icon" aria-hidden="true">
-                <img class="promise-icon-img" src="license-icon-white.webp" alt="">
+                <img class="promise-icon-img" src="local-service-icon-white.webp" alt="">
               </div>
-              <div><h3>Licensed, bonded &amp; insured</h3><p>Professional work with the proper coverage behind it.</p></div>
+              <div><h3>Direct local service</h3><p>You get clear communication from a small company serving Southwest Washington.</p></div>
             </article>
           </div>
         </div>
@@ -675,7 +602,7 @@
           <div class="reviews-grid" id="reviewsScroller">
             <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“I feel very happy and pleased with the work Jon did under my house. He cleaned up the entire crawl space!! Jon is hard working and I would recommend him highly.”</blockquote><footer><strong>Henry Rettinger</strong><span>Google Review</span></footer></article>
             <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Fast, affordable, and friendly. Add to that they did a fantastic job. Would definitely be referring them to friends and family. Good job guys!!”</blockquote><footer><strong>Bobby Shaffer</strong><span>Google Review</span></footer></article>
-            <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Jon did an excellent job working in the crawl space under my home. And also did an outstanding job putting screens to thwart the kitties from setting up there again. Thank you, Jon!”</blockquote><footer><strong>JoAnne Baker</strong><span>Google Review</span></footer></article>
+            <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Job did an excellent job working in the crawl space under my home. And also did an outstanding job putting screens to thwart the kitties from setting up there again. Thank you, Jon!”</blockquote><footer><strong>JoAnne Baker</strong><span>Google Review</span></footer></article>
             <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Loved every aspect of working with Jonathan. Straightforward pricing, no hidden surprises, friendly, and hard working. Made every aspect of our crawlspace nightmare easy to understand and went above and beyond to make it happen.”</blockquote><footer><strong>Zach Auld</strong><span>Google Review</span></footer></article>
           </div>
           <button class="reviews-arrow reviews-arrow-next" type="button" aria-label="Next reviews"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
