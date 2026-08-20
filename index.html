@@ -68,6 +68,15 @@
       padding: 0 !important;
     }
 
+    #why-us #whyHeading {
+      white-space: nowrap !important;
+    }
+
+    #why-us #whyHeading span {
+      display: inline !important;
+      margin-top: 0 !important;
+    }
+
     #why-us .promise-reference-list {
       width: 100% !important;
       margin-top: 38px !important;
@@ -128,19 +137,53 @@
 
     #why-us .promise-reference-list .promise-icon-img {
       display: block !important;
-      width: 36px !important;
-      height: 36px !important;
       object-fit: contain !important;
       filter: none !important;
+    }
+
+    /* Individual icon sizing so each mark feels visually balanced. */
+    #why-us .promise-reference-list .why-reference-item:nth-child(1) .promise-icon-img {
+      width: 36px !important;
+      height: 36px !important;
+    }
+
+    #why-us .promise-reference-list .why-reference-item:nth-child(2) .promise-icon-img {
+      width: 34px !important;
+      height: 34px !important;
+    }
+
+    #why-us .promise-reference-list .why-reference-item:nth-child(3) .promise-icon-img {
+      width: 37px !important;
+      height: 37px !important;
+    }
+
+    #why-us .promise-reference-list .why-reference-item:nth-child(4) .promise-icon-img {
+      width: 35px !important;
+      height: 35px !important;
+    }
+
+    #why-us .promise-reference-list .why-reference-item:nth-child(5) .promise-icon-img {
+      width: 33px !important;
+      height: 33px !important;
+    }
+
+    #why-us .promise-reference-list .why-reference-item:nth-child(6) .promise-icon-img {
+      width: 36px !important;
+      height: 36px !important;
+    }
+
+    #why-us .promise-reference-list .why-reference-item:nth-child(7) .promise-icon-img {
+      width: 31px !important;
+      height: 31px !important;
     }
 
     @media (min-width: 701px) {
       #why-us .promise-reference-list .why-reference-item {
         padding: 18px 20px !important;
-        border: 1px solid rgba(140, 206, 255, 0.22) !important;
+        border: 1px solid rgba(138, 205, 255, 0.24) !important;
         border-radius: 18px !important;
-        background: rgba(26, 90, 151, 0.68) !important;
-        box-shadow: 0 14px 30px rgba(3, 18, 41, 0.18) !important;
+        background: rgba(26, 90, 151, 0.60) !important;
+        box-shadow: 0 14px 32px rgba(3, 18, 41, 0.17) !important;
       }
 
       #why-us .promise-reference-list .why-reference-item:last-child {
@@ -170,6 +213,12 @@
         padding: 0 2px !important;
       }
 
+      #why-us #whyHeading {
+        white-space: nowrap !important;
+        font-size: clamp(28px, 8.8vw, 34px) !important;
+        line-height: 1.08 !important;
+      }
+
       #why-us .promise-reference-list {
         margin-top: 28px !important;
         grid-template-columns: 1fr !important;
@@ -183,6 +232,11 @@
         justify-self: stretch !important;
         grid-template-columns: 38px minmax(0, 1fr) !important;
         gap: 14px !important;
+        padding: 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
       }
 
       #why-us .promise-reference-list .why-reference-icon {
@@ -191,10 +245,13 @@
         min-width: 38px !important;
       }
 
-      #why-us .promise-reference-list .promise-icon-img {
-        width: 32px !important;
-        height: 32px !important;
-      }
+      #why-us .promise-reference-list .why-reference-item:nth-child(1) .promise-icon-img { width: 32px !important; height: 32px !important; }
+      #why-us .promise-reference-list .why-reference-item:nth-child(2) .promise-icon-img { width: 30px !important; height: 30px !important; }
+      #why-us .promise-reference-list .why-reference-item:nth-child(3) .promise-icon-img { width: 32px !important; height: 32px !important; }
+      #why-us .promise-reference-list .why-reference-item:nth-child(4) .promise-icon-img { width: 31px !important; height: 31px !important; }
+      #why-us .promise-reference-list .why-reference-item:nth-child(5) .promise-icon-img { width: 29px !important; height: 29px !important; }
+      #why-us .promise-reference-list .why-reference-item:nth-child(6) .promise-icon-img { width: 31px !important; height: 31px !important; }
+      #why-us .promise-reference-list .why-reference-item:nth-child(7) .promise-icon-img { width: 28px !important; height: 28px !important; }
 
       #why-us .promise-reference-list .why-reference-item h3 {
         font-size: 18px !important;
@@ -208,17 +265,6 @@
       }
     }
 
-
-
-    /* Keep Why Choose Us. on one line across desktop and mobile. */
-    #why-us #whyHeading {
-      white-space: nowrap !important;
-    }
-
-    #why-us #whyHeading span {
-      display: inline !important;
-      margin-top: 0 !important;
-    }
 
     /* About Crawl Space Pros: promise copy + matching white icon treatment. */
     #about .about-inner {
@@ -529,9 +575,9 @@
 
             <article class="why-reference-item">
               <div class="why-reference-icon" aria-hidden="true">
-                <img class="promise-icon-img" src="license-icon-white.webp" alt="">
+                <img class="promise-icon-img" src="local-service-icon-white.webp" alt="">
               </div>
-              <div><h3>Licensed, bonded &amp; insured</h3><p>Professional work with the proper coverage behind it.</p></div>
+              <div><h3>Direct local service</h3><p>You get clear communication from a small company serving Southwest Washington.</p></div>
             </article>
 
             <article class="why-reference-item">
@@ -543,9 +589,9 @@
 
             <article class="why-reference-item">
               <div class="why-reference-icon" aria-hidden="true">
-                <img class="promise-icon-img" src="local-service-icon-white.webp" alt="">
+                <img class="promise-icon-img" src="license-icon-white.webp" alt="">
               </div>
-              <div><h3>Direct local service</h3><p>You get clear communication from a small company serving Southwest Washington.</p></div>
+              <div><h3>Licensed, bonded &amp; insured</h3><p>Professional work with the proper coverage behind it.</p></div>
             </article>
           </div>
         </div>
