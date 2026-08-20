@@ -80,3 +80,51 @@
     background: none !important;
   }
 }
+
+/* =========================================================
+   ABOUT ICON IMAGE CONTAINMENT FIX
+   Prevent the new WebP icons from rendering at intrinsic size.
+   Applies to desktop + mobile only inside the About proof points.
+   ========================================================= */
+.about-points .about-point .why-reference-icon {
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px !important;
+  flex: 0 0 50px !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+}
+
+.about-points .about-point .why-reference-icon > img.promise-icon-img {
+  display: block !important;
+  position: static !important;
+  inset: auto !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 0 !important;
+  max-width: 32px !important;
+  min-height: 0 !important;
+  max-height: 32px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: none !important;
+}
+
+@media (max-width: 700px) {
+  .about-points .about-point .why-reference-icon {
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    flex-basis: 46px !important;
+  }
+
+  .about-points .about-point .why-reference-icon > img.promise-icon-img {
+    width: 29px !important;
+    height: 29px !important;
+    max-width: 29px !important;
+    max-height: 29px !important;
+  }
+}
