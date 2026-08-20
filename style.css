@@ -128,3 +128,60 @@
     max-height: 29px !important;
   }
 }
+
+/* =========================================================
+   FINAL ABOUT SECTION UPDATE
+   Remove the photo column and let the copy/proof points use the section width.
+   ========================================================= */
+.about-inner.about-inner-no-visual {
+  display: block !important;
+  grid-template-columns: 1fr !important;
+  width: min(1180px, calc(100% - 48px)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.about-inner-no-visual .about-copy {
+  width: 100% !important;
+  max-width: 920px !important;
+  margin: 0 auto !important;
+}
+
+.about-inner-no-visual .about-promise-copy strong,
+.about-inner-no-visual .about-promise-copy span {
+  display: block !important;
+}
+
+.about-inner-no-visual .about-promise-copy strong {
+  margin-bottom: 10px !important;
+  color: #1A5A97 !important;
+  font-size: 15px !important;
+  line-height: 1.25 !important;
+  font-weight: 850 !important;
+  letter-spacing: .04em !important;
+  text-transform: uppercase !important;
+}
+
+.about-inner-no-visual .about-promise-copy span + span {
+  margin-top: 14px !important;
+}
+
+@media (max-width: 700px) {
+  .about-inner.about-inner-no-visual {
+    width: calc(100% - 28px) !important;
+  }
+
+  .about-inner-no-visual .about-copy {
+    max-width: none !important;
+  }
+
+  .about-inner-no-visual .about-promise-copy strong {
+    margin-bottom: 8px !important;
+    font-size: 13px !important;
+  }
+
+  .about-inner-no-visual .about-promise-copy span + span {
+    margin-top: 12px !important;
+  }
+}
+
