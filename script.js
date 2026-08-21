@@ -1,6 +1,6 @@
 (() => {
   const ORIGINAL_SCRIPT = "https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/script.js";
-  const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbz5dXkGEYjjttzh7_B-5hgeZStfISjsOR_3j883rv5VTLRR0UIgBXZ1Bx5Yuu3eZQ/exec";
+  const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbzm5ZaVzeXJXtDjgMX0DtcKd3st0myj5Rp7qGQtQY_wu3lmVjb3Hvu2S7Si9OJXe9RR/exec";
 
   function initMobileScrollQuote() {
     const cta = document.querySelector('.desktop-quote');
