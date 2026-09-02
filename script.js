@@ -130,14 +130,15 @@
 
   function initClientRequestedDetails() {
     function addRequestedDetails() {
-      const reviewsHeading = document.querySelector('#reviews .reviews-heading');
+      const reviewsShell = document.querySelector('#reviews .reviews-scroller-shell');
 
-      if (reviewsHeading && !document.querySelector('#leaveGoogleReviewButton')) {
+      if (reviewsShell && !document.querySelector('#leaveGoogleReviewButton')) {
         const reviewWrap = document.createElement('div');
         reviewWrap.style.display = 'flex';
         reviewWrap.style.justifyContent = 'center';
+        reviewWrap.style.alignItems = 'center';
         reviewWrap.style.width = '100%';
-        reviewWrap.style.margin = '24px 0 30px';
+        reviewWrap.style.margin = '28px 0 0';
 
         const reviewButton = document.createElement('a');
         reviewButton.id = 'leaveGoogleReviewButton';
@@ -151,7 +152,7 @@
         reviewButton.style.justifyContent = 'center';
         reviewButton.style.minHeight = '52px';
         reviewButton.style.padding = '0 24px';
-        reviewButton.style.borderRadius = '999px';
+        reviewButton.style.borderRadius = '0';
         reviewButton.style.background = '#1A5A97';
         reviewButton.style.color = '#ffffff';
         reviewButton.style.textDecoration = 'none';
@@ -163,7 +164,7 @@
         reviewButton.style.zIndex = '5';
 
         reviewWrap.appendChild(reviewButton);
-        reviewsHeading.insertAdjacentElement('afterend', reviewWrap);
+        reviewsShell.insertAdjacentElement('afterend', reviewWrap);
       }
 
       const footerCredit = document.querySelector('.footer-bottom .footer-credit');
