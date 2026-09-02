@@ -152,7 +152,7 @@
         reviewButton.style.justifyContent = 'center';
         reviewButton.style.minHeight = '52px';
         reviewButton.style.padding = '0 24px';
-        reviewButton.style.borderRadius = '0';
+        reviewButton.style.borderRadius = '8px';
         reviewButton.style.background = '#1A5A97';
         reviewButton.style.color = '#ffffff';
         reviewButton.style.textDecoration = 'none';
