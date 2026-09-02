@@ -129,35 +129,61 @@
   }
 
   function initClientRequestedDetails() {
-    const reviewsInner = document.querySelector('.reviews-section .reviews-inner');
-    const reviewsShell = document.querySelector('.reviews-section .reviews-scroller-shell');
+    function addRequestedDetails() {
+      const reviewsHeading = document.querySelector('#reviews .reviews-heading');
 
-    if (reviewsInner && reviewsShell && !document.querySelector('.leave-review-cta')) {
-      const action = document.createElement('div');
-      action.className = 'leave-review-cta';
-      action.style.display = 'flex';
-      action.style.justifyContent = 'center';
-      action.style.margin = '0 0 28px';
+      if (reviewsHeading && !document.querySelector('#leaveGoogleReviewButton')) {
+        const reviewWrap = document.createElement('div');
+        reviewWrap.style.display = 'flex';
+        reviewWrap.style.justifyContent = 'center';
+        reviewWrap.style.width = '100%';
+        reviewWrap.style.margin = '24px 0 30px';
 
-      const link = document.createElement('a');
-      link.className = 'footer-quote';
-      link.href = 'https://g.page/r/CTLRqh0kijy5EBM/review';
-      link.target = '_blank';
-      link.rel = 'noopener';
-      link.textContent = 'Leave a Google Review';
+        const reviewButton = document.createElement('a');
+        reviewButton.id = 'leaveGoogleReviewButton';
+        reviewButton.href = 'https://g.page/r/CTLRqh0kijy5EBM/review';
+        reviewButton.target = '_blank';
+        reviewButton.rel = 'noopener';
+        reviewButton.textContent = 'Leave a Google Review';
 
-      action.appendChild(link);
-      reviewsInner.insertBefore(action, reviewsShell);
+        reviewButton.style.display = 'inline-flex';
+        reviewButton.style.alignItems = 'center';
+        reviewButton.style.justifyContent = 'center';
+        reviewButton.style.minHeight = '52px';
+        reviewButton.style.padding = '0 24px';
+        reviewButton.style.borderRadius = '999px';
+        reviewButton.style.background = '#1A5A97';
+        reviewButton.style.color = '#ffffff';
+        reviewButton.style.textDecoration = 'none';
+        reviewButton.style.fontSize = '15px';
+        reviewButton.style.fontWeight = '800';
+        reviewButton.style.lineHeight = '1';
+        reviewButton.style.boxShadow = '0 10px 24px rgba(3, 18, 41, 0.18)';
+        reviewButton.style.position = 'relative';
+        reviewButton.style.zIndex = '5';
+
+        reviewWrap.appendChild(reviewButton);
+        reviewsHeading.insertAdjacentElement('afterend', reviewWrap);
+      }
+
+      const footerCredit = document.querySelector('.footer-bottom .footer-credit');
+
+      if (footerCredit && !document.querySelector('#contractorLicenseNumber')) {
+        const license = document.createElement('span');
+        license.id = 'contractorLicenseNumber';
+        license.textContent = 'Contractor License: OUTSIOG746BH';
+        footerCredit.insertAdjacentElement('beforebegin', license);
+      }
     }
 
-    const footerCredit = document.querySelector('.footer-bottom .footer-credit');
-
-    if (footerCredit && !document.querySelector('.contractor-license')) {
-      const license = document.createElement('span');
-      license.className = 'contractor-license';
-      license.textContent = 'Contractor License: OUTSIOG746BH';
-      footerCredit.parentNode.insertBefore(license, footerCredit);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', addRequestedDetails, { once: true });
+    } else {
+      addRequestedDetails();
     }
+
+    // One delayed retry in case another script finishes building a section after load.
+    window.setTimeout(addRequestedDetails, 300);
   }
 
   initMobileScrollQuote();
