@@ -128,8 +128,41 @@
     );
   }
 
+  function initClientRequestedDetails() {
+    const reviewsInner = document.querySelector('.reviews-section .reviews-inner');
+    const reviewsShell = document.querySelector('.reviews-section .reviews-scroller-shell');
+
+    if (reviewsInner && reviewsShell && !document.querySelector('.leave-review-cta')) {
+      const action = document.createElement('div');
+      action.className = 'leave-review-cta';
+      action.style.display = 'flex';
+      action.style.justifyContent = 'center';
+      action.style.margin = '0 0 28px';
+
+      const link = document.createElement('a');
+      link.className = 'footer-quote';
+      link.href = 'https://g.page/r/CTLRqh0kijy5EBM/review';
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = 'Leave a Google Review';
+
+      action.appendChild(link);
+      reviewsInner.insertBefore(action, reviewsShell);
+    }
+
+    const footerCredit = document.querySelector('.footer-bottom .footer-credit');
+
+    if (footerCredit && !document.querySelector('.contractor-license')) {
+      const license = document.createElement('span');
+      license.className = 'contractor-license';
+      license.textContent = 'Contractor License: OUTSIOG746BH';
+      footerCredit.parentNode.insertBefore(license, footerCredit);
+    }
+  }
+
   initMobileScrollQuote();
   initQuoteFormSubmission();
+  initClientRequestedDetails();
 
   const original = document.createElement('script');
   original.src = ORIGINAL_SCRIPT;
