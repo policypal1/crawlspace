@@ -199,6 +199,104 @@
       .deliverables-note{text-align:left;margin-top:20px}
     }
 
+
+    /* v7 visual cleanup: stronger rhythm, native cards, mobile-first proof */
+    .hero-copy-glass .hero-actions{display:none!important}
+
+    .hero-estimate-wrap{margin-top:24px!important}
+    .hero-estimate-card .quick-estimate-heading{border-bottom:0!important;padding-bottom:18px!important}
+    .hero-estimate-card .quick-progress{padding:0 30px!important;margin:0!important}
+    .quick-progress-segments{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;width:100%}
+    .quick-progress-segment{height:6px;border:1px solid #a9bdcd;border-radius:999px;background:#f7fafc;transition:background .18s ease,border-color .18s ease}
+    .quick-progress-segment.is-complete,.quick-progress-segment.is-active{background:#1A5A97;border-color:#1A5A97}
+    .quick-progress-segment.is-active{box-shadow:0 0 0 2px rgba(26,90,151,.10)}
+    .quick-progress-bar{display:none!important}
+    .hero-estimate-card .quick-step{padding-top:24px!important}
+
+    .wet-season-strip{background:#1A5A97!important;color:#fff!important;border:0!important;padding:18px 0!important}
+    .wet-season-strip .seasonal-strip-inner{display:grid!important;grid-template-columns:auto 1fr!important;align-items:center!important;justify-content:start!important;gap:14px!important;width:min(1120px,calc(100% - 40px))!important}
+    .wet-season-tag{background:#fff!important;color:#1A5A97!important;border-radius:7px!important;letter-spacing:.1em!important}
+    .wet-season-headline{font-size:22px;line-height:1.1;font-weight:950;color:#fff;white-space:nowrap}
+
+    .proof-first{background:#fff!important;padding:96px 0!important}
+    .proof-first .projects-inner{padding-bottom:0!important}
+    .proof-first .projects-heading{margin-bottom:36px!important}
+    .proof-first .projects-subcopy{max-width:650px!important;margin-left:auto!important;margin-right:auto!important}
+    .proof-before-after .project-featured-media{display:grid!important;grid-template-columns:1fr 1fr!important;gap:14px!important}
+    .proof-before-after figure{min-width:0!important}
+    .proof-before-after figure img{width:100%!important;height:100%!important;object-fit:cover!important}
+    .proof-review-inline{max-width:860px;margin:36px auto 0;padding-top:34px;border-top:1px solid #dce5ed}
+    .proof-review-inline .featured-review-card{margin:0!important}
+
+    .self-identification{background:#082f53!important;padding-top:96px!important;padding-bottom:96px!important}
+    .self-identification .problem-heading-wrap h2,.self-identification .problem-heading-wrap h2 span{color:#fff!important}
+    .self-identification .problem-intro{color:rgba(255,255,255,.78)!important}
+    .self-identification .carousel-arrow{background:#fff!important;color:#1A5A97!important;border-color:rgba(255,255,255,.4)!important}
+
+    .deliverables-section{padding:96px 0!important;background:#fff!important;border:0!important}
+    .deliverables-heading{margin-bottom:44px!important}
+    .deliverables-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important}
+    .deliverable-card{position:relative;display:grid!important;grid-template-columns:54px minmax(0,1fr)!important;gap:17px!important;align-items:start!important;background:#fff!important;border:1px solid #dbe5ee!important;border-top:4px solid #1A5A97!important;border-radius:14px!important;padding:26px 24px!important;box-shadow:0 12px 28px rgba(7,36,67,.08)!important}
+    .deliverable-number{display:block;color:#1A5A97;font-size:15px;line-height:1;font-weight:950;letter-spacing:.08em;padding-top:4px}
+    .deliverable-card h3{margin:0 0 8px!important;color:#0c2035!important;font-size:20px!important;line-height:1.2!important}
+    .deliverable-card p{margin:0!important;color:#607386!important;font-size:14px!important;line-height:1.55!important}
+
+    .process-low-friction{background:#082f53!important;padding-top:96px!important;padding-bottom:96px!important}
+    .process-low-friction .diagnosis-header h2,.process-low-friction .diagnosis-header h2 span{color:#fff!important}
+    .process-low-friction .diagnosis-step-copy strong{color:#fff!important}
+    .process-low-friction .diagnosis-step-copy p{color:rgba(255,255,255,.76)!important}
+    .process-low-friction .diagnosis-step-number{color:#fff!important}
+
+    .owner-trust{background:#fff!important;padding-top:96px!important;padding-bottom:96px!important;color:#0c2035!important}
+    .owner-trust h2,.owner-trust h2 span{color:#0c2035!important}
+    .owner-trust h2 span{color:#1A5A97!important}
+    .owner-trust .about-lead{color:#607386!important}
+    .owner-trust .about-points>.about-point .why-reference-icon{background:#1A5A97!important;border-radius:12px!important;width:44px!important;height:44px!important;min-width:44px!important}
+    .owner-trust .about-point-copy strong{color:#0c2035!important}
+    .owner-trust .about-point-copy span{color:#607386!important}
+
+    .reviews-section{background:#082f53!important;padding-top:96px!important;padding-bottom:96px!important}
+    .reviews-section .reviews-eyebrow,.reviews-section .reviews-heading h2,.reviews-section .reviews-heading h2 span{color:#fff!important}
+    .reviews-section .review-card{background:#fff!important}
+    .reviews-section .review-card blockquote{color:#263e55!important}
+
+    .objections-section{background:#fff!important;padding-top:96px!important;padding-bottom:96px!important}
+
+    .quote-section{background:#082f53!important;padding-top:96px!important;padding-bottom:96px!important}
+    .quote-section .quote-copy,.quote-section .quote-copy h2,.quote-section .quote-copy h2 span,.quote-section .quote-copy p,.quote-section .quote-contact span,.quote-section .quote-contact a{color:#fff!important}
+
+    @media(max-width:700px){
+      .hero-estimate-wrap{margin-top:20px!important}
+      .hero-estimate-card .quick-estimate-heading{padding:21px 20px 16px!important}
+      .hero-estimate-card .quick-progress{padding:0 20px!important}
+      .quick-progress-segments{gap:5px!important}
+      .quick-progress-segment{height:6px!important}
+      .hero-estimate-card .quick-step{padding-top:20px!important}
+
+      .wet-season-strip{padding:16px 0!important}
+      .wet-season-strip .seasonal-strip-inner{width:calc(100% - 32px)!important;grid-template-columns:auto 1fr!important;gap:8px 10px!important}
+      .wet-season-headline{font-size:20px!important;white-space:normal!important}
+
+      .proof-first{padding:70px 0!important}
+      .proof-first .projects-heading{margin-bottom:26px!important}
+      .proof-before-after .project-featured-media{grid-template-columns:1fr 1fr!important;gap:8px!important}
+      .proof-before-after figure{height:220px!important;min-height:220px!important}
+      .proof-before-after figure img{height:220px!important}
+      .proof-before-after figcaption{font-size:11px!important;padding:7px 9px!important}
+      .proof-review-inline{margin-top:28px!important;padding-top:28px!important}
+
+      .self-identification{padding-top:72px!important;padding-bottom:72px!important}
+      .deliverables-section{padding:72px 0!important}
+      .deliverables-heading{margin-bottom:28px!important}
+      .deliverables-grid{grid-template-columns:1fr!important;gap:12px!important}
+      .deliverable-card{grid-template-columns:42px minmax(0,1fr)!important;gap:12px!important;padding:22px 18px!important}
+      .deliverable-card h3{font-size:18px!important}
+      .deliverable-card p{font-size:13px!important}
+
+      .process-low-friction,.owner-trust,.reviews-section,.objections-section,.quote-section{padding-top:72px!important;padding-bottom:72px!important}
+      .owner-trust .about-points>.about-point .why-reference-icon{width:40px!important;height:40px!important;min-width:40px!important}
+    }
+
   </style>
 </head>
 <body>
@@ -250,10 +348,6 @@
           <div class="hero-copy-glass">
             <h1>Crawl Space Cleanouts <span>in Southwest Washington.</span></h1>
             <p class="hero-subheadline">Old insulation, torn vapor barrier, rodent mess, or years of debris under your home? We remove it, haul it away, and leave the crawl space clean and ready for whatever comes next.</p>
-            <div class="hero-actions">
-              <a class="hero-btn hero-btn-primary" href="#hero-estimate">Get My Free Cleanout Estimate</a>
-              <a class="hero-btn hero-btn-secondary" href="tel:3604704956">Call / Text (360) 470-4956</a>
-            </div>
 
             <div class="hero-estimate-wrap" id="hero-estimate">
               <div class="quote-form-wrap quick-estimate-card hero-estimate-card">
@@ -264,7 +358,12 @@
                   </div>
 
                   <div class="quick-progress" aria-label="Estimate form progress">
-                    <span class="quick-progress-bar" aria-hidden="true"><span id="quickProgressFill"></span></span>
+                    <span class="quick-progress-segments" aria-hidden="true">
+                      <span class="quick-progress-segment is-active"></span>
+                      <span class="quick-progress-segment"></span>
+                      <span class="quick-progress-segment"></span>
+                      <span class="quick-progress-segment"></span>
+                    </span>
                     <span class="quick-progress-status" id="quickProgressText" aria-live="polite">Step 1 of 4</span>
                   </div>
 
@@ -319,38 +418,32 @@
 
     <section class="seasonal-strip wet-season-strip" aria-label="Wet season reminder">
       <div class="seasonal-strip-inner">
-        <span class="wet-season-tag">Wet Season Reminder</span>
-        <div class="seasonal-strip-copy">
-          <strong>If the crawl space already needs a cleanout, don’t let the mess sit through another wet season.</strong>
-          <span>Wetter weather can make an already dirty crawl space harder to ignore. If old insulation, damaged plastic, rodent debris, or years of buildup are already underneath the home, this is a good time to get it handled.</span>
-        </div>
+        <span class="wet-season-tag">Wet Season</span>
+        <strong class="wet-season-headline">It will get worse.</strong>
       </div>
     </section>
 
     <section class="projects-section proof-first" id="projects" aria-labelledby="projectsHeading">
       <div class="projects-inner">
         <div class="projects-heading">
-          <p class="projects-eyebrow">REAL PROJECT • REAL RESULT</p>
           <h2 id="projectsHeading">See what a cleanout <span>can change.</span></h2>
-          <p class="projects-subcopy">Proof first. Here’s a real crawl space before and after the old material and mess were dealt with.</p>
+          <p class="projects-subcopy">A real crawl space before and after the old material and mess were removed.</p>
         </div>
 
-        <article class="project-featured project-overlay-style">
+        <article class="project-featured project-overlay-style proof-before-after">
           <div class="project-featured-media">
             <figure class="project-image project-image-before"><img src="crawlspace-before.webp" alt="Crawl space before cleanout" loading="eager"><figcaption>Before</figcaption></figure>
             <figure class="project-image project-image-after"><img src="crawlspace-after.webp" alt="Crawl space after cleanout" loading="eager"><figcaption>After</figcaption></figure>
           </div>
         </article>
-      </div>
-    </section>
 
-    <section class="featured-review-section proof-review" aria-label="Customer review">
-      <div class="featured-review-inner">
-        <article class="featured-review-card">
-          <div class="featured-review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="featured-review-copy">“I feel very happy and pleased with the work Jon did under my house. He cleaned up the entire crawl space!! Jon is hard working and I would recommend him highly.”</p>
-          <div class="featured-review-footer"><strong>- Henry Rettinger</strong></div>
-        </article>
+        <div class="proof-review-inline" aria-label="Customer review">
+          <article class="featured-review-card">
+            <div class="featured-review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="featured-review-copy">“I feel very happy and pleased with the work Jon did under my house. He cleaned up the entire crawl space!! Jon is hard working and I would recommend him highly.”</p>
+            <div class="featured-review-footer"><strong>- Henry Rettinger</strong></div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -382,17 +475,16 @@
       <div class="deliverables-inner">
         <div class="deliverables-heading">
           <p class="deliverables-eyebrow">WHAT YOU GET</p>
-          <h2 id="deliverablesHeading">A clear cleanout. <span>No mystery scope.</span></h2>
-          <p>Before you agree to anything, you’ll know what we’re removing and what the cleanout includes.</p>
+          <h2 id="deliverablesHeading">The mess comes out. <span>You know the scope first.</span></h2>
+          <p>No vague “cleanup” package. We inspect the space, define what is coming out, and give you the estimate before you decide.</p>
         </div>
 
         <div class="deliverables-grid">
-          <article class="deliverable-card"><span class="deliverable-check">✓</span><h3>We identify what needs out</h3><p>We inspect the crawl space and define the material that actually needs to be removed.</p></article>
-          <article class="deliverable-card"><span class="deliverable-check">✓</span><h3>We remove the agreed material</h3><p>Old insulation, vapor barrier, rodent debris, construction debris, and other unwanted material are removed based on the scope.</p></article>
-          <article class="deliverable-card"><span class="deliverable-check">✓</span><h3>We haul the mess away</h3><p>You’re not left with bags or piles of crawl-space waste to deal with after the job.</p></article>
-          <article class="deliverable-card"><span class="deliverable-check">✓</span><h3>We leave it ready for what’s next</h3><p>The crawl space is cleared out and ready for insulation, vapor barrier, drainage work, or the next repair if one is needed.</p></article>
+          <article class="deliverable-card"><span class="deliverable-number">01</span><div><h3>Clear cleanout scope</h3><p>We show you what needs to be removed before the work starts.</p></div></article>
+          <article class="deliverable-card"><span class="deliverable-number">02</span><div><h3>Old material removed</h3><p>Insulation, vapor barrier, rodent debris, and unwanted buildup are removed based on the agreed scope.</p></div></article>
+          <article class="deliverable-card"><span class="deliverable-number">03</span><div><h3>Debris hauled away</h3><p>The crawl-space waste leaves with us. You are not left with bags or piles to deal with.</p></div></article>
+          <article class="deliverable-card"><span class="deliverable-number">04</span><div><h3>Ready for the next step</h3><p>The space is cleared and ready for insulation, vapor barrier, drainage work, or whatever comes next.</p></div></article>
         </div>
-        <p class="deliverables-note">The exact scope is based on what we find underneath your home. You get the estimate first, then you decide how you want to move forward.</p>
       </div>
     </section>
 
@@ -539,7 +631,7 @@
 
       const endpoint = 'https://script.google.com/macros/s/AKfycbzm5ZaVzeXJXtDjgMX0DtcKd3st0myj5Rp7qGQtQY_wu3lmVjb3Hvu2S7Si9OJXe9RR/exec';
       const steps = Array.from(form.querySelectorAll('.quick-step'));
-      const progressFill = document.getElementById('quickProgressFill');
+      const progressSegments = Array.from(form.querySelectorAll('.quick-progress-segment'));
       const progressText = document.getElementById('quickProgressText');
       const submitButton = form.querySelector('.quick-estimate-submit');
       const originalSubmitHtml = submitButton.innerHTML;
@@ -552,8 +644,10 @@
           step.hidden = !active;
           step.classList.toggle('is-active', active);
         });
-        const pct = ((currentStep + 1) / steps.length) * 100;
-        progressFill.style.width = pct + '%';
+        progressSegments.forEach((segment, i) => {
+          segment.classList.toggle('is-complete', i < currentStep);
+          segment.classList.toggle('is-active', i === currentStep);
+        });
         progressText.textContent = `Step ${currentStep + 1} of ${steps.length}`;
         const field = steps[currentStep].querySelector('input, select');
         if (field) window.setTimeout(() => field.focus({ preventScroll: true }), 60);
