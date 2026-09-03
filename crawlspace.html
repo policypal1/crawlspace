@@ -54,25 +54,35 @@
     }
 
     /* Cleanout ad-page conversion upgrades */
-    .quick-estimate-section{padding:54px 0 62px;background:#fff;border-bottom:1px solid #e3eaf1}
-    .quick-estimate-shell{width:min(720px,calc(100% - 40px));margin:0 auto}
-    .quick-estimate-card{width:100%;margin:0}
-    .quick-estimate-form{width:100%}
-    .quick-estimate-heading{margin-bottom:18px}
-    .quick-progress{display:flex;align-items:center;gap:14px;margin:0 0 24px}
-    .quick-progress-bar{height:6px;flex:1;overflow:hidden;border-radius:999px;background:#dbe6ef}
+    .featured-review-section{padding:34px 0 26px!important}
+    .featured-review-inner{width:min(760px,calc(100% - 40px))!important;margin:0 auto!important}
+    .featured-review-card{padding:20px 26px!important;border-radius:14px!important}
+    .featured-review-stars{font-size:15px!important;line-height:1!important;margin-bottom:8px!important}
+    .featured-review-copy{font-size:16px!important;line-height:1.55!important;margin:0 0 9px!important}
+    .featured-review-footer{font-size:13px!important}
+
+    .quick-estimate-section{padding:34px 0 72px;background:#fff;border-bottom:1px solid #e3eaf1}
+    .quick-estimate-shell{width:min(760px,calc(100% - 40px));margin:0 auto}
+    .quick-estimate-card{width:100%;margin:0!important;padding:0!important;overflow:hidden;border-radius:18px!important}
+    .quick-estimate-form{width:100%;padding:0!important}
+    .quick-estimate-heading{margin:0!important;padding:34px 38px 30px!important;border-bottom:1px solid #dce6ef}
+    .quick-estimate-heading h3{margin:0 0 10px!important;font-size:31px!important;line-height:1.12!important}
+    .quick-estimate-heading p{max-width:610px!important;margin:0!important;font-size:14px!important;line-height:1.6!important}
+    .quick-progress{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:18px;margin:0 0 30px;padding:30px 38px 0}
+    .quick-progress-bar{height:6px;width:100%;overflow:hidden;border-radius:999px;background:#dbe6ef}
     .quick-progress-bar>span{display:block;width:25%;height:100%;border-radius:inherit;background:#1A5A97;transition:width .22s ease}
-    .quick-progress strong{min-width:72px;color:#64778a;font-size:11px;line-height:1;font-weight:900;text-align:right;text-transform:uppercase;letter-spacing:.04em}
+    .quick-progress strong{min-width:78px;color:#64778a;font-size:11px;line-height:1;font-weight:900;text-align:right;text-transform:uppercase;letter-spacing:.04em}
+    .quick-step{padding:0 38px 36px}
     .quick-step[hidden]{display:none!important}
-    .quick-step label{margin-bottom:0}
-    .quick-step label>span{font-size:13px}
-    .quick-step input,.quick-step select{min-height:54px;font-size:15px}
-    .quick-step-actions{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;margin-top:18px}
+    .quick-step label{display:block!important;margin:0!important}
+    .quick-step label>span{display:block!important;margin-bottom:9px!important;font-size:14px!important;line-height:1.35!important}
+    .quick-step input,.quick-step select{min-height:58px!important;padding-left:16px!important;padding-right:16px!important;font-size:15px!important}
+    .quick-step-actions{display:grid;grid-template-columns:104px minmax(0,1fr);gap:12px;align-items:center;margin-top:22px}
     .quick-step-actions-single{grid-template-columns:1fr}
-    .quick-step-actions .quote-submit{width:100%!important;margin:0!important;min-height:54px!important}
-    .quick-back{min-height:54px;padding:0 18px;border:1px solid #cdd9e4;border-radius:8px;background:#fff;color:#41566b;font:inherit;font-size:13px;font-weight:900;cursor:pointer}
+    .quick-step-actions .quote-submit{width:100%!important;margin:0!important;min-height:56px!important;padding:0 18px!important;font-size:14px!important;white-space:nowrap}
+    .quick-back{min-height:56px;padding:0 16px;border:1px solid #cdd9e4;border-radius:8px;background:#fff;color:#41566b;font:inherit;font-size:13px;font-weight:900;cursor:pointer}
     .quick-back:hover{background:#f5f8fb}
-    .quick-estimate-status{display:none;margin:14px 0 0;padding:12px 14px;border-radius:10px;font-size:13px;line-height:1.45;font-weight:800;text-align:center}
+    .quick-estimate-status{display:none;margin:0 38px 30px;padding:13px 15px;border-radius:10px;font-size:13px;line-height:1.45;font-weight:800;text-align:center}
 
     .seasonal-strip{background:#082f53;color:#fff;padding:24px 0}
     .seasonal-strip-inner{width:min(1080px,calc(100% - 40px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:28px}
@@ -81,13 +91,27 @@
     .seasonal-strip-cta{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:8px;background:#fff;color:#0e4f86;text-decoration:none;font-size:12px;font-weight:950;white-space:nowrap}
 
     @media(max-width:700px){
-      .quick-estimate-section{padding:34px 0 42px}
-      .quick-estimate-shell{width:calc(100% - 28px)}
-      .quick-estimate-heading h3{font-size:26px!important}
-      .quick-progress{margin-bottom:20px}
-      .quick-step-actions{grid-template-columns:94px 1fr}
+      .featured-review-section{padding:26px 0 18px!important}
+      .featured-review-inner{width:calc(100% - 32px)!important}
+      .featured-review-card{padding:17px 19px!important}
+      .featured-review-copy{font-size:14px!important;line-height:1.52!important}
+
+      .quick-estimate-section{padding:22px 0 52px}
+      .quick-estimate-shell{width:calc(100% - 32px)}
+      .quick-estimate-card{border-radius:16px!important}
+      .quick-estimate-heading{padding:26px 22px 23px!important}
+      .quick-estimate-heading h3{font-size:26px!important;line-height:1.12!important;margin-bottom:9px!important}
+      .quick-estimate-heading p{font-size:13px!important;line-height:1.55!important}
+      .quick-progress{display:block;margin:0 0 26px;padding:25px 22px 0}
+      .quick-progress strong{display:block;min-width:0;margin-top:10px;text-align:left;font-size:10px}
+      .quick-step{padding:0 22px 28px}
+      .quick-step label>span{margin-bottom:8px!important;font-size:13px!important}
+      .quick-step input,.quick-step select{min-height:56px!important;font-size:15px!important}
+      .quick-step-actions{grid-template-columns:92px minmax(0,1fr);gap:10px;margin-top:20px}
       .quick-step-actions-single{grid-template-columns:1fr}
-      .quick-back{padding:0 10px}
+      .quick-step-actions .quote-submit{min-height:54px!important;padding:0 12px!important;font-size:13px!important}
+      .quick-back{min-height:54px;padding:0 10px;font-size:12px}
+      .quick-estimate-status{margin:0 22px 24px}
       .seasonal-strip{padding:20px 0}
       .seasonal-strip-inner{width:calc(100% - 28px);display:block}
       .seasonal-strip-copy strong{font-size:17px}.seasonal-strip-copy span{font-size:12px}
@@ -167,8 +191,8 @@
       <div class="featured-review-inner">
         <article class="featured-review-card">
           <div class="featured-review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="featured-review-copy">“Loved every aspect of working with Jonathan. Straightforward pricing, no hidden surprises, friendly, and hard working. Made every aspect of our crawlspace nightmare easy to understand and went above and beyond to make it happen.”</p>
-          <div class="featured-review-footer"><strong>- Zach Auld</strong></div>
+          <p class="featured-review-copy">“Straightforward pricing, no hidden surprises, friendly, and hard working.”</p>
+          <div class="featured-review-footer"><strong>— Zach Auld</strong></div>
         </article>
       </div>
     </section>
@@ -178,9 +202,8 @@
         <div class="quote-form-wrap quick-estimate-card">
           <form class="quote-form quick-estimate-form" id="quickEstimateForm" novalidate>
             <div class="quote-form-heading quick-estimate-heading">
-              <span>FREE CLEANOUT ESTIMATE</span>
-              <h3>Tell us what needs cleaned out.</h3>
-              <p>Answer four quick questions. We’ll follow up to schedule your crawl-space inspection and estimate.</p>
+              <h3>Get Your Free Cleanout Estimate</h3>
+              <p>Tell us a few quick details and we’ll follow up to schedule your crawl-space inspection and estimate.</p>
             </div>
 
             <div class="quick-progress" aria-label="Estimate form progress">
@@ -215,7 +238,7 @@
                   <option value="Not Sure">Not sure yet</option>
                 </select>
               </label>
-              <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-estimate-submit" type="submit">Request My Free Estimate <span aria-hidden="true">→</span></button></div>
+              <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-estimate-submit" type="submit">Get My Free Estimate <span aria-hidden="true">→</span></button></div>
             </div>
 
             <div class="quick-estimate-status" id="quickEstimateStatus" role="status" aria-live="polite"></div>
