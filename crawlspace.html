@@ -54,24 +54,17 @@
     }
 
     /* Cleanout ad-page conversion upgrades */
-    .featured-review-section{padding:34px 0 26px!important}
-    .featured-review-inner{width:min(760px,calc(100% - 40px))!important;margin:0 auto!important}
-    .featured-review-card{padding:20px 26px!important;border-radius:14px!important}
-    .featured-review-stars{font-size:15px!important;line-height:1!important;margin-bottom:8px!important}
-    .featured-review-copy{font-size:16px!important;line-height:1.55!important;margin:0 0 9px!important}
-    .featured-review-footer{font-size:13px!important}
-
-    .quick-estimate-section{padding:34px 0 72px;background:#fff;border-bottom:1px solid #e3eaf1}
+    .quick-estimate-section{padding:38px 0 74px;background:#fff;border-bottom:1px solid #e3eaf1}
     .quick-estimate-shell{width:min(760px,calc(100% - 40px));margin:0 auto}
     .quick-estimate-card{width:100%;margin:0!important;padding:0!important;overflow:hidden;border-radius:18px!important}
     .quick-estimate-form{width:100%;padding:0!important}
     .quick-estimate-heading{margin:0!important;padding:34px 38px 30px!important;border-bottom:1px solid #dce6ef}
     .quick-estimate-heading h3{margin:0 0 10px!important;font-size:31px!important;line-height:1.12!important}
     .quick-estimate-heading p{max-width:610px!important;margin:0!important;font-size:14px!important;line-height:1.6!important}
-    .quick-progress{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:18px;margin:0 0 30px;padding:30px 38px 0}
-    .quick-progress-bar{height:6px;width:100%;overflow:hidden;border-radius:999px;background:#dbe6ef}
-    .quick-progress-bar>span{display:block;width:25%;height:100%;border-radius:inherit;background:#1A5A97;transition:width .22s ease}
-    .quick-progress strong{min-width:78px;color:#64778a;font-size:11px;line-height:1;font-weight:900;text-align:right;text-transform:uppercase;letter-spacing:.04em}
+    .quick-progress{margin:0 0 30px;padding:30px 38px 0}
+    .quick-progress-bar{display:block;box-sizing:border-box;height:11px;width:100%;padding:1px;overflow:hidden;border:1px solid #aebfce;border-radius:999px;background:#edf3f7;box-shadow:inset 0 1px 2px rgba(14,47,78,.08)}
+    .quick-progress-bar>span{display:block;width:25%;height:100%;border-radius:999px;background:#1A5A97;transition:width .22s ease}
+    .quick-progress-status{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
     .quick-step{padding:0 38px 36px}
     .quick-step[hidden]{display:none!important}
     .quick-step label{display:block!important;margin:0!important}
@@ -91,19 +84,14 @@
     .seasonal-strip-cta{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:8px;background:#fff;color:#0e4f86;text-decoration:none;font-size:12px;font-weight:950;white-space:nowrap}
 
     @media(max-width:700px){
-      .featured-review-section{padding:26px 0 18px!important}
-      .featured-review-inner{width:calc(100% - 32px)!important}
-      .featured-review-card{padding:17px 19px!important}
-      .featured-review-copy{font-size:14px!important;line-height:1.52!important}
-
-      .quick-estimate-section{padding:22px 0 52px}
+      .quick-estimate-section{padding:28px 0 54px}
       .quick-estimate-shell{width:calc(100% - 32px)}
       .quick-estimate-card{border-radius:16px!important}
-      .quick-estimate-heading{padding:26px 22px 23px!important}
+      .quick-estimate-heading{padding:28px 22px 25px!important}
       .quick-estimate-heading h3{font-size:26px!important;line-height:1.12!important;margin-bottom:9px!important}
       .quick-estimate-heading p{font-size:13px!important;line-height:1.55!important}
-      .quick-progress{display:block;margin:0 0 26px;padding:25px 22px 0}
-      .quick-progress strong{display:block;min-width:0;margin-top:10px;text-align:left;font-size:10px}
+      .quick-progress{margin:0 0 27px;padding:26px 22px 0}
+      .quick-progress-bar{height:11px}
       .quick-step{padding:0 22px 28px}
       .quick-step label>span{margin-bottom:8px!important;font-size:13px!important}
       .quick-step input,.quick-step select{min-height:56px!important;font-size:15px!important}
@@ -187,16 +175,6 @@
       </div>
     </section>
 
-    <section class="featured-review-section" aria-label="Customer review">
-      <div class="featured-review-inner">
-        <article class="featured-review-card">
-          <div class="featured-review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="featured-review-copy">“Straightforward pricing, no hidden surprises, friendly, and hard working.”</p>
-          <div class="featured-review-footer"><strong>— Zach Auld</strong></div>
-        </article>
-      </div>
-    </section>
-
     <section class="quick-estimate-section" aria-label="Free crawl space cleanout estimate">
       <div class="quick-estimate-shell">
         <div class="quote-form-wrap quick-estimate-card">
@@ -207,8 +185,8 @@
             </div>
 
             <div class="quick-progress" aria-label="Estimate form progress">
-              <span class="quick-progress-bar"><span id="quickProgressFill"></span></span>
-              <strong id="quickProgressText">Step 1 of 4</strong>
+              <span class="quick-progress-bar" aria-hidden="true"><span id="quickProgressFill"></span></span>
+              <span class="quick-progress-status" id="quickProgressText" aria-live="polite">Step 1 of 4</span>
             </div>
 
             <div class="quick-step is-active" data-step="1">
