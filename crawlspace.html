@@ -108,20 +108,22 @@
 
 
     /* Mobile cleanout landing-page flow. Desktop remains unchanged. */
+    .mobile-estimate-below-hero,
     .mobile-hero-estimate,
     .mobile-urgency-strip,
     .mobile-before-after,
     .mobile-problem-heading{display:none}
 
     @media(max-width:700px){
-      /* Hero: replace the two mobile CTAs with the estimate form. */
-      .hero{height:auto!important;min-height:0!important;overflow:visible!important;padding-bottom:0!important}
-      .hero-inner{height:auto!important;min-height:0!important;padding-bottom:34px!important}
+      /* Mobile hero ends after the headline/copy. The estimate is its own section below. */
+      .hero{height:auto!important;min-height:0!important;overflow:hidden!important;padding-bottom:0!important}
+      .hero-inner{height:auto!important;min-height:0!important;padding-bottom:28px!important}
       .hero-copy,.hero-copy-glass{overflow:visible!important}
       .hero-actions{display:none!important}
-      .mobile-hero-estimate{display:block!important;width:100%!important;margin-top:38px!important;padding:10px!important;box-sizing:border-box!important;border-radius:20px!important;background:#fff!important;box-shadow:0 18px 44px rgba(3,18,41,.28)!important}
+      .mobile-estimate-below-hero{display:block!important;background:#f4f7fa!important;padding:24px 16px 30px!important;border-bottom:1px solid #dce6ef!important}
+      .mobile-hero-estimate{display:block!important;width:100%!important;max-width:560px!important;margin:0 auto!important;padding:0!important;box-sizing:border-box!important;border-radius:18px!important;background:#fff!important;box-shadow:0 14px 36px rgba(3,18,41,.14)!important}
       .mobile-hero-estimate::before{display:none!important;content:none!important}
-      .mobile-hero-estimate .quick-estimate-card{width:100%!important;margin:0!important;overflow:hidden!important;border-radius:14px!important;background:#fff!important;color:#031229!important;border:1px solid #e3eaf1!important;box-shadow:none!important}
+      .mobile-hero-estimate .quick-estimate-card{width:100%!important;margin:0!important;overflow:hidden!important;border-radius:18px!important;background:#fff!important;color:#031229!important;border:1px solid #dce6ef!important;box-shadow:none!important}
       .mobile-hero-estimate .quick-estimate-form{width:100%!important;padding:0!important;background:#fff!important;color:#031229!important}
       .mobile-hero-estimate .quick-estimate-heading{padding:24px 20px 12px!important;border-bottom:1px solid #dce6ef!important;background:#fff!important;text-align:left!important}
       .mobile-hero-estimate .quick-estimate-heading h3{margin:0 0 8px!important;color:#031229!important;font-size:23px!important;line-height:1.12!important;font-weight:850!important;letter-spacing:-.025em!important}
@@ -185,10 +187,10 @@
       #why-us{background:#031229!important}
       .service-area-section{background:#fff!important}
 
-      /* Keep the urgency message inside the white before/after section. */
-      .mobile-before-after-urgency{margin:26px auto 0!important;max-width:340px!important;text-align:center!important;padding-top:22px!important;border-top:1px solid #dce6ef!important}
-      .mobile-before-after-urgency strong{display:block!important;margin:0!important;color:#031229!important;font-size:19px!important;line-height:1.15!important;font-weight:900!important;letter-spacing:-.025em!important}
-      .mobile-before-after-urgency p{margin:8px auto 0!important;max-width:320px!important;color:#526777!important;font-size:12.5px!important;line-height:1.45!important;font-weight:600!important}
+      /* Eye-catching wet-season urgency callout. */
+      .mobile-before-after-urgency{margin:28px auto 0!important;max-width:360px!important;box-sizing:border-box!important;text-align:center!important;padding:22px 18px 23px!important;border:1px solid rgba(255,255,255,.16)!important;border-radius:16px!important;background:#0B5D9B!important;box-shadow:0 12px 28px rgba(3,18,41,.16)!important}
+      .mobile-before-after-urgency strong{display:block!important;margin:0!important;color:#fff!important;font-size:20px!important;line-height:1.12!important;font-weight:900!important;letter-spacing:-.025em!important}
+      .mobile-before-after-urgency p{margin:9px auto 0!important;max-width:320px!important;color:rgba(255,255,255,.88)!important;font-size:12.5px!important;line-height:1.45!important;font-weight:650!important}
 
       /* White process section: force readable dark copy throughout. */
       #diagnosis,#diagnosis .diagnosis-inner,#diagnosis .diagnosis-process{color:#031229!important}
@@ -217,7 +219,7 @@
 
       /* Final mobile consistency pass. */
       .hero-shade{display:none!important;opacity:0!important;background:transparent!important}
-      .hero-copy-glass>h1{margin-bottom:22px!important}
+      .hero-copy-glass>h1{margin-bottom:18px!important}
       .hero-copy-glass>h1,.hero-copy-glass>h1 span{ text-shadow:0 2px 16px rgba(3,18,41,.62)!important }
       .hero-copy-glass>h1{color:#fff!important;-webkit-text-fill-color:#fff!important}
       .hero-copy-glass>h1 span{color:#8ACDFF!important;-webkit-text-fill-color:#8ACDFF!important}
@@ -344,54 +346,57 @@
               <a class="hero-btn hero-btn-secondary" href="tel:3604704956">Call / Text (360) 470-4956</a>
             </div>
 
-            <div class="mobile-hero-estimate" aria-label="Free crawl space cleanout estimate">
-              <div class="quote-form-wrap quick-estimate-card">
-                <form class="quote-form quick-estimate-form" id="mobileHeroEstimateForm" novalidate>
-                  <div class="quote-form-heading quick-estimate-heading">
-                    <h3>Get Your Free Cleanout Estimate</h3>
-                    <p>Tell us a few quick details and we’ll follow up to schedule your crawl-space inspection and estimate.</p>
-                  </div>
-
-                  <div class="quick-progress" aria-label="Estimate form progress">
-                    <span class="quick-progress-bar" aria-hidden="true"><span id="mobileQuickProgressFill"></span></span>
-                    <span class="quick-progress-status" id="mobileQuickProgressText" aria-live="polite">Step 1 of 4</span>
-                  </div>
-
-                  <div class="quick-step is-active" data-step="1">
-                    <label><span>What’s your name?</span><input type="text" name="name" autocomplete="name" placeholder="Your name" required></label>
-                    <div class="quick-step-actions quick-step-actions-single"><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
-                  </div>
-
-                  <div class="quick-step" data-step="2" hidden>
-                    <label><span>What’s the best phone number to reach you?</span><input type="tel" name="phone" autocomplete="tel" placeholder="(360) 555-0123" required></label>
-                    <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
-                  </div>
-
-                  <div class="quick-step" data-step="3" hidden>
-                    <label><span>What’s the ZIP code for the property?</span><input type="text" name="location" inputmode="numeric" autocomplete="postal-code" placeholder="98632" required></label>
-                    <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
-                  </div>
-
-                  <div class="quick-step" data-step="4" hidden>
-                    <label><span>What do you need cleaned out?</span>
-                      <select name="problem" required>
-                        <option value="">Select the closest match</option>
-                        <option value="Old or Dirty Insulation">Old or dirty insulation</option>
-                        <option value="Old or Torn Vapor Barrier">Old or torn vapor barrier</option>
-                        <option value="Rodent Mess or Contamination">Rodent mess or contamination</option>
-                        <option value="Crawl Space Debris and Buildup">Debris and years of buildup</option>
-                        <option value="Complete Crawl Space Cleanout">Complete crawl space cleanout</option>
-                        <option value="Not Sure">Not sure yet</option>
-                      </select>
-                    </label>
-                    <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-estimate-submit" type="submit">Get My Free Estimate <span aria-hidden="true">→</span></button></div>
-                  </div>
-
-                  <div class="quick-estimate-status" id="mobileQuickEstimateStatus" role="status" aria-live="polite"></div>
-                </form>
-              </div>
-            </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mobile-estimate-below-hero" aria-label="Free crawl space cleanout estimate">
+      <div class="mobile-hero-estimate" aria-label="Free crawl space cleanout estimate">
+        <div class="quote-form-wrap quick-estimate-card">
+          <form class="quote-form quick-estimate-form" id="mobileHeroEstimateForm" novalidate>
+            <div class="quote-form-heading quick-estimate-heading">
+              <h3>Get Your Free Cleanout Estimate</h3>
+              <p>Tell us a few quick details and we’ll follow up to schedule your crawl-space inspection and estimate.</p>
+            </div>
+
+            <div class="quick-progress" aria-label="Estimate form progress">
+              <span class="quick-progress-bar" aria-hidden="true"><span id="mobileQuickProgressFill"></span></span>
+              <span class="quick-progress-status" id="mobileQuickProgressText" aria-live="polite">Step 1 of 4</span>
+            </div>
+
+            <div class="quick-step is-active" data-step="1">
+              <label><span>What’s your name?</span><input type="text" name="name" autocomplete="name" placeholder="Your name" required></label>
+              <div class="quick-step-actions quick-step-actions-single"><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
+            </div>
+
+            <div class="quick-step" data-step="2" hidden>
+              <label><span>What’s the best phone number to reach you?</span><input type="tel" name="phone" autocomplete="tel" placeholder="(360) 555-0123" required></label>
+              <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
+            </div>
+
+            <div class="quick-step" data-step="3" hidden>
+              <label><span>What’s the ZIP code for the property?</span><input type="text" name="location" inputmode="numeric" autocomplete="postal-code" placeholder="98632" required></label>
+              <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
+            </div>
+
+            <div class="quick-step" data-step="4" hidden>
+              <label><span>What do you need cleaned out?</span>
+                <select name="problem" required>
+                  <option value="">Select the closest match</option>
+                  <option value="Old or Dirty Insulation">Old or dirty insulation</option>
+                  <option value="Old or Torn Vapor Barrier">Old or torn vapor barrier</option>
+                  <option value="Rodent Mess or Contamination">Rodent mess or contamination</option>
+                  <option value="Crawl Space Debris and Buildup">Debris and years of buildup</option>
+                  <option value="Complete Crawl Space Cleanout">Complete crawl space cleanout</option>
+                  <option value="Not Sure">Not sure yet</option>
+                </select>
+              </label>
+              <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-estimate-submit" type="submit">Get My Free Estimate <span aria-hidden="true">→</span></button></div>
+            </div>
+
+            <div class="quick-estimate-status" id="mobileQuickEstimateStatus" role="status" aria-live="polite"></div>
+          </form>
         </div>
       </div>
     </section>
@@ -597,3 +602,592 @@
     </section>
 
     <section class="why-section why-reference-layout" id="why-us" aria-labelledby="whyHeading">
+      <div class="why-inner why-reference-inner promise-reference-inner">
+        <div class="why-reference-copy promise-reference-copy">
+          <p class="why-eyebrow">WHY CRAWL SPACE PROS</p>
+          <h2 id="whyHeading">A cleanout without <span>the runaround.</span></h2>
+
+          <div class="why-reference-list promise-reference-list">
+            <article class="why-reference-item"><div class="why-reference-icon" aria-hidden="true"><img class="promise-icon-img" src="family-icon-white.webp" alt=""></div><div><h3>Family Owned</h3><p>We treat your home like our own and keep the process straightforward.</p></div></article>
+            <article class="why-reference-item"><div class="why-reference-icon" aria-hidden="true"><img class="promise-icon-img" src="pricing-icon-white.webp" alt=""></div><div><h3>Honest &amp; Fair Pricing</h3><p>You get a clear estimate before deciding to move forward.</p></div></article>
+            <article class="why-reference-item"><div class="why-reference-icon" aria-hidden="true"><img class="promise-icon-img" src="workmanship-icon-white.webp" alt=""></div><div><h3>Complete Cleanout</h3><p>We focus on getting the old material, debris, and mess out of the crawl space.</p></div></article>
+            <article class="why-reference-item"><div class="why-reference-icon" aria-hidden="true"><img class="promise-icon-img" src="handshake-icon-white.webp" alt=""></div><div><h3>Clear Communication</h3><p>We show up, explain the scope, and keep you informed throughout the job.</p></div></article>
+            <article class="why-reference-item"><div class="why-reference-icon" aria-hidden="true"><img class="promise-icon-img" src="local-service-icon-white.webp" alt=""></div><div><h3>Direct Local Service</h3><p>A small independent company serving homeowners across Southwest Washington.</p></div></article>
+            <article class="why-reference-item"><div class="why-reference-icon" aria-hidden="true"><img class="promise-icon-img" src="cause-icon-white.webp" alt=""></div><div><h3>Inspect First</h3><p>We look underneath the home before recommending what actually needs to be removed.</p></div></article>
+            <article class="why-reference-item"><div class="why-reference-icon" aria-hidden="true"><img class="promise-icon-img" src="license-icon-white.webp" alt=""></div><div><h3>Licensed, Bonded &amp; Insured</h3><p>Professional work with the proper coverage behind it.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-area-section" aria-labelledby="serviceAreaHeading">
+      <div class="service-area-inner">
+        <div class="service-area-copy">
+          <h2 id="serviceAreaHeading">Crawl space cleanouts across <span>Southwest Washington.</span></h2>
+          <p class="service-area-places">Longview • Kelso • Castle Rock • Camas • Vancouver • surrounding Southwest Washington communities</p>
+        </div>
+        <div class="service-area-visual">
+          <div class="service-area-map-placeholder">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1384362.9813303542!2d-120.48435068011459!3d47.58681922257448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485e5ffe7c3b0f9%3A0x944278686c5ff3ba!2sWashington!5e0!3m2!1sen!2sus!4v1786920325181!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-help-strip" aria-label="Crawl space cleanout help">
+      <div class="project-help-inner">
+        <div class="project-help-copy">
+          <strong>Ready to get the crawl space cleaned out?</strong>
+          <span>Call or text us and we’ll schedule a free estimate to see what needs to come out.</span>
+        </div>
+        <a class="project-help-phone" href="tel:3604704956">Call / Text (360) 470-4956</a>
+      </div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="aboutHeading">
+      <div class="about-inner">
+        <div class="about-copy">
+          <h2 id="aboutHeading">Our <span>Promise.</span></h2>
+          <p class="about-lead desktop-about-lead">We promise to treat your home like our own, do the job right, and always treat you with honesty and respect. We believe quality work should come at a reasonable price, and that doing business the right way still matters.</p>
+          <p class="about-lead mobile-about-lead">We promise to treat your home like our own, do the job right, and always treat you with honesty and respect. We believe quality work should come at a reasonable price, and that doing business the right way still matters.</p>
+          <p class="about-lead">Thank you for trusting our family with yours.</p>
+
+          <div class="about-points">
+            <div class="about-point"><div class="why-reference-icon" aria-hidden="true"><img class="promise-icon-img" src="workmanship-icon-white.webp" alt=""></div><div class="about-point-copy"><strong>10+ Years</strong><span>Experience</span></div></div>
+            <div class="about-point"><div class="why-reference-icon" aria-hidden="true"><img class="promise-icon-img" src="local-service-icon-white.webp" alt=""></div><div class="about-point-copy"><strong>Local</strong><span>Southwest Washington</span></div></div>
+            <div class="about-point"><div class="why-reference-icon" aria-hidden="true"><img class="promise-icon-img" src="handshake-icon-white.webp" alt=""></div><div class="about-point-copy"><strong>Direct</strong><span>Communication</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews-section" id="reviews" aria-labelledby="reviewsHeading">
+      <div class="reviews-inner">
+        <div class="reviews-heading">
+          <p class="reviews-eyebrow">HOMEOWNER FEEDBACK</p>
+          <h2 id="reviewsHeading">What homeowners <span>say about the work.</span></h2>
+        </div>
+        <div class="reviews-scroller-shell">
+          <button class="reviews-arrow reviews-arrow-prev" type="button" aria-label="Previous reviews"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="reviews-grid" id="reviewsScroller">
+            <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“I feel very happy and pleased with the work Jon did under my house. He cleaned up the entire crawl space!! Jon is hard working and I would recommend him highly.”</blockquote><footer><strong>Henry Rettinger</strong><span>Google Review</span></footer></article>
+            <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Fast, affordable, and friendly. Add to that they did a fantastic job. Would definitely be referring them to friends and family. Good job guys!!”</blockquote><footer><strong>Bobby Shaffer</strong><span>Google Review</span></footer></article>
+            <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Jon did an excellent job working in the crawl space under my home. And also did an outstanding job putting screens to thwart the kitties from setting up there again. Thank you, Jon!”</blockquote><footer><strong>JoAnne Baker</strong><span>Google Review</span></footer></article>
+            <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Loved every aspect of working with Jonathan. Straightforward pricing, no hidden surprises, friendly, and hard working. Made every aspect of our crawlspace nightmare easy to understand and went above and beyond to make it happen.”</blockquote><footer><strong>Zach Auld</strong><span>Google Review</span></footer></article>
+          </div>
+          <button class="reviews-arrow reviews-arrow-next" type="button" aria-label="Next reviews"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="seasonal-strip" aria-label="Seasonal crawl space cleanout reminder">
+      <div class="seasonal-strip-inner">
+        <div class="seasonal-strip-copy">
+          <strong>Get ahead of Southwest Washington’s wetter months.</strong>
+          <span>Fall is a smart time to clear out old insulation, damaged plastic, rodent debris, and years of buildup before the wetter part of the year settles in.</span>
+        </div>
+        <a class="seasonal-strip-cta" href="#quote">Schedule My Free Estimate</a>
+      </div>
+    </section>
+
+    <section class="quote-section" id="quote" aria-labelledby="quoteHeading">
+      <div class="quote-inner">
+        <div class="quote-copy">
+          <p class="quote-eyebrow">FREE CLEANOUT ESTIMATE</p>
+          <h2 id="quoteHeading">Let’s get the mess <span>out from under your home.</span></h2>
+          <p>Tell us what needs to be cleaned out and the best way to reach you. We’ll take a look, explain the scope, and give you a straightforward estimate before you decide.</p>
+          <div class="quote-contact"><span>Prefer to call or text?</span><a href="tel:3604704956">(360) 470-4956</a></div>
+        </div>
+
+        <div class="quote-form-wrap mobile-bottom-estimate" aria-label="Free crawl space cleanout estimate">
+          <form class="quote-form quick-estimate-form" id="mobileBottomEstimateForm" novalidate>
+            <div class="quote-form-heading quick-estimate-heading">
+              <h3>Get Your Free Cleanout Estimate</h3>
+              <p>Tell us a few quick details and we’ll follow up to schedule your crawl-space inspection and estimate.</p>
+            </div>
+
+            <div class="quick-progress" aria-label="Estimate form progress">
+              <span class="quick-progress-bar" aria-hidden="true"><span id="bottomQuickProgressFill"></span></span>
+              <span class="quick-progress-status" id="bottomQuickProgressText" aria-live="polite">Step 1 of 4</span>
+            </div>
+
+            <div class="quick-step is-active" data-step="1">
+              <label><span>What’s your name?</span><input type="text" name="name" autocomplete="name" placeholder="Your name" required></label>
+              <div class="quick-step-actions quick-step-actions-single"><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
+            </div>
+
+            <div class="quick-step" data-step="2" hidden>
+              <label><span>What’s the best phone number to reach you?</span><input type="tel" name="phone" autocomplete="tel" placeholder="(360) 555-0123" required></label>
+              <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
+            </div>
+
+            <div class="quick-step" data-step="3" hidden>
+              <label><span>What’s the ZIP code for the property?</span><input type="text" name="location" inputmode="numeric" autocomplete="postal-code" placeholder="98632" required></label>
+              <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
+            </div>
+
+            <div class="quick-step" data-step="4" hidden>
+              <label><span>What do you need cleaned out?</span>
+                <select name="problem" required>
+                  <option value="">Select the closest match</option>
+                  <option value="Old or Dirty Insulation">Old or dirty insulation</option>
+                  <option value="Old or Torn Vapor Barrier">Old or torn vapor barrier</option>
+                  <option value="Rodent Mess or Contamination">Rodent mess or contamination</option>
+                  <option value="Crawl Space Debris and Buildup">Debris and years of buildup</option>
+                  <option value="Complete Crawl Space Cleanout">Complete crawl space cleanout</option>
+                  <option value="Not Sure">Not sure yet</option>
+                </select>
+              </label>
+              <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-estimate-submit" type="submit">Get My Free Estimate <span aria-hidden="true">→</span></button></div>
+            </div>
+
+            <div class="quick-estimate-status" id="bottomQuickEstimateStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <div class="quote-form-wrap desktop-original-quote-form">
+          <form class="quote-form" id="quoteForm">
+            <div class="quote-form-heading"><span>FREE ESTIMATE</span><h3>Tell us what needs cleaned out.</h3><p>Leave your contact information and pick the closest match.</p></div>
+            <div class="quote-field-grid"><label><span>Name</span><input type="text" name="name" autocomplete="name" placeholder="Your name" required></label><label><span>Phone</span><input type="tel" name="phone" autocomplete="tel" placeholder="(360) 555-0123" required></label></div>
+            <div class="quote-field-grid"><label><span>Email</span><input type="email" name="email" autocomplete="email" placeholder="you@example.com"></label><label><span>City / ZIP</span><input type="text" name="location" autocomplete="postal-code" placeholder="Longview, WA"></label></div>
+            <label><span>What needs to be cleaned out?</span>
+              <select name="problem" id="quoteProblem">
+                <option value="">Select the closest match</option>
+                <option value="Old or Dirty Insulation">Old or dirty insulation</option>
+                <option value="Old or Torn Vapor Barrier">Old or torn vapor barrier</option>
+                <option value="Rodent Mess or Contamination">Rodent mess or contamination</option>
+                <option value="Crawl Space Debris and Buildup">Debris and years of buildup</option>
+                <option value="Complete Crawl Space Cleanout">Complete crawl space cleanout</option>
+                <option value="Not Sure">Not sure</option>
+              </select>
+            </label>
+            <label><span>Anything else we should know?</span><textarea name="message" rows="5" placeholder="Tell us what you found under the home or what you want removed."></textarea></label>
+            <button type="submit" class="quote-submit" style="margin-top:18px;">Request My Free Cleanout Estimate <span aria-hidden="true">→</span></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-labelledby="faqHeading">
+      <div class="faq-inner">
+        <div class="faq-heading"><h2 id="faqHeading">Crawl Space Cleanout <span>Questions.</span></h2></div>
+        <div class="faq-list">
+          <details class="faq-item"><summary><span>What does a crawl space cleanout include?</span><span class="faq-plus" aria-hidden="true">+</span></summary><div class="faq-answer"><p>The exact scope depends on what is under your home. Cleanouts can include removing old or damaged insulation, old vapor barrier, rodent debris, construction debris, and other unwanted material from the crawl space.</p></div></details>
+          <details class="faq-item"><summary><span>Do you haul the old material away?</span><span class="faq-plus" aria-hidden="true">+</span></summary><div class="faq-answer"><p>Yes. The goal of the cleanout is to remove the unwanted material from underneath the home and haul it away as part of the agreed scope.</p></div></details>
+          <details class="faq-item"><summary><span>Do I need to know exactly what needs removed?</span><span class="faq-plus" aria-hidden="true">+</span></summary><div class="faq-answer"><p>No. We can inspect the crawl space, show you what we found, and explain what should be included in the cleanout before you decide how to move forward.</p></div></details>
+          <details class="faq-item"><summary><span>Can you remove old insulation and vapor barrier?</span><span class="faq-plus" aria-hidden="true">+</span></summary><div class="faq-answer"><p>Yes. Old insulation and vapor barrier removal are common parts of crawl space cleanout work.</p></div></details>
+          <details class="faq-item"><summary><span>Do you offer free estimates?</span><span class="faq-plus" aria-hidden="true">+</span></summary><div class="faq-answer"><p>Yes. We can inspect the crawl space and give you an estimate before you decide whether to move forward.</p></div></details>
+          <details class="faq-item"><summary><span>What areas do you serve?</span><span class="faq-plus" aria-hidden="true">+</span></summary><div class="faq-answer"><p>We serve homeowners across Southwest Washington, including Longview, Kelso, Castle Rock, Camas, Vancouver, and nearby communities.</p></div></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <a class="footer-logo-wrap" href="/" aria-label="Crawl Space Pros home">
+        <img src="https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/Crawlspace-Logo-01.webp" alt="Crawl Space Pros" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/b9c34fec-3561-472c-8195-e6789ea01a0d.png';">
+      </a>
+
+      <div class="footer-center">
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#hero">Cleanouts</a>
+          <a href="#problems">What We Remove</a>
+          <a href="#diagnosis">How It Works</a>
+          <a href="#projects">Projects</a>
+          <a href="#why-us">Why Us</a>
+        </nav>
+        <div class="footer-legal" aria-label="Legal pages">
+          <a href="privacy.html">Privacy</a>
+          <a href="accessibility.html">Accessibility</a>
+          <a href="policy.html">Policy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+
+      <div class="footer-action">
+        <span>Free Cleanout Estimates</span>
+        <a class="footer-phone" href="tel:3604704956">(360) 470-4956</a>
+        <a class="footer-quote" href="#quote">Get Estimate</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Crawlspace Pros</span>
+      <span>Longview • Kelso • Southwest Washington</span>
+      <span class="footer-credit">Made by <a href="https://kumpulamarketing.co" target="_blank" rel="noopener">KumpulaMarketing.co</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (() => {
+      const form = document.getElementById('quickEstimateForm');
+      const status = document.getElementById('quickEstimateStatus');
+      if (!form || !status) return;
+
+      const endpoint = 'https://script.google.com/macros/s/AKfycbzm5ZaVzeXJXtDjgMX0DtcKd3st0myj5Rp7qGQtQY_wu3lmVjb3Hvu2S7Si9OJXe9RR/exec';
+      const steps = Array.from(form.querySelectorAll('.quick-step'));
+      const progressFill = document.getElementById('quickProgressFill');
+      const progressText = document.getElementById('quickProgressText');
+      const submitButton = form.querySelector('.quick-estimate-submit');
+      const originalSubmitHtml = submitButton.innerHTML;
+      let currentStep = 0;
+
+      function showStep(index) {
+        currentStep = Math.max(0, Math.min(index, steps.length - 1));
+        steps.forEach((step, i) => {
+          const active = i === currentStep;
+          step.hidden = !active;
+          step.classList.toggle('is-active', active);
+        });
+        const pct = ((currentStep + 1) / steps.length) * 100;
+        progressFill.style.width = pct + '%';
+        progressText.textContent = `Step ${currentStep + 1} of ${steps.length}`;
+        const field = steps[currentStep].querySelector('input, select');
+        if (field) window.setTimeout(() => field.focus({ preventScroll: true }), 60);
+      }
+
+      function validateCurrentStep() {
+        const field = steps[currentStep].querySelector('input, select');
+        if (!field) return true;
+        if (!field.checkValidity()) {
+          field.reportValidity();
+          return false;
+        }
+        return true;
+      }
+
+      form.querySelectorAll('.quick-next').forEach((button) => {
+        button.addEventListener('click', () => {
+          if (!validateCurrentStep()) return;
+          showStep(currentStep + 1);
+        });
+      });
+
+      form.querySelectorAll('.quick-back').forEach((button) => {
+        button.addEventListener('click', () => showStep(currentStep - 1));
+      });
+
+      form.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' || currentStep === steps.length - 1) return;
+        event.preventDefault();
+        if (validateCurrentStep()) showStep(currentStep + 1);
+      });
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (!validateCurrentStep()) return;
+        if (form.dataset.submitting === 'true') return;
+
+        form.dataset.submitting = 'true';
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+        status.style.display = 'none';
+
+        try {
+          const data = new FormData(form);
+          data.append('message', 'Multi-step cleanout estimate form from crawlspace.html');
+          const payload = new URLSearchParams();
+          data.forEach((value, key) => payload.append(key, String(value)));
+
+          await fetch(endpoint, { method: 'POST', mode: 'no-cors', body: payload });
+          form.reset();
+          showStep(0);
+          status.textContent = 'Thanks — your cleanout estimate request was sent. We’ll be in touch soon.';
+          status.style.display = 'block';
+          status.style.background = '#eaf7ef';
+          status.style.border = '1px solid #b8e0c5';
+          status.style.color = '#176336';
+          submitButton.innerHTML = 'Request Sent ✓';
+          window.setTimeout(() => { submitButton.innerHTML = originalSubmitHtml; }, 3500);
+        } catch (error) {
+          status.textContent = 'Something went wrong. Please call or text (360) 470-4956.';
+          status.style.display = 'block';
+          status.style.background = '#fff0f0';
+          status.style.border = '1px solid #f0b8b8';
+          status.style.color = '#9f2424';
+          submitButton.innerHTML = originalSubmitHtml;
+        } finally {
+          form.dataset.submitting = 'false';
+          submitButton.disabled = false;
+        }
+      });
+
+      showStep(0);
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const form = document.getElementById('mobileHeroEstimateForm');
+      const status = document.getElementById('mobileQuickEstimateStatus');
+      if (!form || !status) return;
+
+      const endpoint = 'https://script.google.com/macros/s/AKfycbzm5ZaVzeXJXtDjgMX0DtcKd3st0myj5Rp7qGQtQY_wu3lmVjb3Hvu2S7Si9OJXe9RR/exec';
+      const steps = Array.from(form.querySelectorAll('.quick-step'));
+      const progressFill = document.getElementById('mobileQuickProgressFill');
+      const progressText = document.getElementById('mobileQuickProgressText');
+      const submitButton = form.querySelector('.quick-estimate-submit');
+      const originalSubmitHtml = submitButton.innerHTML;
+      let currentStep = 0;
+
+      function showStep(index) {
+        currentStep = Math.max(0, Math.min(index, steps.length - 1));
+        steps.forEach((step, i) => {
+          const active = i === currentStep;
+          step.hidden = !active;
+          step.classList.toggle('is-active', active);
+        });
+        progressFill.style.width = (((currentStep + 1) / steps.length) * 100) + '%';
+        progressText.textContent = `Step ${currentStep + 1} of ${steps.length}`;
+      }
+
+      function validateCurrentStep() {
+        const field = steps[currentStep].querySelector('input, select');
+        if (!field) return true;
+        if (!field.checkValidity()) {
+          field.reportValidity();
+          return false;
+        }
+        return true;
+      }
+
+      form.querySelectorAll('.quick-next').forEach((button) => {
+        button.addEventListener('click', () => {
+          if (validateCurrentStep()) showStep(currentStep + 1);
+        });
+      });
+
+      form.querySelectorAll('.quick-back').forEach((button) => {
+        button.addEventListener('click', () => showStep(currentStep - 1));
+      });
+
+      form.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' || currentStep === steps.length - 1) return;
+        event.preventDefault();
+        if (validateCurrentStep()) showStep(currentStep + 1);
+      });
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (!validateCurrentStep() || form.dataset.submitting === 'true') return;
+
+        form.dataset.submitting = 'true';
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+        status.style.display = 'none';
+
+        try {
+          const data = new FormData(form);
+          data.append('message', 'Multi-step cleanout estimate form from the mobile hero on crawlspace.html');
+          const payload = new URLSearchParams();
+          data.forEach((value, key) => payload.append(key, String(value)));
+
+          await fetch(endpoint, { method: 'POST', mode: 'no-cors', body: payload });
+          form.reset();
+          showStep(0);
+          status.textContent = 'Thanks — your cleanout estimate request was sent. We’ll be in touch soon.';
+          status.style.display = 'block';
+          status.style.background = '#eaf7ef';
+          status.style.border = '1px solid #b8e0c5';
+          status.style.color = '#176336';
+          submitButton.innerHTML = 'Request Sent ✓';
+          window.setTimeout(() => { submitButton.innerHTML = originalSubmitHtml; }, 3500);
+        } catch (error) {
+          status.textContent = 'Something went wrong. Please call or text (360) 470-4956.';
+          status.style.display = 'block';
+          status.style.background = '#fff0f0';
+          status.style.border = '1px solid #f0b8b8';
+          status.style.color = '#9f2424';
+          submitButton.innerHTML = originalSubmitHtml;
+        } finally {
+          form.dataset.submitting = 'false';
+          submitButton.disabled = false;
+        }
+      });
+
+      showStep(0);
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const form = document.getElementById('mobileBottomEstimateForm');
+      const status = document.getElementById('bottomQuickEstimateStatus');
+      if (!form || !status) return;
+
+      const endpoint = 'https://script.google.com/macros/s/AKfycbzm5ZaVzeXJXtDjgMX0DtcKd3st0myj5Rp7qGQtQY_wu3lmVjb3Hvu2S7Si9OJXe9RR/exec';
+      const steps = Array.from(form.querySelectorAll('.quick-step'));
+      const progressFill = document.getElementById('bottomQuickProgressFill');
+      const progressText = document.getElementById('bottomQuickProgressText');
+      const submitButton = form.querySelector('.quick-estimate-submit');
+      const originalSubmitHtml = submitButton.innerHTML;
+      let currentStep = 0;
+
+      function showStep(index) {
+        currentStep = Math.max(0, Math.min(index, steps.length - 1));
+        steps.forEach((step, i) => {
+          const active = i === currentStep;
+          step.hidden = !active;
+          step.classList.toggle('is-active', active);
+        });
+        progressFill.style.width = (((currentStep + 1) / steps.length) * 100) + '%';
+        progressText.textContent = `Step ${currentStep + 1} of ${steps.length}`;
+      }
+
+      function validateCurrentStep() {
+        const field = steps[currentStep].querySelector('input, select');
+        if (!field) return true;
+        if (!field.checkValidity()) {
+          field.reportValidity();
+          return false;
+        }
+        return true;
+      }
+
+      form.querySelectorAll('.quick-next').forEach((button) => {
+        button.addEventListener('click', () => {
+          if (validateCurrentStep()) showStep(currentStep + 1);
+        });
+      });
+
+      form.querySelectorAll('.quick-back').forEach((button) => {
+        button.addEventListener('click', () => showStep(currentStep - 1));
+      });
+
+      form.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' || currentStep === steps.length - 1) return;
+        event.preventDefault();
+        if (validateCurrentStep()) showStep(currentStep + 1);
+      });
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (!validateCurrentStep() || form.dataset.submitting === 'true') return;
+
+        form.dataset.submitting = 'true';
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+        status.style.display = 'none';
+
+        try {
+          const data = new FormData(form);
+          data.append('message', 'Multi-step cleanout estimate form from the mobile bottom CTA on crawlspace.html');
+          const payload = new URLSearchParams();
+          data.forEach((value, key) => payload.append(key, String(value)));
+
+          await fetch(endpoint, { method: 'POST', mode: 'no-cors', body: payload });
+          form.reset();
+          showStep(0);
+          status.textContent = 'Thanks — your cleanout estimate request was sent. We’ll be in touch soon.';
+          status.style.display = 'block';
+          status.style.background = '#eaf7ef';
+          status.style.border = '1px solid #b8e0c5';
+          status.style.color = '#176336';
+          submitButton.innerHTML = 'Request Sent ✓';
+          window.setTimeout(() => { submitButton.innerHTML = originalSubmitHtml; }, 3500);
+        } catch (error) {
+          status.textContent = 'Something went wrong. Please call or text (360) 470-4956.';
+          status.style.display = 'block';
+          status.style.background = '#fff0f0';
+          status.style.border = '1px solid #f0b8b8';
+          status.style.color = '#9f2424';
+          submitButton.innerHTML = originalSubmitHtml;
+        } finally {
+          form.dataset.submitting = 'false';
+          submitButton.disabled = false;
+        }
+      });
+
+      showStep(0);
+    })();
+  </script>
+
+  <script>
+    /* Mobile review carousel: use a stable card index instead of DOM reordering.
+       This avoids the forward arrow bouncing between the same two positions. */
+    (() => {
+      function initStableMobileReviews() {
+        if (!window.matchMedia('(max-width: 700px)').matches) return;
+
+        const scroller = document.getElementById('reviewsScroller');
+        const oldPrev = document.querySelector('.reviews-arrow-prev');
+        const oldNext = document.querySelector('.reviews-arrow-next');
+        if (!scroller || !oldPrev || !oldNext) return;
+        /* Cloning strips the looping listeners attached by the inherited script. */
+        const prev = oldPrev.cloneNode(true);
+        const next = oldNext.cloneNode(true);
+        oldPrev.replaceWith(prev);
+        oldNext.replaceWith(next);
+
+        scroller.dataset.stableMobileReviews = 'true';
+        let index = 0;
+
+        function cards() {
+          return Array.from(scroller.querySelectorAll('.review-card'));
+        }
+
+        function goTo(nextIndex) {
+          const list = cards();
+          if (!list.length) return;
+
+          index = (nextIndex + list.length) % list.length;
+          const card = list[index];
+          const baseOffset = list[0].offsetLeft;
+          scroller.scrollTo({
+            left: card.offsetLeft - baseOffset,
+            behavior: 'smooth'
+          });
+        }
+
+        next.addEventListener('click', (event) => {
+          event.preventDefault();
+          goTo(index + 1);
+        });
+
+        prev.addEventListener('click', (event) => {
+          event.preventDefault();
+          goTo(index - 1);
+        });
+
+        /* If the homeowner swipes manually, make the next arrow continue
+           from the card nearest the viewport instead of jumping backward. */
+        let scrollTimer;
+        scroller.addEventListener('scroll', () => {
+          window.clearTimeout(scrollTimer);
+          scrollTimer = window.setTimeout(() => {
+            const list = cards();
+            if (!list.length) return;
+            let nearest = 0;
+            let nearestDistance = Infinity;
+            list.forEach((card, i) => {
+              const baseOffset = list[0].offsetLeft;
+              const distance = Math.abs((card.offsetLeft - baseOffset) - scroller.scrollLeft);
+              if (distance < nearestDistance) {
+                nearestDistance = distance;
+                nearest = i;
+              }
+            });
+            index = nearest;
+          }, 100);
+        }, { passive: true });
+      }
+
+      function runReviewFixPasses() {
+        /* Run twice so even a late-loading inherited script cannot reattach
+           the old looping handlers after this fix. */
+        window.setTimeout(initStableMobileReviews, 120);
+        window.setTimeout(initStableMobileReviews, 1200);
+      }
+
+      if (document.readyState === 'complete') {
+        runReviewFixPasses();
+      } else {
+        window.addEventListener('load', runReviewFixPasses, { once: true });
+      }
+    })();
+  </script>
+
+</body>
+</html>
