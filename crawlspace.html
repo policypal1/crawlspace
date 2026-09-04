@@ -62,7 +62,7 @@
     .quick-estimate-heading h3{margin:0 0 10px!important;font-size:31px!important;line-height:1.12!important}
     .quick-estimate-heading p{max-width:610px!important;margin:0!important;font-size:14px!important;line-height:1.6!important}
     .quick-progress{margin:0 0 30px;padding:30px 38px 0}
-    .quick-progress-bar{display:block;box-sizing:border-box;height:11px;width:100%;padding:1px;overflow:hidden;border:1px solid #aebfce;border-radius:999px;background:#edf3f7;box-shadow:inset 0 1px 2px rgba(14,47,78,.08)}
+    .quick-progress-bar;display:block;box-sizing:border-box;height:11px;width:100%;padding:1px;overflow:hidden;border:1px solid #aebfce;border-radius:999px;background:#edf3f7;box-shadow:inset 0 1px 2px rgba(14,47,78,.08)}
     .quick-progress-bar>span{display:block;width:25%;height:100%;border-radius:999px;background:#1A5A97;transition:width .22s ease}
     .quick-progress-status{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
     .quick-step{padding:0 38px 36px}
@@ -106,18 +106,92 @@
       .seasonal-strip-cta{margin-top:14px;width:100%;box-sizing:border-box}
     }
 
+
+    /* Mobile cleanout landing-page flow. Desktop remains unchanged. */
+    .mobile-hero-estimate,
+    .mobile-urgency-strip,
+    .mobile-before-after,
+    .mobile-problem-heading{display:none}
+
+    @media(max-width:700px){
+      /* Hero: replace the two mobile CTAs with the estimate form. */
+      .hero{height:auto!important;min-height:0!important;overflow:visible!important;padding-bottom:0!important}
+      .hero-inner{height:auto!important;min-height:0!important;padding-bottom:34px!important}
+      .hero-copy,.hero-copy-glass{overflow:visible!important}
+      .hero-actions{display:none!important}
+      .mobile-hero-estimate{display:block!important;width:100%!important;margin-top:52px!important}
+      .mobile-hero-estimate .quick-estimate-card{width:100%!important;margin:0!important;overflow:hidden!important;border-radius:16px!important;background:#fff!important;color:#031229!important;border:1px solid rgba(255,255,255,.36)!important;box-shadow:0 18px 44px rgba(3,18,41,.28)!important}
+      .mobile-hero-estimate .quick-estimate-form{width:100%!important;padding:0!important;background:#fff!important;color:#031229!important}
+      .mobile-hero-estimate .quick-estimate-heading{padding:24px 20px 21px!important;border-bottom:1px solid #dce6ef!important;background:#fff!important;text-align:left!important}
+      .mobile-hero-estimate .quick-estimate-heading h3{margin:0 0 8px!important;color:#031229!important;font-size:23px!important;line-height:1.12!important;font-weight:850!important;letter-spacing:-.025em!important}
+      .mobile-hero-estimate .quick-estimate-heading p{margin:0!important;color:#526777!important;font-size:12.5px!important;line-height:1.5!important}
+      .mobile-hero-estimate .quick-progress{margin:0 0 23px!important;padding:22px 20px 0!important}
+      .mobile-hero-estimate .quick-progress-bar{height:10px!important}
+      .mobile-hero-estimate .quick-step{padding:0 20px 24px!important;color:#031229!important}
+      .mobile-hero-estimate .quick-step label>span{color:#263c4d!important;font-size:13px!important;font-weight:800!important}
+      .mobile-hero-estimate .quick-step input,
+      .mobile-hero-estimate .quick-step select{min-height:54px!important;background:#fff!important;color:#031229!important;border-color:#cdd9e4!important;font-size:14px!important}
+      .mobile-hero-estimate .quick-step-actions{margin-top:18px!important}
+      .mobile-hero-estimate .quick-step-actions .quote-submit{min-height:54px!important;margin:0!important}
+      .mobile-hero-estimate .quick-back{min-height:54px!important}
+      .mobile-hero-estimate .quick-estimate-status{margin:0 20px 22px!important}
+
+      /* The mobile conversion path starts immediately after the hero. */
+      .trust-bar,.quick-estimate-section{display:none!important}
+
+      .mobile-urgency-strip{display:block!important;padding:25px 0 27px!important;background:#fff!important;color:#031229!important;border-bottom:1px solid #e1e8ee!important}
+      .mobile-urgency-inner{width:calc(100% - 32px)!important;margin:0 auto!important}
+      .mobile-urgency-inner strong{display:block!important;margin:0!important;color:#031229!important;font-size:22px!important;line-height:1.08!important;font-weight:900!important;letter-spacing:-.035em!important}
+      .mobile-urgency-inner p{margin:11px 0 0!important;color:#526777!important;font-size:13px!important;line-height:1.52!important;font-weight:600!important}
+
+      .mobile-before-after{display:block!important;padding:42px 0 46px!important;background:#031229!important;color:#fff!important}
+      .mobile-before-after-inner{width:calc(100% - 28px)!important;margin:0 auto!important}
+      .mobile-before-after h2{margin:0 0 24px!important;color:#fff!important;font-size:30px!important;line-height:1.06!important;font-weight:900!important;letter-spacing:-.04em!important}
+      .mobile-before-after h2 span{display:block!important;color:#78bff2!important}
+      .mobile-before-after-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+      .mobile-before-after figure{margin:0!important;min-width:0!important}
+      .mobile-ba-image{height:190px!important;overflow:hidden!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.14)!important;background:#0c2239!important}
+      .mobile-ba-image img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important}
+      .mobile-before-after figcaption{margin-top:9px!important;color:#fff!important;font-size:12px!important;line-height:1!important;font-weight:900!important;letter-spacing:.08em!important;text-transform:uppercase!important}
+
+      /* Turn the existing four cleanout cards into a mobile diagnosis section. */
+      .problem-section{padding:44px 0 48px!important;background:#fff!important;color:#031229!important}
+      .problem-heading-wrap{width:calc(100% - 28px)!important;margin:0 auto 24px!important}
+      #problemHeading,.problem-intro{display:none!important}
+      .mobile-problem-heading{display:block!important}
+      .mobile-problem-heading h2{margin:0!important;color:#031229!important;font-size:30px!important;line-height:1.06!important;font-weight:900!important;letter-spacing:-.04em!important}
+      .mobile-problem-heading h2 span{display:block!important;color:#1A5A97!important}
+      .mobile-problem-heading p{margin:11px 0 0!important;color:#526777!important;font-size:13px!important;line-height:1.5!important;font-weight:600!important}
+      .problem-carousel-shell{width:calc(100% - 28px)!important;margin:0 auto!important;padding:0!important}
+      .carousel-arrow{display:none!important}
+      .problem-carousel{display:grid!important;grid-template-columns:1fr!important;gap:14px!important;width:100%!important;max-width:none!important;overflow:visible!important;scroll-snap-type:none!important;padding:0!important}
+      .problem-card.problem-card-v2{display:grid!important;grid-template-columns:128px minmax(0,1fr)!important;align-items:stretch!important;width:100%!important;min-width:0!important;max-width:none!important;min-height:146px!important;margin:0!important;padding:0!important;overflow:hidden!important;border:1px solid #dce6ef!important;border-radius:15px!important;background:#fff!important;box-shadow:0 10px 26px rgba(3,18,41,.08)!important;text-align:left!important;transform:none!important;scroll-snap-align:none!important}
+      .problem-card.problem-card-v2 .problem-card-media{display:block!important;width:128px!important;height:100%!important;min-height:146px!important;overflow:hidden!important;border-radius:0!important}
+      .problem-card.problem-card-v2 .problem-card-media img{display:block!important;width:100%!important;height:100%!important;min-height:146px!important;object-fit:cover!important}
+      .problem-card-wedge,.problem-card-strip,.problem-service-line{display:none!important}
+      .problem-card.problem-card-v2 .problem-card-body{display:flex!important;flex-direction:column!important;justify-content:center!important;min-width:0!important;padding:17px 16px!important;background:#fff!important;color:#031229!important}
+      .problem-card.problem-card-v2 .problem-card-body strong{display:block!important;margin:0!important;color:#031229!important;font-size:17px!important;line-height:1.18!important;font-weight:900!important;letter-spacing:-.015em!important}
+      .problem-card.problem-card-v2 .problem-card-body small{display:block!important;margin-top:8px!important;color:#526777!important;font-size:12px!important;line-height:1.45!important;font-weight:500!important}
+
+      /* The new before/after replaces the later duplicate project gallery on mobile. */
+      .projects-section{display:none!important}
+
+      /* Remove only the bottom wet-months strip on mobile. */
+      .seasonal-strip{display:none!important}
+    }
+
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="/" aria-label="Crawl Space Pros home">
-        <img class="brand-logo" src="https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/Crawlspace-Logo-01.webp" alt="Crawl Space Pros" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/b9c34fec-3561-472c-8195-e6789ea01a0d.png';">
+        <img class="brand-logo" src="https://cdn.jsdeliv.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/Crawlspace-Logo-01.webp" alt="Crawl Space Pros" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/b9c34fec-3561-472c-8195-e6789ea01a0d.png';">
       </a>
 
       <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="#hero">Cleanouts</a>
-        <a href="#problems">What We Remove</a>
+        <a href="#problems">What Wd Remove</a>
         <a href="#diagnosis">How It Works</a>
         <a href="#projects">Projects</a>
         <a href="#why-us">Why Us</a>
@@ -147,7 +221,7 @@
       <div class="hero-media" aria-hidden="true">
         <div class="hero-panel hero-panel-one"><img src="hero-left-crawlspace.webp" alt=""></div>
         <div class="hero-panel hero-panel-two"><img src="https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/hero-clean.webp" alt=""></div>
-        <div class="hero-panel hero-panel-three"><img src="https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/hero-piers.webp" alt=""></div>
+        <div class="hero-panel hero-panel-three"><img src="https://cdn.jsdeliv.net/gh/policypal1/crawlspace@76bbd0d19aac5956c4bb5dbecc7d00f383407ba/hero-piers.webp" alt=""></div>
         <div class="hero-panel hero-panel-four"><img src="hero-right-clean-insulation.webp" alt=""></div>
         <img class="hero-mobile-bg" src="hero-mobile-crawlspace.webp" alt="">
       </div>
@@ -161,7 +235,78 @@
               <a class="hero-btn hero-btn-primary" href="#quote">Get My Free Cleanout Estimate</a>
               <a class="hero-btn hero-btn-secondary" href="tel:3604704956">Call / Text (360) 470-4956</a>
             </div>
+
+            <div class="mobile-hero-estimate" aria-label="Free crawl space cleanout estimate">
+              <div class="quote-form-wrap quick-estimate-card">
+                <form class="quote-form quick-estimate-form" id="mobileHeroEstimateForm" novalidate>
+                  <div class="quote-form-heading quick-estimate-heading">
+                    <h3>Get Your Free Cleanout Estimate</h3>
+                    <p>Tell us a few quick details and we’ll follow up to schedule your crawl-space inspection and estimate.</p>
+                  </div>
+
+                  <div class="quick-progress" aria-label="Estimate form progress">
+                    <span class="quick-progress-bar" aria-hidden="true"><span id="mobileQuickProgressFill"></span></span>
+                    <span class="quick-progress-status" id="mobileQuickProgressText" aria-live="polite">Step 1 of 4</span>
+                  </div>
+
+                  <div class="quick-step is-active" data-step="1">
+                    <label><span>What’s your name?</span><input type="text" name="name" autocomplete="name" placeholder="Your name" required></label>
+                    <div class="quick-step-actions quick-step-actions-single"><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
+                  </div>
+
+                  <div class="quick-step" data-step="2" hidden>
+                    <label><span>What’s the best phone number to reach you?</span><input type="tel" name="phone" autocomplete="tel" placeholder="(360) 555-0123" required></label>
+                    <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
+                  </div>
+
+                  <div class="quick-step" data-step="3" hidden>
+                    <label><span>What’s the ZIP code for the property?</span><input type="text" name="location" inputmode="numeric" autocomplete="postal-code" placeholder="98632" required></label>
+                    <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
+                  </div>
+
+                  <div class="quick-step" data-step="4" hidden>
+                    <label><span>What do you need cleaned out?</span>
+                      <select name="problem" required>
+                        <option value="">Select the closest match</option>
+                        <option value="Old or Dirty Insulation">Old or dirty insulation</option>
+                        <option value="Old or Torn Vapor Barrier">Old or torn vapor barrier</option>
+                        <option value="Rodent Mess or Contamination">Rodent mess or contamination</option>
+                        <option value="Crawl Space Debris and Buildup">Debris and years of buildup</option>
+                        <option value="Complete Crawl Space Cleanout">Complete crawl space cleanout</option>
+                        <option value="Not Sure">Not sure yet</option>
+                      </select>
+                    </label>
+                    <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-estimate-submit" type="submit">Get My Free Estimate <span aria-hidden="true">→</span></button></div>
+                  </div>
+
+                  <div class="quick-estimate-status" id="mobileQuickEstimateStatus" role="status" aria-live="polite"></div>
+                </form>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mobile-urgency-strip" aria-label="Wet season crawl space reminder">
+      <div class="mobile-urgency-inner">
+        <strong>Wet season is here. Don’t let a crawl-space mess get worse.</strong>
+        <p>Old insulation, damaged plastic, rodent debris, and years of buildup can hold moisture as the rain settles in. Get the mess out before it turns into a bigger cleanup.</p>
+      </div>
+    </section>
+
+    <section class="mobile-before-after" aria-labelledby="mobileBeforeAfterHeading">
+      <div class="mobile-before-after-inner">
+        <h2 id="mobileBeforeAfterHeading">See what a full <span>cleanout does.</span></h2>
+        <div class="mobile-before-after-grid">
+          <figure>
+            <div class="mobile-ba-image"><img src="crawlspace-before.webp" alt="Crawl space before cleanout" loading="lazy"></div>
+            <figcaption>Before</figcaption>
+          </figure>
+          <figure>
+            <div class="mobile-ba-image"><img src="crawlspace-after.webp" alt="Crawl space after cleanout" loading="lazy"></div>
+            <figcaption>After</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -230,6 +375,10 @@
         <div class="problem-heading-wrap">
           <h2 id="problemHeading">Get the mess <span>out from under your home.</span></h2>
           <p class="problem-intro">Crawl space cleanouts are for removing the old, dirty, damaged, and contaminated material that has been sitting underneath your house.</p>
+          <div class="mobile-problem-heading">
+            <h2>Does your crawl space <span>look like this?</span></h2>
+            <p>These are four of the most common cleanout problems. Pick the one that looks closest to what’s under your home.</p>
+          </div>
         </div>
 
         <div class="problem-carousel-shell">
@@ -583,6 +732,99 @@
         try {
           const data = new FormData(form);
           data.append('message', 'Multi-step cleanout estimate form from crawlspace.html');
+          const payload = new URLSearchParams();
+          data.forEach((value, key) => payload.append(key, String(value)));
+
+          await fetch(endpoint, { method: 'POST', mode: 'no-cors', body: payload });
+          form.reset();
+          showStep(0);
+          status.textContent = 'Thanks — your cleanout estimate request was sent. We’ll be in touch soon.';
+          status.style.display = 'block';
+          status.style.background = '#eaf7ef';
+          status.style.border = '1px solid #b8e0c5';
+          status.style.color = '#176336';
+          submitButton.innerHTML = 'Request Sent ✓';
+          window.setTimeout(() => { submitButton.innerHTML = originalSubmitHtml; }, 3500);
+        } catch (error) {
+          status.textContent = 'Something went wrong. Please call or text (360) 470-4956.';
+          status.style.display = 'block';
+          status.style.background = '#fff0f0';
+          status.style.border = '1px solid #f0b8b8';
+          status.style.color = '#9f2424';
+          submitButton.innerHTML = originalSubmitHtml;
+        } finally {
+          form.dataset.submitting = 'false';
+          submitButton.disabled = false;
+        }
+      });
+
+      showStep(0);
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const form = document.getElementById('mobileHeroEstimateForm');
+      const status = document.getElementById('mobileQuickEstimateStatus');
+      if (!form || !status) return;
+
+      const endpoint = 'https://script.google.com/macros/s/AKfycbzm5ZaVzeXJXtDjgMX0DtcKd3st0myj5Rp7qGQtQY_wu3lmVjb3Hvu2S7Si9OJXe9RR/exec';
+      const steps = Array.from(form.querySelectorAll('.quick-step'));
+      const progressFill = document.getElementById('mobileQuickProgressFill');
+      const progressText = document.getElementById('mobileQuickProgressText');
+      const submitButton = form.querySelector('.quick-estimate-submit');
+      const originalSubmitHtml = submitButton.innerHTML;
+      let currentStep = 0;
+
+      function showStep(index) {
+        currentStep = Math.max(0, Math.min(index, steps.length - 1));
+        steps.forEach((step, i) => {
+          const active = i === currentStep;
+          step.hidden = !active;
+          step.classList.toggle('is-active', active);
+        });
+        progressFill.style.width = (((currentStep + 1) / steps.length) * 100) + '%';
+        progressText.textContent = `Step ${currentStep + 1} of ${steps.length}`;
+      }
+
+      function validateCurrentStep() {
+        const field = steps[currentStep].querySelector('input, select');
+        if (!field) return true;
+        if (!field.checkValidity()) {
+          field.reportValidity();
+          return false;
+        }
+        return true;
+      }
+
+      form.querySelectorAll('.quick-next').forEach((button) => {
+        button.addEventListener('click', () => {
+          if (validateCurrentStep()) showStep(currentStep + 1);
+        });
+      });
+
+      form.querySelectorAll('.quick-back').forEach((button) => {
+        button.addEventListener('click', () => showStep(currentStep - 1));
+      });
+
+      form.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' || currentStep === steps.length - 1) return;
+        event.preventDefault();
+        if (validateCurrentStep()) showStep(currentStep + 1);
+      });
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (!validateCurrentStep() || form.dataset.submitting === 'true') return;
+
+        form.dataset.submitting = 'true';
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+        status.style.display = 'none';
+
+        try {
+          const data = new FormData(form);
+          data.append('message', 'Multi-step cleanout estimate form from the mobile hero on crawlspace.html');
           const payload = new URLSearchParams();
           data.forEach((value, key) => payload.append(key, String(value)));
 
