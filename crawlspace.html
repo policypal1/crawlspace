@@ -215,7 +215,7 @@
       }
 
       .hero-copy-card p{
-        margin:13px 0 0;
+        margin:19px 0 0;
         color:rgba(255,255,255,.93);
         font-size:14.5px;
         line-height:1.5;
@@ -241,11 +241,149 @@
 
       .hero-primary:active{transform:translateY(1px)}
 
+      /* REAL BEFORE & AFTER PROOF */
+      .proof-section{
+        background:#fff;
+        color:var(--navy);
+        padding:46px 0 50px;
+        border-bottom:1px solid var(--border);
+      }
+
+      .proof-inner{
+        width:calc(100% - 28px);
+        margin:0 auto;
+      }
+
+      .proof-eyebrow{
+        margin:0 0 8px;
+        color:var(--blue);
+        font-size:10.5px;
+        line-height:1.2;
+        font-weight:900;
+        letter-spacing:.095em;
+        text-align:center;
+        text-transform:uppercase;
+      }
+
+      .proof-heading{
+        margin:0 auto;
+        max-width:360px;
+        color:var(--navy);
+        font-size:34px;
+        line-height:1.01;
+        font-weight:950;
+        letter-spacing:-.045em;
+        text-align:center;
+      }
+
+      .proof-subcopy{
+        margin:11px auto 0;
+        max-width:330px;
+        color:var(--muted);
+        font-size:13px;
+        line-height:1.5;
+        font-weight:600;
+        text-align:center;
+      }
+
+      .before-after-grid{
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:8px;
+        margin-top:26px;
+      }
+
+      .proof-photo{
+        min-width:0;
+        margin:0;
+      }
+
+      .proof-photo-frame{
+        position:relative;
+        height:205px;
+        overflow:hidden;
+        border:1px solid #d7e1e9;
+        border-radius:13px;
+        background:#edf3f7;
+        box-shadow:0 8px 22px rgba(3,18,41,.08);
+      }
+
+      .proof-photo-frame img{
+        display:block;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+      }
+
+      .proof-label{
+        position:absolute;
+        left:9px;
+        bottom:9px;
+        display:inline-flex;
+        align-items:center;
+        min-height:27px;
+        padding:0 10px;
+        border-radius:6px;
+        background:rgba(3,18,41,.88);
+        color:#fff;
+        font-size:10px;
+        line-height:1;
+        font-weight:900;
+        letter-spacing:.07em;
+        text-transform:uppercase;
+      }
+
+      .proof-review{
+        margin:26px 0 0;
+        padding:21px 19px 19px;
+        border:1px solid var(--border);
+        border-radius:14px;
+        background:#f7f9fb;
+      }
+
+      .proof-stars{
+        color:var(--blue);
+        font-size:16px;
+        line-height:1;
+        letter-spacing:.06em;
+      }
+
+      .proof-review blockquote{
+        margin:13px 0 0;
+        color:var(--navy);
+        font-size:15px;
+        line-height:1.5;
+        font-weight:700;
+      }
+
+      .proof-review footer{
+        margin-top:14px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:12px;
+      }
+
+      .proof-review footer strong{
+        color:var(--navy);
+        font-size:12px;
+        font-weight:900;
+      }
+
+      .proof-review footer span{
+        color:#7b8b98;
+        font-size:10.5px;
+        font-weight:800;
+      }
+    }
+
     @media(max-width:390px){
       .hero-copy-card h1{font-size:31px}
       .hero-inner{padding-top:58px}
       .brand-logo{height:44px;max-width:165px}
       .mobile-call{min-height:44px;padding:0 14px;font-size:12px}
+      .proof-heading{font-size:31px}
+      .proof-photo-frame{height:188px}
     }
   </style>
 </head>
@@ -291,7 +429,39 @@
         <a class="hero-primary" href="quote.html">Get My Free Cleanout Estimate</a>
       </div>
     </section>
-    <!-- Next landing-page section will be added here. -->
+
+    <section class="proof-section" id="proof" aria-labelledby="proofHeading">
+      <div class="proof-inner">
+        <p class="proof-eyebrow">Real Before &amp; After Proof</p>
+        <h2 class="proof-heading" id="proofHeading">See what a full cleanout does.</h2>
+        <p class="proof-subcopy">One real crawl space before the mess comes out, and after the cleanup is finished.</p>
+
+        <div class="before-after-grid">
+          <figure class="proof-photo">
+            <div class="proof-photo-frame">
+              <img src="crawlspace-before.webp" alt="Crawl space before cleanout" loading="lazy">
+              <span class="proof-label">Before</span>
+            </div>
+          </figure>
+
+          <figure class="proof-photo">
+            <div class="proof-photo-frame">
+              <img src="crawlspace-after.webp" alt="Crawl space after cleanout" loading="lazy">
+              <span class="proof-label">After</span>
+            </div>
+          </figure>
+        </div>
+
+        <article class="proof-review" aria-label="Customer review">
+          <div class="proof-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>“I feel very happy and pleased with the work Jon did under my house. He cleaned up the entire crawl space!! Jon is hard working and I would recommend him highly.”</blockquote>
+          <footer>
+            <strong>Henry Rettinger</strong>
+            <span>Google Review</span>
+          </footer>
+        </article>
+      </div>
+    </section>
   </main>
 
 </body>
