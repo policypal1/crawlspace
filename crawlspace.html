@@ -12,8 +12,8 @@
   <style>
     :root{
       --navy:#031229;
-      --blue:#1A5A97;
-      --blue-dark:#124a80;
+      --blue:#59636e;
+      --blue-dark:#424b55;
       --light:#f4f7fa;
       --border:#dce6ef;
       --text:#263c4d;
@@ -110,51 +110,64 @@
       /* HERO */
       .mobile-hero{
         position:relative;
-        min-height:560px;
+        min-height:475px;
         overflow:hidden;
-        background:#101820;
+        background:#050505;
         isolation:isolate;
       }
 
-      .hero-video,
-      .hero-poster{
+      .hero-video-placeholder{
         position:absolute;
         inset:0;
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        object-position:center 42%;
         z-index:-3;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:#050505;
+        color:rgba(255,255,255,.36);
+        font-size:13px;
+        font-weight:900;
+        letter-spacing:.16em;
+        text-transform:uppercase;
       }
 
-      .hero-poster{z-index:-4}
+      .hero-video,.hero-poster{display:none}
 
       .hero-overlay{
         position:absolute;
         inset:0;
         z-index:-2;
-        background:
-          linear-gradient(180deg,rgba(3,18,41,.12) 0%,rgba(3,18,41,.24) 30%,rgba(3,18,41,.77) 100%);
+        background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.12) 38%,rgba(0,0,0,.45) 100%);
       }
 
       .hero-inner{
-        min-height:560px;
+        min-height:475px;
         width:calc(100% - 28px);
         margin:0 auto;
-        padding:122px 0 28px;
+        padding:58px 0 24px;
         display:flex;
         flex-direction:column;
-        justify-content:flex-end;
+        justify-content:flex-start;
       }
 
       .hero-copy-card{
         padding:18px 16px 17px;
         border:1px solid rgba(255,255,255,.18);
         border-radius:15px;
-        background:rgba(3,18,41,.72);
+        background:rgba(18,22,27,.88);
         box-shadow:0 16px 34px rgba(0,0,0,.22);
         backdrop-filter:blur(5px);
         -webkit-backdrop-filter:blur(5px);
+      }
+
+      .hero-trust{
+        margin:0 0 10px;
+        color:rgba(255,255,255,.72);
+        font-size:10.5px;
+        line-height:1.2;
+        font-weight:900;
+        letter-spacing:.08em;
+        text-transform:uppercase;
       }
 
       .hero-copy-card h1{
@@ -178,7 +191,7 @@
       .hero-primary{
         width:100%;
         min-height:58px;
-        margin-top:16px;
+        margin-top:14px;
         display:flex;
         align-items:center;
         justify-content:center;
@@ -197,7 +210,7 @@
       /* FORM DIRECTLY BELOW HERO */
       .estimate-section{
         background:var(--light);
-        padding:28px 16px 38px;
+        padding:22px 16px 34px;
         border-bottom:1px solid var(--border);
         scroll-margin-top:82px;
       }
@@ -339,7 +352,7 @@
 
     @media(max-width:390px){
       .hero-copy-card h1{font-size:31px}
-      .hero-inner{padding-top:105px}
+      .hero-inner{padding-top:48px}
       .brand-logo{height:44px;max-width:165px}
       .mobile-call{min-height:44px;padding:0 14px;font-size:12px}
     }
@@ -367,17 +380,13 @@
 
   <main class="mobile-landing">
     <section class="mobile-hero" id="cleanouts" aria-labelledby="heroHeading">
-      <img class="hero-poster" src="hero-mobile-crawlspace.webp" alt="" aria-hidden="true">
-
-      <!-- Replace crawlspace-cleanout-video.mp4 with the client's working video file. -->
-      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="hero-mobile-crawlspace.webp" aria-hidden="true">
-        <source src="crawlspace-cleanout-video.mp4" type="video/mp4">
-      </video>
-
+      <div class="hero-video-placeholder" aria-hidden="true">Insert Video Here</div>
+      <!-- When the client video is ready, replace the placeholder above with a muted autoplaying <video> element. -->
       <div class="hero-overlay" aria-hidden="true"></div>
 
       <div class="hero-inner">
         <div class="hero-copy-card">
+          <div class="hero-trust">Local • Licensed • Bonded &amp; Insured</div>
           <h1 id="heroHeading">Crawl Space Cleanouts in Longview &amp; Kelso</h1>
           <p>Old insulation, rodent mess, torn plastic or years of debris? We remove it, haul it away, and leave the crawl space clean.</p>
         </div>
