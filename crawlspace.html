@@ -12,8 +12,8 @@
   <style>
     :root{
       --navy:#031229;
-      --blue:#59636e;
-      --blue-dark:#424b55;
+      --blue:#1A5A97;
+      --blue-dark:#124a80;
       --light:#f4f7fa;
       --border:#dce6ef;
       --text:#263c4d;
@@ -106,6 +106,7 @@
       }
 
       .mobile-landing{display:block}
+      .future-form-anchor{display:block;height:1px;scroll-margin-top:82px}
 
       /* HERO */
       .mobile-hero{
@@ -120,15 +121,30 @@
         position:absolute;
         inset:0;
         z-index:-3;
+        overflow:hidden;
         display:flex;
-        align-items:center;
-        justify-content:center;
+        flex-direction:column;
+        justify-content:space-around;
         background:#050505;
-        color:rgba(255,255,255,.36);
-        font-size:13px;
+        color:rgba(255,255,255,.13);
+        font-size:12px;
         font-weight:900;
         letter-spacing:.16em;
         text-transform:uppercase;
+        user-select:none;
+        pointer-events:none;
+      }
+
+      .placeholder-row{
+        display:flex;
+        width:max-content;
+        gap:34px;
+        white-space:nowrap;
+        transform:translateX(-18px);
+      }
+
+      .placeholder-row:nth-child(even){
+        transform:translateX(-78px);
       }
 
       .hero-video,.hero-poster{display:none}
@@ -161,13 +177,26 @@
       }
 
       .hero-trust{
-        margin:0 0 10px;
-        color:rgba(255,255,255,.72);
+        margin:0 0 11px;
+        display:flex;
+        flex-wrap:wrap;
+        gap:7px 8px;
+        color:#fff;
         font-size:10.5px;
-        line-height:1.2;
+        line-height:1;
         font-weight:900;
-        letter-spacing:.08em;
+        letter-spacing:.035em;
         text-transform:uppercase;
+      }
+
+      .hero-trust span{
+        display:inline-flex;
+        align-items:center;
+        min-height:25px;
+        padding:0 9px;
+        border:1px solid rgba(255,255,255,.22);
+        border-radius:999px;
+        background:rgba(255,255,255,.08);
       }
 
       .hero-copy-card h1{
@@ -207,149 +236,6 @@
 
       .hero-primary:active{transform:translateY(1px)}
 
-      /* FORM DIRECTLY BELOW HERO */
-      .estimate-section{
-        background:var(--light);
-        padding:22px 16px 34px;
-        border-bottom:1px solid var(--border);
-        scroll-margin-top:82px;
-      }
-
-      .estimate-card{
-        width:100%;
-        max-width:560px;
-        margin:0 auto;
-        overflow:hidden;
-        border:1px solid var(--border);
-        border-radius:18px;
-        background:#fff;
-        box-shadow:0 14px 34px rgba(3,18,41,.10);
-      }
-
-      .estimate-heading{
-        padding:24px 20px 18px;
-        border-bottom:1px solid var(--border);
-      }
-
-      .estimate-heading h2{
-        margin:0;
-        color:var(--navy);
-        font-size:26px;
-        line-height:1.05;
-        letter-spacing:-.035em;
-        font-weight:950;
-      }
-
-      .estimate-heading p{
-        margin:9px 0 0;
-        color:var(--muted);
-        font-size:13px;
-        line-height:1.5;
-        font-weight:600;
-      }
-
-      .progress-wrap{padding:18px 20px 0}
-      .progress-track{
-        height:9px;
-        overflow:hidden;
-        border:1px solid #bfd0de;
-        border-radius:999px;
-        background:#edf3f7;
-      }
-      .progress-fill{
-        display:block;
-        width:25%;
-        height:100%;
-        border-radius:999px;
-        background:var(--blue);
-        transition:width .2s ease;
-      }
-      .progress-copy{
-        margin-top:7px;
-        color:#7b8d9b;
-        font-size:11px;
-        font-weight:800;
-      }
-
-      .form-step{padding:20px}
-      .form-step[hidden]{display:none!important}
-
-      .form-step label{
-        display:block;
-        color:var(--text);
-        font-size:13px;
-        line-height:1.35;
-        font-weight:850;
-      }
-
-      .form-step input,
-      .form-step select{
-        width:100%;
-        min-height:56px;
-        margin-top:9px;
-        padding:0 15px;
-        border:1px solid #c9d7e2;
-        border-radius:9px;
-        background:#fff;
-        color:var(--navy);
-        font:inherit;
-        font-size:15px;
-        outline:none;
-      }
-
-      .form-step input:focus,
-      .form-step select:focus{
-        border-color:var(--blue);
-        box-shadow:0 0 0 3px rgba(26,90,151,.10);
-      }
-
-      .step-actions{
-        display:grid;
-        grid-template-columns:94px minmax(0,1fr);
-        gap:10px;
-        margin-top:18px;
-      }
-
-      .step-actions.single{grid-template-columns:1fr}
-
-      .back-btn,
-      .next-btn,
-      .submit-btn{
-        min-height:54px;
-        border-radius:9px;
-        font:inherit;
-        font-size:13px;
-        font-weight:950;
-        cursor:pointer;
-      }
-
-      .back-btn{
-        border:1px solid #cbd8e2;
-        background:#fff;
-        color:#526777;
-      }
-
-      .next-btn,
-      .submit-btn{
-        border:0;
-        background:var(--blue);
-        color:#fff;
-      }
-
-      .submit-btn{padding:0 14px}
-
-      .form-status{
-        display:none;
-        margin:0 20px 20px;
-        padding:13px 14px;
-        border-radius:9px;
-        font-size:12.5px;
-        line-height:1.45;
-        font-weight:800;
-        text-align:center;
-      }
-    }
-
     @media(max-width:390px){
       .hero-copy-card h1{font-size:31px}
       .hero-inner{padding-top:48px}
@@ -380,179 +266,30 @@
 
   <main class="mobile-landing">
     <section class="mobile-hero" id="cleanouts" aria-labelledby="heroHeading">
-      <div class="hero-video-placeholder" aria-hidden="true">Insert Video Here</div>
+      <div class="hero-video-placeholder" aria-hidden="true">
+        <div class="placeholder-row"><span>Insert Video Here</span><span>Insert Video Here</span><span>Insert Video Here</span><span>Insert Video Here</span></div>
+        <div class="placeholder-row"><span>Insert Video Here</span><span>Insert Video Here</span><span>Insert Video Here</span><span>Insert Video Here</span></div>
+        <div class="placeholder-row"><span>Insert Video Here</span><span>Insert Video Here</span><span>Insert Video Here</span><span>Insert Video Here</span></div>
+        <div class="placeholder-row"><span>Insert Video Here</span><span>Insert Video Here</span><span>Insert Video Here</span><span>Insert Video Here</span></div>
+        <div class="placeholder-row"><span>Insert Video Here</span><span>Insert Video Here</span><span>Insert Video Here</span><span>Insert Video Here</span></div>
+      </div>
       <!-- When the client video is ready, replace the placeholder above with a muted autoplaying <video> element. -->
       <div class="hero-overlay" aria-hidden="true"></div>
 
       <div class="hero-inner">
         <div class="hero-copy-card">
-          <div class="hero-trust">Local • Licensed • Bonded &amp; Insured</div>
+          <div class="hero-trust"><span>Local</span><span>4.8 ★ Rating</span><span>Family-Owned</span></div>
           <h1 id="heroHeading">Crawl Space Cleanouts in Longview &amp; Kelso</h1>
           <p>Old insulation, rodent mess, torn plastic or years of debris? We remove it, haul it away, and leave the crawl space clean.</p>
         </div>
 
-        <a class="hero-primary" href="#cleanout-form">Get My Free Cleanout</a>
+        <a class="hero-primary" href="#cleanout-form">Get My Free Cleanout Estimate</a>
       </div>
     </section>
 
-    <section class="estimate-section" id="cleanout-form" aria-labelledby="estimateHeading">
-      <div class="estimate-card">
-        <div class="estimate-heading">
-          <h2 id="estimateHeading">Get Your Free Cleanout Estimate</h2>
-          <p>Tell us a few quick details. We’ll follow up to schedule your crawl-space inspection and estimate.</p>
-        </div>
-
-        <form id="cleanoutEstimateForm" novalidate>
-          <div class="progress-wrap" aria-label="Estimate form progress">
-            <div class="progress-track" aria-hidden="true"><span class="progress-fill" id="progressFill"></span></div>
-            <div class="progress-copy" id="progressCopy" aria-live="polite">Step 1 of 4</div>
-          </div>
-
-          <div class="form-step" data-step="1">
-            <label>
-              What’s your name?
-              <input type="text" name="name" autocomplete="name" placeholder="Your name" required>
-            </label>
-            <div class="step-actions single">
-              <button class="next-btn" type="button">Next →</button>
-            </div>
-          </div>
-
-          <div class="form-step" data-step="2" hidden>
-            <label>
-              What’s the best phone number to reach you?
-              <input type="tel" name="phone" autocomplete="tel" placeholder="(360) 555-0123" required>
-            </label>
-            <div class="step-actions">
-              <button class="back-btn" type="button">← Back</button>
-              <button class="next-btn" type="button">Next →</button>
-            </div>
-          </div>
-
-          <div class="form-step" data-step="3" hidden>
-            <label>
-              What’s the ZIP code for the property?
-              <input type="text" name="location" inputmode="numeric" autocomplete="postal-code" placeholder="98632" required>
-            </label>
-            <div class="step-actions">
-              <button class="back-btn" type="button">← Back</button>
-              <button class="next-btn" type="button">Next →</button>
-            </div>
-          </div>
-
-          <div class="form-step" data-step="4" hidden>
-            <label>
-              What do you need cleaned out?
-              <select name="problem" required>
-                <option value="">Select the closest match</option>
-                <option value="Old or Dirty Insulation">Old or dirty insulation</option>
-                <option value="Old or Torn Vapor Barrier">Old or torn vapor barrier</option>
-                <option value="Rodent Mess or Contamination">Rodent mess or contamination</option>
-                <option value="Crawl Space Debris and Buildup">Debris and years of buildup</option>
-                <option value="Complete Crawl Space Cleanout">Complete crawl space cleanout</option>
-                <option value="Not Sure">Not sure yet</option>
-              </select>
-            </label>
-            <div class="step-actions">
-              <button class="back-btn" type="button">← Back</button>
-              <button class="submit-btn" type="submit">Request My Free Cleanout</button>
-            </div>
-          </div>
-
-          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-        </form>
-      </div>
-    </section>
+    <span id="cleanout-form" class="future-form-anchor" aria-hidden="true"></span>
+    <!-- The visible estimate form will be added after the proof sections. -->
   </main>
 
-  <script>
-    (() => {
-      const form = document.getElementById('cleanoutEstimateForm');
-      if (!form) return;
-
-      const endpoint = 'https://script.google.com/macros/s/AKfycbzm5ZaVzeXJXtDjgMX0DtcKd3st0myj5Rp7qGQtQY_wu3lmVjb3Hvu2S7Si9OJXe9RR/exec';
-      const steps = Array.from(form.querySelectorAll('.form-step'));
-      const progressFill = document.getElementById('progressFill');
-      const progressCopy = document.getElementById('progressCopy');
-      const status = document.getElementById('formStatus');
-      const submit = form.querySelector('.submit-btn');
-      const submitOriginal = submit.innerHTML;
-      let current = 0;
-
-      function showStep(index){
-        current = Math.max(0, Math.min(index, steps.length - 1));
-        steps.forEach((step,i) => step.hidden = i !== current);
-        progressFill.style.width = (((current + 1) / steps.length) * 100) + '%';
-        progressCopy.textContent = `Step ${current + 1} of ${steps.length}`;
-      }
-
-      function validateStep(){
-        const field = steps[current].querySelector('input,select');
-        if (!field) return true;
-        if (!field.checkValidity()){
-          field.reportValidity();
-          return false;
-        }
-        return true;
-      }
-
-      form.querySelectorAll('.next-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          if (validateStep()) showStep(current + 1);
-        });
-      });
-
-      form.querySelectorAll('.back-btn').forEach(btn => {
-        btn.addEventListener('click', () => showStep(current - 1));
-      });
-
-      form.addEventListener('keydown', event => {
-        if (event.key !== 'Enter' || current === steps.length - 1) return;
-        event.preventDefault();
-        if (validateStep()) showStep(current + 1);
-      });
-
-      form.addEventListener('submit', async event => {
-        event.preventDefault();
-        if (!validateStep() || form.dataset.submitting === 'true') return;
-
-        form.dataset.submitting = 'true';
-        submit.disabled = true;
-        submit.textContent = 'Sending…';
-        status.style.display = 'none';
-
-        try{
-          const data = new FormData(form);
-          data.append('message','Mobile crawl space cleanout landing page estimate form');
-          const payload = new URLSearchParams();
-          data.forEach((value,key) => payload.append(key,String(value)));
-
-          await fetch(endpoint,{method:'POST',mode:'no-cors',body:payload});
-
-          form.reset();
-          showStep(0);
-          status.textContent = 'Thanks — your cleanout request was sent. We’ll be in touch soon.';
-          status.style.display = 'block';
-          status.style.background = '#eaf7ef';
-          status.style.border = '1px solid #b8e0c5';
-          status.style.color = '#176336';
-          submit.innerHTML = 'Request Sent ✓';
-          window.setTimeout(() => submit.innerHTML = submitOriginal, 3500);
-        }catch(error){
-          status.textContent = 'Something went wrong. Please try again.';
-          status.style.display = 'block';
-          status.style.background = '#fff0f0';
-          status.style.border = '1px solid #f0b8b8';
-          status.style.color = '#9f2424';
-          submit.innerHTML = submitOriginal;
-        }finally{
-          form.dataset.submitting = 'false';
-          submit.disabled = false;
-        }
-      });
-
-      showStep(0);
-    })();
-  </script>
 </body>
 </html>
