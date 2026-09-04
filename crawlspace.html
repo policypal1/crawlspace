@@ -148,7 +148,7 @@
 
       .mobile-before-after{display:block!important;padding:42px 0 46px!important;background:#fff!important;color:#031229!important}
       .mobile-before-after-inner{width:calc(100% - 28px)!important;margin:0 auto!important}
-      .mobile-before-after h2{margin:0 0 24px!important;color:#031229!important;font-size:30px!important;line-height:1.06!important;font-weight:900!important;letter-spacing:-.04em!important;text-align:center!important}
+      .mobile-before-after h2{margin:0 0 26px!important;color:#031229!important;font-size:36px!important;line-height:1.02!important;font-weight:900!important;letter-spacing:-.045em!important;text-align:center!important}
       .mobile-before-after h2 span{display:block!important;color:#1A5A97!important}
       .mobile-before-after-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
       .mobile-before-after figure{margin:0!important;min-width:0!important}
@@ -161,8 +161,8 @@
       .problem-heading-wrap{width:calc(100% - 28px)!important;margin:0 auto 24px!important}
       #problemHeading,.problem-intro{display:none!important}
       .mobile-problem-heading{display:block!important;text-align:center!important}
-      .mobile-problem-heading h2{margin:0!important;color:#fff!important;font-size:30px!important;line-height:1.06!important;font-weight:900!important;letter-spacing:-.04em!important}
-      .mobile-problem-heading h2 span{display:block!important;color:#fff!important}
+      .mobile-problem-heading h2{margin:0!important;color:#fff!important;-webkit-text-fill-color:#fff!important;background:none!important;background-image:none!important;opacity:1!important;font-size:30px!important;line-height:1.06!important;font-weight:900!important;letter-spacing:-.04em!important}
+      .mobile-problem-heading h2 span{display:block!important;color:#fff!important;-webkit-text-fill-color:#fff!important;background:none!important;background-image:none!important;opacity:1!important}
       .mobile-problem-heading p{margin:10px auto 0!important;max-width:320px!important;color:rgba(255,255,255,.74)!important;font-size:12.5px!important;line-height:1.4!important;font-weight:650!important}
       .problem-carousel-shell{width:calc(100% - 28px)!important;margin:0 auto!important;padding:0!important}
       .carousel-arrow{display:none!important}
@@ -186,7 +186,7 @@
       .service-area-section{background:#fff!important}
 
       /* Keep the urgency message inside the white before/after section. */
-      .mobile-before-after-urgency{margin:-8px auto 24px!important;max-width:340px!important;text-align:center!important}
+      .mobile-before-after-urgency{margin:26px auto 0!important;max-width:340px!important;text-align:center!important;padding-top:22px!important;border-top:1px solid #dce6ef!important}
       .mobile-before-after-urgency strong{display:block!important;margin:0!important;color:#031229!important;font-size:19px!important;line-height:1.15!important;font-weight:900!important;letter-spacing:-.025em!important}
       .mobile-before-after-urgency p{margin:8px auto 0!important;max-width:320px!important;color:#526777!important;font-size:12.5px!important;line-height:1.45!important;font-weight:600!important}
 
@@ -197,6 +197,13 @@
       #diagnosis .diagnosis-step-copy strong,#diagnosis .mobile-diagnosis-copy strong{color:#031229!important}
       #diagnosis .diagnosis-step-copy p,#diagnosis .mobile-diagnosis-copy p{color:#526777!important}
       #diagnosis .diagnosis-step-number,#diagnosis .mobile-step-number{color:#1A5A97!important}
+      #diagnosis .diagnosis-steps{display:grid!important;grid-template-columns:1fr!important;gap:12px!important;margin-top:24px!important}
+      #diagnosis .diagnosis-step{display:grid!important;grid-template-columns:48px minmax(0,1fr)!important;align-items:start!important;gap:14px!important;width:100%!important;margin:0!important;padding:16px!important;box-sizing:border-box!important;border:1px solid #dce6ef!important;border-radius:14px!important;background:#f8fafc!important;box-shadow:0 7px 18px rgba(3,18,41,.05)!important}
+      #diagnosis .diagnosis-step-number{display:flex!important;align-items:center!important;justify-content:center!important;width:44px!important;height:44px!important;min-width:44px!important;margin:0!important;border-radius:10px!important;background:#1A5A97!important;color:#fff!important;-webkit-text-fill-color:#fff!important;font-size:16px!important;line-height:1!important;font-weight:900!important;letter-spacing:.02em!important}
+      #diagnosis .diagnosis-step-number .mobile-step-number{display:inline!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+      #diagnosis .diagnosis-step-copy,#diagnosis .mobile-diagnosis-copy{min-width:0!important;padding:1px 0 0!important}
+      #diagnosis .diagnosis-step-copy strong,#diagnosis .mobile-diagnosis-copy strong{display:block!important;margin:0!important;font-size:16px!important;line-height:1.2!important}
+      #diagnosis .diagnosis-step-copy p,#diagnosis .mobile-diagnosis-copy p{margin:6px 0 0!important;font-size:12.5px!important;line-height:1.45!important}
 
       /* Prevent the Why Us heading from running off narrow screens. */
       #why-us #whyHeading{width:100%!important;max-width:100%!important;white-space:normal!important;overflow-wrap:normal!important;word-break:normal!important;font-size:clamp(28px,8.5vw,34px)!important;line-height:1.06!important}
@@ -320,10 +327,6 @@
     <section class="mobile-before-after" aria-labelledby="mobileBeforeAfterHeading">
       <div class="mobile-before-after-inner">
         <h2 id="mobileBeforeAfterHeading">See what a full <span>cleanout does.</span></h2>
-        <div class="mobile-before-after-urgency">
-          <strong>Get the mess out before it gets worse.</strong>
-          <p>Old insulation, rodent debris, and damaged material get worse the longer they sit.</p>
-        </div>
         <div class="mobile-before-after-grid">
           <figure>
             <div class="mobile-ba-image"><img src="crawlspace-before.webp" alt="Crawl space before cleanout" loading="lazy"></div>
@@ -333,6 +336,10 @@
             <div class="mobile-ba-image"><img src="crawlspace-after.webp" alt="Crawl space after cleanout" loading="lazy"></div>
             <figcaption>After</figcaption>
           </figure>
+        </div>
+        <div class="mobile-before-after-urgency">
+          <strong>Get the mess out before it gets worse.</strong>
+          <p>Old insulation, rodent debris, and damaged material only get worse the longer they sit.</p>
         </div>
       </div>
     </section>
@@ -403,7 +410,7 @@
           <p class="problem-intro">Crawl space cleanouts are for removing the old, dirty, damaged, and contaminated material that has been sitting underneath your house.</p>
           <div class="mobile-problem-heading">
             <h2>Does your crawl space <span>look like this?</span></h2>
-            <p>Pick the one that looks closest to what’s under your home.</p>
+            <p>Which one matches your situation best?</p>
           </div>
         </div>
 
