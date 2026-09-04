@@ -214,6 +214,42 @@
 
       /* Remove only the bottom wet-months strip on mobile. */
       .seasonal-strip{display:none!important}
+
+      /* Final mobile consistency pass. */
+      .hero-shade{display:none!important;opacity:0!important;background:transparent!important}
+      .hero-copy-glass>h1{margin-bottom:22px!important}
+      .hero-copy-glass>h1,.hero-copy-glass>h1 span{ text-shadow:0 2px 16px rgba(3,18,41,.62)!important }
+      .hero-copy-glass>h1{color:#fff!important;-webkit-text-fill-color:#fff!important}
+      .hero-copy-glass>h1 span{color:#8ACDFF!important;-webkit-text-fill-color:#8ACDFF!important}
+      .hero-subheadline{margin-top:0!important;color:#fff!important;-webkit-text-fill-color:#fff!important;text-shadow:0 2px 14px rgba(3,18,41,.66)!important}
+
+      /* Keep the primary mobile section headlines visually consistent. */
+      .mobile-before-after h2,
+      .mobile-problem-heading h2,
+      #diagnosis #diagnosisHeading,
+      #why-us #whyHeading{font-size:36px!important;line-height:1.04!important;letter-spacing:-.045em!important}
+      .mobile-problem-heading h2,.mobile-problem-heading h2 span{color:#fff!important;-webkit-text-fill-color:#fff!important}
+
+      /* Bottom CTA: use the same multi-step estimate card as the hero on mobile. */
+      .quote-section .quote-inner{display:block!important}
+      .quote-section .quote-inner>.quote-copy,
+      .quote-section .quote-inner>.quote-form-wrap:not(.mobile-bottom-estimate){display:none!important}
+      .mobile-bottom-estimate{display:block!important;width:100%!important;max-width:560px!important;margin:0 auto!important;padding:0!important;overflow:hidden!important;border-radius:16px!important;background:#fff!important;color:#031229!important;border:1px solid #dce6ef!important;box-shadow:0 18px 44px rgba(3,18,41,.14)!important}
+      .mobile-bottom-estimate .quick-estimate-form{width:100%!important;padding:0!important;background:#fff!important;color:#031229!important}
+      .mobile-bottom-estimate .quick-estimate-heading{padding:24px 20px 12px!important;border-bottom:1px solid #dce6ef!important;background:#fff!important;text-align:left!important}
+      .mobile-bottom-estimate .quick-estimate-heading h3{margin:0 0 8px!important;color:#031229!important;font-size:23px!important;line-height:1.12!important;font-weight:850!important;letter-spacing:-.025em!important}
+      .mobile-bottom-estimate .quick-estimate-heading p{margin:0!important;color:#526777!important;font-size:12.5px!important;line-height:1.5!important}
+      .mobile-bottom-estimate .quick-progress{margin:0 0 10px!important;padding:10px 20px 0!important}
+      .mobile-bottom-estimate .quick-progress-bar{display:block!important;width:100%!important;height:10px!important;padding:1px!important;overflow:hidden!important;border:1px solid #aebfce!important;border-radius:999px!important;background:#edf3f7!important;box-shadow:inset 0 1px 2px rgba(14,47,78,.08)!important}
+      .mobile-bottom-estimate .quick-progress-bar>span{display:block!important;width:25%;height:100%!important;border-radius:999px!important;background:#1A5A97!important;transition:width .22s ease!important}
+      .mobile-bottom-estimate .quick-step{padding:0 20px 24px!important;color:#031229!important}
+      .mobile-bottom-estimate .quick-step label>span{color:#263c4d!important;font-size:13px!important;font-weight:800!important}
+      .mobile-bottom-estimate .quick-step input,
+      .mobile-bottom-estimate .quick-step select{min-height:54px!important;background:#fff!important;color:#031229!important;border-color:#cdd9e4!important;font-size:14px!important}
+      .mobile-bottom-estimate .quick-step-actions{margin-top:18px!important}
+      .mobile-bottom-estimate .quick-step-actions .quote-submit{min-height:54px!important;margin:0!important}
+      .mobile-bottom-estimate .quick-back{min-height:54px!important}
+      .mobile-bottom-estimate .quick-estimate-status{margin:0 20px 22px!important}
     }
 
   </style>
@@ -222,12 +258,12 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="/" aria-label="Crawl Space Pros home">
-        <img class="brand-logo" src="https://cdn.jsdeliv.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/Crawlspace-Logo-01.webp" alt="Crawl Space Pros" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/b9c34fec-3561-472c-8195-e6789ea01a0d.png';">
+        <img class="brand-logo" src="https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/Crawlspace-Logo-01.webp" alt="Crawl Space Pros" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/b9c34fec-3561-472c-8195-e6789ea01a0d.png';">
       </a>
 
       <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="#hero">Cleanouts</a>
-        <a href="#problems">What Wd Remove</a>
+        <a href="#problems">What We Remove</a>
         <a href="#diagnosis">How It Works</a>
         <a href="#projects">Projects</a>
         <a href="#why-us">Why Us</a>
@@ -257,7 +293,7 @@
       <div class="hero-media" aria-hidden="true">
         <div class="hero-panel hero-panel-one"><img src="hero-left-crawlspace.webp" alt=""></div>
         <div class="hero-panel hero-panel-two"><img src="https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/hero-clean.webp" alt=""></div>
-        <div class="hero-panel hero-panel-three"><img src="https://cdn.jsdeliv.net/gh/policypal1/crawlspace@76bbd0d19aac5956c4bb5dbecc7d00f383407ba/hero-piers.webp" alt=""></div>
+        <div class="hero-panel hero-panel-three"><img src="https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aac5956c4bb5dbecc7d00f383407ba/hero-piers.webp" alt=""></div>
         <div class="hero-panel hero-panel-four"><img src="hero-right-clean-insulation.webp" alt=""></div>
         <img class="hero-mobile-bg" src="hero-mobile-crawlspace.webp" alt="">
       </div>
@@ -622,6 +658,52 @@
           <div class="quote-contact"><span>Prefer to call or text?</span><a href="tel:3604704956">(360) 470-4956</a></div>
         </div>
 
+        <div class="quote-form-wrap mobile-bottom-estimate" aria-label="Free crawl space cleanout estimate">
+          <form class="quote-form quick-estimate-form" id="mobileBottomEstimateForm" novalidate>
+            <div class="quote-form-heading quick-estimate-heading">
+              <h3>Get Your Free Cleanout Estimate</h3>
+              <p>Tell us a few quick details and we’ll follow up to schedule your crawl-space inspection and estimate.</p>
+            </div>
+
+            <div class="quick-progress" aria-label="Estimate form progress">
+              <span class="quick-progress-bar" aria-hidden="true"><span id="bottomQuickProgressFill"></span></span>
+              <span class="quick-progress-status" id="bottomQuickProgressText" aria-live="polite">Step 1 of 4</span>
+            </div>
+
+            <div class="quick-step is-active" data-step="1">
+              <label><span>What’s your name?</span><input type="text" name="name" autocomplete="name" placeholder="Your name" required></label>
+              <div class="quick-step-actions quick-step-actions-single"><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
+            </div>
+
+            <div class="quick-step" data-step="2" hidden>
+              <label><span>What’s the best phone number to reach you?</span><input type="tel" name="phone" autocomplete="tel" placeholder="(360) 555-0123" required></label>
+              <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
+            </div>
+
+            <div class="quick-step" data-step="3" hidden>
+              <label><span>What’s the ZIP code for the property?</span><input type="text" name="location" inputmode="numeric" autocomplete="postal-code" placeholder="98632" required></label>
+              <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-next" type="button">Next <span aria-hidden="true">→</span></button></div>
+            </div>
+
+            <div class="quick-step" data-step="4" hidden>
+              <label><span>What do you need cleaned out?</span>
+                <select name="problem" required>
+                  <option value="">Select the closest match</option>
+                  <option value="Old or Dirty Insulation">Old or dirty insulation</option>
+                  <option value="Old or Torn Vapor Barrier">Old or torn vapor barrier</option>
+                  <option value="Rodent Mess or Contamination">Rodent mess or contamination</option>
+                  <option value="Crawl Space Debris and Buildup">Debris and years of buildup</option>
+                  <option value="Complete Crawl Space Cleanout">Complete crawl space cleanout</option>
+                  <option value="Not Sure">Not sure yet</option>
+                </select>
+              </label>
+              <div class="quick-step-actions"><button class="quick-back" type="button">← Back</button><button class="quote-submit quick-estimate-submit" type="submit">Get My Free Estimate <span aria-hidden="true">→</span></button></div>
+            </div>
+
+            <div class="quick-estimate-status" id="bottomQuickEstimateStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
         <div class="quote-form-wrap">
           <form class="quote-form" id="quoteForm">
             <div class="quote-form-heading"><span>FREE ESTIMATE</span><h3>Tell us what needs cleaned out.</h3><p>Leave your contact information and pick the closest match.</p></div>
@@ -858,6 +940,99 @@
         try {
           const data = new FormData(form);
           data.append('message', 'Multi-step cleanout estimate form from the mobile hero on crawlspace.html');
+          const payload = new URLSearchParams();
+          data.forEach((value, key) => payload.append(key, String(value)));
+
+          await fetch(endpoint, { method: 'POST', mode: 'no-cors', body: payload });
+          form.reset();
+          showStep(0);
+          status.textContent = 'Thanks — your cleanout estimate request was sent. We’ll be in touch soon.';
+          status.style.display = 'block';
+          status.style.background = '#eaf7ef';
+          status.style.border = '1px solid #b8e0c5';
+          status.style.color = '#176336';
+          submitButton.innerHTML = 'Request Sent ✓';
+          window.setTimeout(() => { submitButton.innerHTML = originalSubmitHtml; }, 3500);
+        } catch (error) {
+          status.textContent = 'Something went wrong. Please call or text (360) 470-4956.';
+          status.style.display = 'block';
+          status.style.background = '#fff0f0';
+          status.style.border = '1px solid #f0b8b8';
+          status.style.color = '#9f2424';
+          submitButton.innerHTML = originalSubmitHtml;
+        } finally {
+          form.dataset.submitting = 'false';
+          submitButton.disabled = false;
+        }
+      });
+
+      showStep(0);
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const form = document.getElementById('mobileBottomEstimateForm');
+      const status = document.getElementById('bottomQuickEstimateStatus');
+      if (!form || !status) return;
+
+      const endpoint = 'https://script.google.com/macros/s/AKfycbzm5ZaVzeXJXtDjgMX0DtcKd3st0myj5Rp7qGQtQY_wu3lmVjb3Hvu2S7Si9OJXe9RR/exec';
+      const steps = Array.from(form.querySelectorAll('.quick-step'));
+      const progressFill = document.getElementById('bottomQuickProgressFill');
+      const progressText = document.getElementById('bottomQuickProgressText');
+      const submitButton = form.querySelector('.quick-estimate-submit');
+      const originalSubmitHtml = submitButton.innerHTML;
+      let currentStep = 0;
+
+      function showStep(index) {
+        currentStep = Math.max(0, Math.min(index, steps.length - 1));
+        steps.forEach((step, i) => {
+          const active = i === currentStep;
+          step.hidden = !active;
+          step.classList.toggle('is-active', active);
+        });
+        progressFill.style.width = (((currentStep + 1) / steps.length) * 100) + '%';
+        progressText.textContent = `Step ${currentStep + 1} of ${steps.length}`;
+      }
+
+      function validateCurrentStep() {
+        const field = steps[currentStep].querySelector('input, select');
+        if (!field) return true;
+        if (!field.checkValidity()) {
+          field.reportValidity();
+          return false;
+        }
+        return true;
+      }
+
+      form.querySelectorAll('.quick-next').forEach((button) => {
+        button.addEventListener('click', () => {
+          if (validateCurrentStep()) showStep(currentStep + 1);
+        });
+      });
+
+      form.querySelectorAll('.quick-back').forEach((button) => {
+        button.addEventListener('click', () => showStep(currentStep - 1));
+      });
+
+      form.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' || currentStep === steps.length - 1) return;
+        event.preventDefault();
+        if (validateCurrentStep()) showStep(currentStep + 1);
+      });
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (!validateCurrentStep() || form.dataset.submitting === 'true') return;
+
+        form.dataset.submitting = 'true';
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+        status.style.display = 'none';
+
+        try {
+          const data = new FormData(form);
+          data.append('message', 'Multi-step cleanout estimate form from the mobile bottom CTA on crawlspace.html');
           const payload = new URLSearchParams();
           data.forEach((value, key) => payload.append(key, String(value)));
 
