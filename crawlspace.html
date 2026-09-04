@@ -655,8 +655,8 @@
         margin-top:20px;
         padding:0 20px;
         border-radius:9px;
-        background:#fff;
-        color:#031229;
+        background:#1A5A97;
+        color:#fff;
         text-decoration:none;
         font-size:12.5px;
         line-height:1.1;
@@ -864,125 +864,162 @@
         font-weight:550;
       }
 
-      /* CUSTOMER REVIEWS */
-      .customer-reviews-section{
-        background:#fff;
-        color:var(--navy);
-        padding:54px 0 58px;
-        border-bottom:1px solid var(--border);
+      /* CUSTOMER REVIEWS — COPIED FROM MAIN SITE */
+      .reviews-section{
+        padding:54px 14px 58px;
+        background:#f4f8fa;
+        color:#031229;
       }
 
-      .customer-reviews-inner{
-        width:calc(100% - 28px);
+      .reviews-inner{
+        width:100%;
         margin:0 auto;
       }
 
-      .customer-reviews-eyebrow{
+      .reviews-heading{
+        max-width:710px;
+        margin:0 auto 30px;
+        text-align:center;
+      }
+
+      .reviews-eyebrow{
         margin:0 0 8px;
-        color:var(--blue);
+        color:#1A5A97;
         font-size:10.5px;
         line-height:1.2;
         font-weight:900;
         letter-spacing:.095em;
-        text-align:center;
         text-transform:uppercase;
       }
 
-      .customer-reviews-heading{
-        margin:0 auto;
-        max-width:355px;
-        color:var(--navy);
+      .reviews-heading h2{
+        margin:0;
+        color:#031229;
         font-size:34px;
         line-height:1.01;
         font-weight:950;
         letter-spacing:-.045em;
-        text-align:center;
       }
 
-      .review-shell{
+      .reviews-heading h2 span{
+        display:block;
+      }
+
+      .reviews-scroller-shell{
         position:relative;
-        margin-top:27px;
       }
 
-      .review-scroller{
+      .reviews-grid{
         display:flex;
-        gap:12px;
+        gap:16px;
         overflow-x:auto;
+        padding:4px 38px 14px 0;
         scroll-snap-type:x mandatory;
+        scroll-behavior:smooth;
         scrollbar-width:none;
         -webkit-overflow-scrolling:touch;
       }
 
-      .review-scroller::-webkit-scrollbar{display:none}
-
-      .customer-review-card{
-        flex:0 0 88%;
-        scroll-snap-align:start;
-        padding:21px 19px 19px;
-        border:1px solid #dce6ef;
-        border-radius:14px;
-        background:#f7f9fb;
+      .reviews-grid::-webkit-scrollbar{
+        display:none;
       }
 
-      .customer-review-stars{
-        color:var(--blue);
-        font-size:16px;
-        line-height:1;
-        letter-spacing:.06em;
-      }
-
-      .customer-review-card blockquote{
-        margin:13px 0 0;
-        color:var(--navy);
-        font-size:14px;
-        line-height:1.52;
-        font-weight:700;
-      }
-
-      .customer-review-card footer{
-        margin-top:15px;
+      .review-card,
+      .review-card-featured{
+        flex:0 0 min(82vw,325px);
+        min-width:min(82vw,325px);
+        min-height:285px;
+        padding:26px 24px;
         display:flex;
-        align-items:center;
-        justify-content:space-between;
-        gap:10px;
+        flex-direction:column;
+        border:1px solid #dae5eb;
+        border-radius:12px;
+        background:#fff;
+        box-shadow:0 12px 32px rgba(18,44,62,.055);
+        transform:none;
+        scroll-snap-align:start;
       }
 
-      .customer-review-card footer strong{
-        color:var(--navy);
-        font-size:11.5px;
-        font-weight:900;
+      .review-stars{
+        color:#1A5A97;
+        font-size:14px;
+        letter-spacing:.13em;
+        font-weight:850;
       }
 
-      .customer-review-card footer span{
-        color:#7b8b98;
-        font-size:10px;
+      .review-card blockquote{
+        margin:24px 0 28px;
+        color:#243b4b;
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+        font-size:15px;
+        line-height:1.65;
+        font-weight:500;
+      }
+
+      .review-card footer{
+        margin-top:auto;
+        padding-top:17px;
+        border-top:1px solid #e3ebef;
+      }
+
+      .review-card footer strong,
+      .review-card footer span{
+        display:block;
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      }
+
+      .review-card footer strong{
+        color:#031229;
+        font-size:13px;
         font-weight:800;
       }
 
-      .review-controls{
-        display:flex;
-        justify-content:center;
-        gap:10px;
-        margin-top:15px;
+      .review-card footer span{
+        margin-top:3px;
+        color:#82929c;
+        font-size:10px;
       }
 
-      .review-arrow{
+      .reviews-arrow{
+        position:absolute;
+        z-index:10;
+        top:50%;
+        width:40px;
+        height:40px;
         display:grid;
         place-items:center;
-        width:42px;
-        height:42px;
-        border:1px solid #cfdce6;
+        border:1px solid #d8e4ea;
         border-radius:50%;
         background:#fff;
-        color:var(--navy);
-        font-size:18px;
-        font-weight:900;
+        color:#031229;
+        box-shadow:0 10px 26px rgba(18,44,62,.1);
+        cursor:pointer;
+        transform:translateY(-50%);
+      }
+
+      .reviews-arrow svg{
+        width:19px;
+        height:19px;
+      }
+
+      .reviews-arrow-prev{
+        left:-8px;
+      }
+
+      .reviews-arrow-next{
+        right:-8px;
+      }
+
+      .reviews-arrow:active{
+        color:#fff;
+        background:#1A5A97;
+        border-color:#1A5A97;
       }
 
       /* FAQ */
       .faq-section{
-        background:#f5f8fb;
-        color:var(--navy);
+        background:#031229;
+        color:#fff;
         padding:54px 0 58px;
       }
 
@@ -993,7 +1030,7 @@
 
       .faq-eyebrow{
         margin:0 0 8px;
-        color:var(--blue);
+        color:rgba(255,255,255,.62);
         font-size:10.5px;
         line-height:1.2;
         font-weight:900;
@@ -1005,7 +1042,7 @@
       .faq-heading{
         margin:0 auto 26px;
         max-width:350px;
-        color:var(--navy);
+        color:#fff;
         font-size:34px;
         line-height:1.01;
         font-weight:950;
@@ -1014,11 +1051,11 @@
       }
 
       .faq-list{
-        border-top:1px solid #d5e0e8;
+        border-top:1px solid rgba(255,255,255,.13);
       }
 
       .faq-item{
-        border-bottom:1px solid #d5e0e8;
+        border-bottom:1px solid rgba(255,255,255,.13);
       }
 
       .faq-item summary{
@@ -1029,7 +1066,7 @@
         align-items:center;
         padding:18px 0;
         cursor:pointer;
-        color:var(--navy);
+        color:#fff;
         font-size:14px;
         line-height:1.3;
         font-weight:900;
@@ -1043,8 +1080,8 @@
         width:26px;
         height:26px;
         border-radius:50%;
-        background:#e7eef4;
-        color:var(--blue);
+        background:rgba(255,255,255,.10);
+        color:#fff;
         font-size:18px;
         line-height:1;
         transition:transform .18s ease;
@@ -1058,7 +1095,7 @@
 
       .faq-answer p{
         margin:0;
-        color:#667a8b;
+        color:rgba(255,255,255,.72);
         font-size:12px;
         line-height:1.55;
         font-weight:600;
@@ -1066,9 +1103,9 @@
 
       /* FINAL CTA */
       .final-cta-section{
-        background:#031229;
-        color:#fff;
-        padding:42px 0 44px;
+        background:#fff;
+        color:#031229;
+        padding:46px 0 48px;
       }
 
       .final-cta-inner{
@@ -1080,7 +1117,7 @@
       .final-cta-heading{
         margin:0 auto;
         max-width:345px;
-        color:#fff;
+        color:#031229;
         font-size:30px;
         line-height:1.04;
         font-weight:950;
@@ -1090,7 +1127,7 @@
       .final-cta-copy{
         margin:10px auto 0;
         max-width:315px;
-        color:rgba(255,255,255,.72);
+        color:#667a8b;
         font-size:12px;
         line-height:1.5;
         font-weight:600;
@@ -1128,18 +1165,6 @@
         flex-direction:column;
         align-items:flex-start;
         gap:18px;
-      }
-
-      .footer-logo-wrap{
-        display:inline-flex;
-        width:142px;
-      }
-
-      .footer-logo-wrap img{
-        display:block;
-        width:100%;
-        height:auto;
-        object-fit:contain;
       }
 
       .footer-nav,
@@ -1482,42 +1507,51 @@
       </div>
     </section>
 
-    <section class="customer-reviews-section" id="reviews" aria-labelledby="customerReviewsHeading">
-      <div class="customer-reviews-inner">
-        <p class="customer-reviews-eyebrow">Homeowner Feedback</p>
-        <h2 class="customer-reviews-heading" id="customerReviewsHeading">What homeowners say about the work.</h2>
+    <section class="reviews-section" id="reviews" aria-labelledby="reviewsHeading">
+      <div class="reviews-inner">
+        <div class="reviews-heading">
+          <p class="reviews-eyebrow">HOMEOWNER FEEDBACK</p>
+          <h2 id="reviewsHeading">What homeowners <span>say about the work.</span></h2>
+        </div>
 
-        <div class="review-shell">
-          <div class="review-scroller" id="reviewScroller">
-            <article class="customer-review-card">
-              <div class="customer-review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <div class="reviews-scroller-shell">
+          <button class="reviews-arrow reviews-arrow-prev" type="button" aria-label="Previous reviews">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m15 18-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="reviews-grid" id="reviewsScroller">
+            <article class="review-card">
+              <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
               <blockquote>“I feel very happy and pleased with the work Jon did under my house. He cleaned up the entire crawl space!! Jon is hard working and I would recommend him highly.”</blockquote>
-              <footer><strong>— Henry Rettinger</strong><span>Google Review</span></footer>
+              <footer><strong>Henry Rettinger</strong><span>Google Review</span></footer>
             </article>
 
-            <article class="customer-review-card">
-              <div class="customer-review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <article class="review-card">
+              <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
               <blockquote>“Fast, affordable, and friendly. Add to that they did a fantastic job. Would definitely be referring them to friends and family. Good job guys!!”</blockquote>
-              <footer><strong>— Bobby Shaffer</strong><span>Google Review</span></footer>
+              <footer><strong>Bobby Shaffer</strong><span>Google Review</span></footer>
             </article>
 
-            <article class="customer-review-card">
-              <div class="customer-review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <article class="review-card">
+              <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
               <blockquote>“Jon did an excellent job working in the crawl space under my home. And also did an outstanding job putting screens to thwart the kitties from setting up there again. Thank you, Jon!”</blockquote>
-              <footer><strong>— JoAnne Baker</strong><span>Google Review</span></footer>
+              <footer><strong>JoAnne Baker</strong><span>Google Review</span></footer>
             </article>
 
-            <article class="customer-review-card">
-              <div class="customer-review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <article class="review-card">
+              <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
               <blockquote>“Loved every aspect of working with Jonathan. Straightforward pricing, no hidden surprises, friendly, and hard working. Made every aspect of our crawlspace nightmare easy to understand and went above and beyond to make it happen.”</blockquote>
-              <footer><strong>— Zach Auld</strong><span>Google Review</span></footer>
+              <footer><strong>Zach Auld</strong><span>Google Review</span></footer>
             </article>
           </div>
 
-          <div class="review-controls">
-            <button class="review-arrow" id="reviewPrev" type="button" aria-label="Previous review">‹</button>
-            <button class="review-arrow" id="reviewNext" type="button" aria-label="Next review">›</button>
-          </div>
+          <button class="reviews-arrow reviews-arrow-next" type="button" aria-label="Next reviews">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
@@ -1567,9 +1601,6 @@
 
   <footer class="site-footer">
     <div class="footer-main">
-      <a class="footer-logo-wrap" href="#cleanouts" aria-label="Crawl Space Pros home">
-        <img src="https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/Crawlspace-Logo-01.webp" alt="Crawl Space Pros">
-      </a>
 
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="#cleanouts">Cleanouts</a>
@@ -1602,23 +1633,89 @@
 
   <script>
     (() => {
-      const scroller = document.getElementById('reviewScroller');
-      const prev = document.getElementById('reviewPrev');
-      const next = document.getElementById('reviewNext');
-      if (!scroller || !prev || !next) return;
+      const reviewsScroller = document.querySelector('#reviewsScroller');
+      const reviewsPrev = document.querySelector('.reviews-arrow-prev');
+      const reviewsNext = document.querySelector('.reviews-arrow-next');
 
-      function move(direction){
-        const card = scroller.querySelector('.customer-review-card');
-        if (!card) return;
-        const gap = 12;
-        scroller.scrollBy({
-          left: direction * (card.getBoundingClientRect().width + gap),
-          behavior: 'smooth'
-        });
+      let reviewScrollLocked = false;
+
+      function getReviewCards() {
+        if (!reviewsScroller) return [];
+        return Array.from(reviewsScroller.querySelectorAll('.review-card'));
       }
 
-      prev.addEventListener('click', () => move(-1));
-      next.addEventListener('click', () => move(1));
+      function getReviewScrollStep() {
+        const cards = getReviewCards();
+        if (!reviewsScroller || !cards.length) return 340;
+
+        const styles = window.getComputedStyle(reviewsScroller);
+        const gap = parseFloat(styles.gap || styles.columnGap || '0') || 0;
+
+        return cards[0].getBoundingClientRect().width + gap;
+      }
+
+      function loopReviewsNext() {
+        if (!reviewsScroller || reviewScrollLocked) return;
+
+        const cards = getReviewCards();
+        if (!cards.length) return;
+
+        reviewScrollLocked = true;
+
+        const step = getReviewScrollStep();
+
+        reviewsScroller.scrollTo({
+          left: step,
+          behavior: 'smooth'
+        });
+
+        window.setTimeout(() => {
+          const firstCard = reviewsScroller.querySelector('.review-card');
+
+          if (firstCard) {
+            reviewsScroller.appendChild(firstCard);
+          }
+
+          reviewsScroller.scrollLeft = 0;
+          reviewScrollLocked = false;
+        }, 420);
+      }
+
+      function loopReviewsPrev() {
+        if (!reviewsScroller || reviewScrollLocked) return;
+
+        const cards = getReviewCards();
+        if (!cards.length) return;
+
+        reviewScrollLocked = true;
+
+        const lastCard = cards[cards.length - 1];
+        const step = getReviewScrollStep();
+
+        reviewsScroller.insertBefore(lastCard, reviewsScroller.firstElementChild);
+        reviewsScroller.scrollLeft = step;
+
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(() => {
+            reviewsScroller.scrollTo({
+              left: 0,
+              behavior: 'smooth'
+            });
+          });
+        });
+
+        window.setTimeout(() => {
+          reviewScrollLocked = false;
+        }, 420);
+      }
+
+      if (reviewsNext) {
+        reviewsNext.addEventListener('click', loopReviewsNext);
+      }
+
+      if (reviewsPrev) {
+        reviewsPrev.addEventListener('click', loopReviewsPrev);
+      }
     })();
   </script>
 
