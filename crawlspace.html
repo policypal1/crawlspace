@@ -378,7 +378,7 @@
 
       /* RECOGNIZABLE PROBLEM CARDS */
       .problems-section{
-        background:var(--blue);
+        background:#031229;
         color:#fff;
         padding:50px 0 56px;
         border-bottom:0;
@@ -478,20 +478,20 @@
         font-weight:650;
       }
 
-      /* HOW IT WORKS */
-      .process-section{
+      /* WHAT'S INCLUDED */
+      .included-section{
         background:#fff;
         color:var(--navy);
         padding:52px 0 58px;
         border-bottom:1px solid var(--border);
       }
 
-      .process-inner{
+      .included-inner{
         width:calc(100% - 28px);
         margin:0 auto;
       }
 
-      .process-eyebrow{
+      .included-eyebrow{
         margin:0 0 8px;
         color:var(--blue);
         font-size:10.5px;
@@ -502,7 +502,7 @@
         text-transform:uppercase;
       }
 
-      .process-heading{
+      .included-heading{
         margin:0 auto;
         max-width:350px;
         color:var(--navy);
@@ -513,54 +513,94 @@
         text-align:center;
       }
 
-      .process-list{
-        display:grid;
-        gap:13px;
-        margin-top:29px;
-      }
-
-      .process-card{
+      .included-photo{
         position:relative;
+        height:225px;
+        margin-top:27px;
         overflow:hidden;
-        padding:21px 18px 20px 72px;
-        border:1px solid #dce6ef;
-        border-radius:14px;
-        background:#f8fafc;
-        box-shadow:0 7px 22px rgba(3,18,41,.045);
+        border-radius:15px;
+        background:#e9eff4;
+        box-shadow:0 10px 28px rgba(3,18,41,.09);
       }
 
-      .process-number{
+      .included-photo img{
+        display:block;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+      }
+
+      .included-photo-label{
         position:absolute;
-        left:18px;
-        top:19px;
+        left:12px;
+        bottom:12px;
+        display:inline-flex;
+        align-items:center;
+        min-height:30px;
+        padding:0 11px;
+        border-radius:7px;
+        background:rgba(3,18,41,.90);
+        color:#fff;
+        font-size:10px;
+        line-height:1;
+        font-weight:900;
+        letter-spacing:.06em;
+        text-transform:uppercase;
+      }
+
+      .included-list{
+        margin-top:23px;
+        border-top:1px solid #dfe7ed;
+      }
+
+      .included-item{
+        display:grid;
+        grid-template-columns:34px minmax(0,1fr);
+        gap:13px;
+        align-items:start;
+        padding:18px 0;
+        border-bottom:1px solid #dfe7ed;
+      }
+
+      .included-check{
         display:grid;
         place-items:center;
-        width:38px;
-        height:38px;
-        border-radius:10px;
-        background:var(--blue);
-        color:#fff;
-        font-size:12px;
+        width:30px;
+        height:30px;
+        margin-top:1px;
+        border-radius:50%;
+        background:#e8f2fb;
+        color:var(--blue);
+        font-size:14px;
         line-height:1;
         font-weight:950;
-        letter-spacing:.04em;
       }
 
-      .process-card h3{
+      .included-item h3{
         margin:0;
         color:var(--navy);
-        font-size:17px;
+        font-size:16px;
         line-height:1.15;
         font-weight:950;
-        letter-spacing:-.025em;
+        letter-spacing:-.02em;
       }
 
-      .process-card p{
-        margin:7px 0 0;
+      .included-item p{
+        margin:6px 0 0;
         color:#667a8b;
-        font-size:12px;
-        line-height:1.48;
+        font-size:11.5px;
+        line-height:1.45;
         font-weight:650;
+      }
+
+      .included-note{
+        margin:18px auto 0;
+        max-width:320px;
+        color:#7b8b98;
+        font-size:10.5px;
+        line-height:1.45;
+        font-weight:700;
+        text-align:center;
       }
     }
 
@@ -576,8 +616,8 @@
       .problem-card-copy{padding:14px 13px}
       .problem-card-copy h3{font-size:15px}
       .problem-card-copy p{font-size:11px}
-      .process-heading{font-size:31px}
-      .process-card{padding-left:68px}
+      .included-heading{font-size:31px}
+      .included-photo{height:205px}
     }
   </style>
 </head>
@@ -591,7 +631,7 @@
       <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="#cleanouts">Cleanouts</a>
         <a href="#what-we-remove">What We Remove</a>
-        <a href="#how-it-works">How It Works</a>
+        <a href="#included">What’s Included</a>
         <a href="#projects">Projects</a>
         <a href="#why-us">Why Us</a>
       </nav>
@@ -694,7 +734,7 @@
 
           <article class="problem-card">
             <div class="problem-card-media">
-              <img src="hero-left-crawlspace.webp" alt="Crawl space with debris and old material buildup" loading="lazy">
+              <img src="gallery-wide.webp" alt="Crawl space with debris and old material buildup" loading="lazy">
             </div>
             <div class="problem-card-copy">
               <h3>Debris &amp; Years of Buildup</h3>
@@ -705,30 +745,51 @@
       </div>
     </section>
 
-    <section class="process-section" id="how-it-works" aria-labelledby="processHeading">
-      <div class="process-inner">
-        <p class="process-eyebrow">How It Works</p>
-        <h2 class="process-heading" id="processHeading">A cleanout starts with a clear plan.</h2>
+    <section class="included-section" id="included" aria-labelledby="includedHeading">
+      <div class="included-inner">
+        <p class="included-eyebrow">What’s Included</p>
+        <h2 class="included-heading" id="includedHeading">What’s included in a crawl space cleanout?</h2>
 
-        <div class="process-list">
-          <article class="process-card">
-            <span class="process-number">01</span>
-            <h3>We Inspect the Crawl Space</h3>
-            <p>We look underneath the home and confirm exactly what needs to be removed.</p>
+        <div class="included-photo">
+          <img src="hero-clean.webp" alt="Clean crawl space after old material and debris have been removed" loading="lazy">
+          <span class="included-photo-label">Cleanout Result</span>
+        </div>
+
+        <div class="included-list">
+          <article class="included-item">
+            <span class="included-check" aria-hidden="true">✓</span>
+            <div>
+              <h3>Old Insulation Removal</h3>
+              <p>Dirty, damaged, hanging, or unwanted insulation is removed from underneath the home.</p>
+            </div>
           </article>
 
-          <article class="process-card">
-            <span class="process-number">02</span>
-            <h3>We Remove the Old Material</h3>
-            <p>Old insulation, damaged vapor barrier, debris, rodent mess, and other unwanted material comes out.</p>
+          <article class="included-item">
+            <span class="included-check" aria-hidden="true">✓</span>
+            <div>
+              <h3>Old Vapor Barrier Removal</h3>
+              <p>Torn, dirty, damaged, or unwanted plastic is pulled out as part of the agreed cleanout scope.</p>
+            </div>
           </article>
 
-          <article class="process-card">
-            <span class="process-number">03</span>
-            <h3>We Haul It Away</h3>
-            <p>The mess leaves with us, and you’re left with a cleared-out crawl space ready for the next step.</p>
+          <article class="included-item">
+            <span class="included-check" aria-hidden="true">✓</span>
+            <div>
+              <h3>Debris &amp; Rodent Mess Cleanup</h3>
+              <p>Loose debris, old material, buildup, and rodent mess are cleared out of the crawl space.</p>
+            </div>
+          </article>
+
+          <article class="included-item">
+            <span class="included-check" aria-hidden="true">✓</span>
+            <div>
+              <h3>Bagging &amp; Haul Away</h3>
+              <p>The removed material is collected and hauled away so the crawl space is left cleared out.</p>
+            </div>
           </article>
         </div>
+
+        <p class="included-note">The exact cleanout scope depends on what we find underneath your home.</p>
       </div>
     </section>
   </main>
