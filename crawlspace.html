@@ -655,8 +655,8 @@
         margin-top:20px;
         padding:0 20px;
         border-radius:9px;
-        background:#1A5A97;
-        color:#fff;
+        background:#fff;
+        color:#031229;
         text-decoration:none;
         font-size:12.5px;
         line-height:1.1;
@@ -666,6 +666,211 @@
 
       .urgency-cta:active{
         transform:translateY(1px);
+      }
+
+      /* HOW THE CLEANOUT WORKS */
+      .cleanout-process-section{
+        background:#fff;
+        color:var(--navy);
+        padding:54px 0 60px;
+        border-bottom:1px solid var(--border);
+      }
+
+      .cleanout-process-inner{
+        width:calc(100% - 28px);
+        margin:0 auto;
+      }
+
+      .cleanout-process-eyebrow{
+        margin:0 0 8px;
+        color:var(--blue);
+        font-size:10.5px;
+        line-height:1.2;
+        font-weight:900;
+        letter-spacing:.095em;
+        text-align:center;
+        text-transform:uppercase;
+      }
+
+      .cleanout-process-heading{
+        margin:0 auto;
+        max-width:355px;
+        color:var(--navy);
+        font-size:34px;
+        line-height:1.01;
+        font-weight:950;
+        letter-spacing:-.045em;
+        text-align:center;
+      }
+
+      .cleanout-process-photo{
+        position:relative;
+        height:210px;
+        margin-top:28px;
+        overflow:hidden;
+        border-radius:15px;
+        border:1px solid #dce6ef;
+        background:
+          linear-gradient(135deg,#eef3f7 0%,#dce6ed 100%);
+      }
+
+      .cleanout-process-photo::before{
+        content:"CLEANOUT PHOTO / VIDEO HERE";
+        position:absolute;
+        inset:0;
+        display:grid;
+        place-items:center;
+        padding:20px;
+        color:#8292a0;
+        font-size:11px;
+        line-height:1.3;
+        font-weight:900;
+        letter-spacing:.10em;
+        text-align:center;
+      }
+
+      .cleanout-steps{
+        margin-top:29px;
+      }
+
+      .cleanout-step{
+        display:grid;
+        grid-template-columns:48px minmax(0,1fr);
+        gap:15px;
+        align-items:start;
+        padding:0 0 24px;
+      }
+
+      .cleanout-step + .cleanout-step{
+        padding-top:24px;
+        border-top:1px solid #dfe7ed;
+      }
+
+      .cleanout-step-number{
+        color:var(--blue);
+        font-size:27px;
+        line-height:1;
+        font-weight:950;
+        letter-spacing:-.04em;
+      }
+
+      .cleanout-step h3{
+        margin:0;
+        color:var(--navy);
+        font-size:17px;
+        line-height:1.15;
+        font-weight:950;
+        letter-spacing:-.025em;
+      }
+
+      .cleanout-step p{
+        margin:7px 0 0;
+        color:#667a8b;
+        font-size:12px;
+        line-height:1.48;
+        font-weight:650;
+      }
+
+      /* LOCAL OWNER & CREW — BASED ON MAIN SITE OUR PROMISE */
+      .local-crew-section{
+        background:#031229;
+        color:#fff;
+        padding:54px 0 58px;
+      }
+
+      .local-crew-inner{
+        width:calc(100% - 28px);
+        margin:0 auto;
+      }
+
+      .local-crew-eyebrow{
+        margin:0 0 8px;
+        color:rgba(255,255,255,.62);
+        font-size:10.5px;
+        line-height:1.2;
+        font-weight:900;
+        letter-spacing:.095em;
+        text-transform:uppercase;
+      }
+
+      .local-crew-heading{
+        margin:0;
+        max-width:350px;
+        color:#fff;
+        font-size:34px;
+        line-height:1.01;
+        font-weight:950;
+        letter-spacing:-.045em;
+      }
+
+      .local-crew-photo{
+        position:relative;
+        height:235px;
+        margin-top:25px;
+        overflow:hidden;
+        border-radius:15px;
+        border:1px solid rgba(255,255,255,.14);
+        background:
+          linear-gradient(135deg,rgba(255,255,255,.11),rgba(255,255,255,.045));
+      }
+
+      .local-crew-photo::before{
+        content:"OWNER / CREW PHOTO HERE";
+        position:absolute;
+        inset:0;
+        display:grid;
+        place-items:center;
+        padding:20px;
+        color:rgba(255,255,255,.52);
+        font-size:11px;
+        line-height:1.3;
+        font-weight:900;
+        letter-spacing:.11em;
+        text-align:center;
+      }
+
+      .local-crew-list{
+        display:grid;
+        gap:23px;
+        margin-top:29px;
+      }
+
+      .local-crew-item{
+        display:grid;
+        grid-template-columns:38px minmax(0,1fr);
+        gap:14px;
+        align-items:start;
+      }
+
+      .local-crew-icon{
+        width:38px;
+        height:38px;
+        display:grid;
+        place-items:center;
+      }
+
+      .local-crew-icon img{
+        display:block;
+        width:31px;
+        height:31px;
+        object-fit:contain;
+      }
+
+      .local-crew-item h3{
+        margin:0;
+        color:#fff;
+        font-size:17px;
+        line-height:1.18;
+        font-weight:850;
+        letter-spacing:-.015em;
+      }
+
+      .local-crew-item p{
+        margin:6px 0 0;
+        color:rgba(255,255,255,.74);
+        font-size:12px;
+        line-height:1.5;
+        font-weight:550;
       }
     }
 
@@ -683,6 +888,10 @@
       .problem-card-copy p{font-size:11px}
       .included-heading{font-size:31px}
       .included-photo{height:205px}
+      .cleanout-process-heading{font-size:31px}
+      .cleanout-process-photo{height:195px}
+      .local-crew-heading{font-size:31px}
+      .local-crew-photo{height:218px}
     }
   </style>
 </head>
@@ -862,8 +1071,93 @@
       <div class="urgency-inner">
         <p class="urgency-kicker">Wet Season Is Coming</p>
         <h2 class="urgency-heading" id="urgencyHeading">Winter won’t make it better.</h2>
-        <p class="urgency-copy">Damaged insulation, debris, moisture, and an already messy crawl space can become a bigger problem once Southwest Washington’s wetter months settle in.</p>
         <a class="urgency-cta" href="quote.html">Get My Free Cleanout Estimate</a>
+      </div>
+    </section>
+
+    <section class="cleanout-process-section" id="how-it-works" aria-labelledby="cleanoutProcessHeading">
+      <div class="cleanout-process-inner">
+        <p class="cleanout-process-eyebrow">How It Works</p>
+        <h2 class="cleanout-process-heading" id="cleanoutProcessHeading">How the cleanout works.</h2>
+
+        <div class="cleanout-process-photo" aria-label="Placeholder for crawl space cleanout photo or video"></div>
+
+        <div class="cleanout-steps">
+          <article class="cleanout-step">
+            <span class="cleanout-step-number">01</span>
+            <div>
+              <h3>We Inspect the Crawl Space</h3>
+              <p>We get underneath the home, see what is there, and confirm what needs to come out.</p>
+            </div>
+          </article>
+
+          <article class="cleanout-step">
+            <span class="cleanout-step-number">02</span>
+            <div>
+              <h3>You Get a Clear Estimate</h3>
+              <p>You know the cleanout scope and price before deciding to move forward.</p>
+            </div>
+          </article>
+
+          <article class="cleanout-step">
+            <span class="cleanout-step-number">03</span>
+            <div>
+              <h3>We Clean It Out &amp; Haul It Away</h3>
+              <p>We remove the agreed material, collect the mess, and haul it away when the cleanout is finished.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="local-crew-section" id="local-crew" aria-labelledby="localCrewHeading">
+      <div class="local-crew-inner">
+        <p class="local-crew-eyebrow">Local Owner &amp; Crew</p>
+        <h2 class="local-crew-heading" id="localCrewHeading">A local crew working underneath your home.</h2>
+
+        <div class="local-crew-photo" aria-label="Placeholder for Crawl Space Pros owner and crew photo"></div>
+
+        <div class="local-crew-list">
+          <article class="local-crew-item">
+            <div class="local-crew-icon" aria-hidden="true">
+              <img src="family-icon-white.webp" alt="">
+            </div>
+            <div>
+              <h3>Family Owned</h3>
+              <p>You are working with a small local company, not a national call center.</p>
+            </div>
+          </article>
+
+          <article class="local-crew-item">
+            <div class="local-crew-icon" aria-hidden="true">
+              <img src="local-service-icon-white.webp" alt="">
+            </div>
+            <div>
+              <h3>Direct Local Service</h3>
+              <p>Clear communication from people serving Longview, Kelso, and Southwest Washington.</p>
+            </div>
+          </article>
+
+          <article class="local-crew-item">
+            <div class="local-crew-icon" aria-hidden="true">
+              <img src="workmanship-icon-white.webp" alt="">
+            </div>
+            <div>
+              <h3>10+ Years of Experience</h3>
+              <p>Experienced crawl-space work with a focus on doing the cleanout correctly.</p>
+            </div>
+          </article>
+
+          <article class="local-crew-item">
+            <div class="local-crew-icon" aria-hidden="true">
+              <img src="license-icon-white.webp" alt="">
+            </div>
+            <div>
+              <h3>Licensed, Bonded &amp; Insured</h3>
+              <p>Professional work with the proper coverage behind it.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>
