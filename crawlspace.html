@@ -375,6 +375,108 @@
         font-size:10.5px;
         font-weight:800;
       }
+
+      /* RECOGNIZABLE PROBLEM CARDS */
+      .problems-section{
+        background:#f5f8fb;
+        color:var(--navy);
+        padding:48px 0 54px;
+        border-bottom:1px solid var(--border);
+      }
+
+      .problems-inner{
+        width:calc(100% - 28px);
+        margin:0 auto;
+      }
+
+      .problems-eyebrow{
+        margin:0 0 8px;
+        color:var(--blue);
+        font-size:10.5px;
+        line-height:1.2;
+        font-weight:900;
+        letter-spacing:.095em;
+        text-align:center;
+        text-transform:uppercase;
+      }
+
+      .problems-heading{
+        margin:0 auto;
+        max-width:360px;
+        color:var(--navy);
+        font-size:34px;
+        line-height:1.01;
+        font-weight:950;
+        letter-spacing:-.045em;
+        text-align:center;
+      }
+
+      .problems-intro{
+        margin:11px auto 0;
+        max-width:335px;
+        color:var(--muted);
+        font-size:13px;
+        line-height:1.5;
+        font-weight:600;
+        text-align:center;
+      }
+
+      .problem-list{
+        display:grid;
+        gap:12px;
+        margin-top:27px;
+      }
+
+      .problem-card{
+        display:grid;
+        grid-template-columns:116px minmax(0,1fr);
+        min-height:124px;
+        overflow:hidden;
+        border:1px solid #d9e3eb;
+        border-radius:14px;
+        background:#fff;
+        box-shadow:0 8px 24px rgba(3,18,41,.055);
+      }
+
+      .problem-card-media{
+        position:relative;
+        min-width:0;
+        overflow:hidden;
+        background:#e8eef3;
+      }
+
+      .problem-card-media img{
+        display:block;
+        width:100%;
+        height:100%;
+        min-height:124px;
+        object-fit:cover;
+      }
+
+      .problem-card-copy{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        min-width:0;
+        padding:16px 15px 16px 16px;
+      }
+
+      .problem-card-copy h3{
+        margin:0;
+        color:var(--navy);
+        font-size:16px;
+        line-height:1.12;
+        font-weight:950;
+        letter-spacing:-.025em;
+      }
+
+      .problem-card-copy p{
+        margin:7px 0 0;
+        color:#667a8b;
+        font-size:11.5px;
+        line-height:1.43;
+        font-weight:650;
+      }
     }
 
     @media(max-width:390px){
@@ -384,6 +486,11 @@
       .mobile-call{min-height:44px;padding:0 14px;font-size:12px}
       .proof-heading{font-size:31px}
       .proof-photo-frame{height:188px}
+      .problems-heading{font-size:31px}
+      .problem-card{grid-template-columns:104px minmax(0,1fr)}
+      .problem-card-copy{padding:14px 13px}
+      .problem-card-copy h3{font-size:15px}
+      .problem-card-copy p{font-size:11px}
     }
   </style>
 </head>
@@ -456,10 +563,60 @@
           <div class="proof-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <blockquote>“I feel very happy and pleased with the work Jon did under my house. He cleaned up the entire crawl space!! Jon is hard working and I would recommend him highly.”</blockquote>
           <footer>
-            <strong>Henry Rettinger</strong>
+            <strong>— Henry Rettinger</strong>
             <span>Google Review</span>
           </footer>
         </article>
+      </div>
+    </section>
+
+    <section class="problems-section" id="problems" aria-labelledby="problemsHeading">
+      <div class="problems-inner">
+        <p class="problems-eyebrow">Common Crawl Space Problems</p>
+        <h2 class="problems-heading" id="problemsHeading">Does your crawl space look like this?</h2>
+        <p class="problems-intro">These are some of the most common things homeowners find when they finally look underneath the house.</p>
+
+        <div class="problem-list">
+          <article class="problem-card">
+            <div class="problem-card-media">
+              <img src="problem-insulation.webp" alt="Old and falling crawl space insulation" loading="lazy">
+            </div>
+            <div class="problem-card-copy">
+              <h3>Old or Falling Insulation</h3>
+              <p>Insulation hanging down, sagging, dirty, or scattered across the crawl-space floor.</p>
+            </div>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-card-media">
+              <img src="problem-vapor.webp" alt="Old or torn crawl space vapor barrier" loading="lazy">
+            </div>
+            <div class="problem-card-copy">
+              <h3>Torn or Dirty Vapor Barrier</h3>
+              <p>Plastic that’s ripped, bunched up, missing in spots, or buried under dirt and debris.</p>
+            </div>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-card-media">
+              <img src="problem-damp.webp" alt="Damp crawl space with moisture problems" loading="lazy">
+            </div>
+            <div class="problem-card-copy">
+              <h3>Damp or Wet Material</h3>
+              <p>Wet ground, damp insulation, musty conditions, or material that has been sitting in moisture.</p>
+            </div>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-card-media">
+              <img src="hero-left-crawlspace.webp" alt="Crawl space with debris and old material buildup" loading="lazy">
+            </div>
+            <div class="problem-card-copy">
+              <h3>Debris &amp; Years of Buildup</h3>
+              <p>Old material, scraps, rodent mess, and other junk collecting underneath the home.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>
