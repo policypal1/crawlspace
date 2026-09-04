@@ -252,6 +252,43 @@
       .mobile-bottom-estimate .quick-estimate-status{margin:0 20px 22px!important}
     }
 
+
+    /* =========================================================
+       MOBILE CONSISTENCY + BOTTOM FORM + REVIEW FIX PASS
+       2026-09-04
+       ========================================================= */
+    @media(max-width:700px){
+      /* These two conversion-section headlines should carry the same visual weight
+         as the other large section headlines. */
+      .mobile-before-after h2,
+      .mobile-problem-heading h2{
+        font-size:clamp(40px,11vw,44px)!important;
+        line-height:1.02!important;
+        letter-spacing:-.05em!important;
+        font-weight:900!important;
+      }
+
+      /* Keep the original bottom quote-section treatment. Only replace its form. */
+      .quote-section .quote-inner{
+        display:block!important;
+      }
+      .quote-section .quote-inner>.quote-copy{
+        display:block!important;
+        width:100%!important;
+        max-width:560px!important;
+        margin:0 auto 26px!important;
+      }
+      .quote-section .desktop-original-quote-form{
+        display:none!important;
+      }
+      .quote-section .mobile-bottom-estimate{
+        display:block!important;
+        width:100%!important;
+        max-width:560px!important;
+        margin:0 auto!important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -704,7 +741,7 @@
           </form>
         </div>
 
-        <div class="quote-form-wrap">
+        <div class="quote-form-wrap desktop-original-quote-form">
           <form class="quote-form" id="quoteForm">
             <div class="quote-form-heading"><span>FREE ESTIMATE</span><h3>Tell us what needs cleaned out.</h3><p>Leave your contact information and pick the closest match.</p></div>
             <div class="quote-field-grid"><label><span>Name</span><input type="text" name="name" autocomplete="name" placeholder="Your name" required></label><label><span>Phone</span><input type="tel" name="phone" autocomplete="tel" placeholder="(360) 555-0123" required></label></div>
@@ -1062,5 +1099,91 @@
       showStep(0);
     })();
   </script>
+
+  <script>
+    /* Mobile review carousel: use a stable card index instead of DOM reordering.
+       This avoids the forward arrow bouncing between the same two positions. */
+    (() => {
+      function initStableMobileReviews() {
+        if (!window.matchMedia('(max-width: 700px)').matches) return;
+
+        const scroller = document.getElementById('reviewsScroller');
+        const oldPrev = document.querySelector('.reviews-arrow-prev');
+        const oldNext = document.querySelector('.reviews-arrow-next');
+        if (!scroller || !oldPrev || !oldNext) return;
+        /* Cloning strips the looping listeners attached by the inherited script. */
+        const prev = oldPrev.cloneNode(true);
+        const next = oldNext.cloneNode(true);
+        oldPrev.replaceWith(prev);
+        oldNext.replaceWith(next);
+
+        scroller.dataset.stableMobileReviews = 'true';
+        let index = 0;
+
+        function cards() {
+          return Array.from(scroller.querySelectorAll('.review-card'));
+        }
+
+        function goTo(nextIndex) {
+          const list = cards();
+          if (!list.length) return;
+
+          index = (nextIndex + list.length) % list.length;
+          const card = list[index];
+          const baseOffset = list[0].offsetLeft;
+          scroller.scrollTo({
+            left: card.offsetLeft - baseOffset,
+            behavior: 'smooth'
+          });
+        }
+
+        next.addEventListener('click', (event) => {
+          event.preventDefault();
+          goTo(index + 1);
+        });
+
+        prev.addEventListener('click', (event) => {
+          event.preventDefault();
+          goTo(index - 1);
+        });
+
+        /* If the homeowner swipes manually, make the next arrow continue
+           from the card nearest the viewport instead of jumping backward. */
+        let scrollTimer;
+        scroller.addEventListener('scroll', () => {
+          window.clearTimeout(scrollTimer);
+          scrollTimer = window.setTimeout(() => {
+            const list = cards();
+            if (!list.length) return;
+            let nearest = 0;
+            let nearestDistance = Infinity;
+            list.forEach((card, i) => {
+              const baseOffset = list[0].offsetLeft;
+              const distance = Math.abs((card.offsetLeft - baseOffset) - scroller.scrollLeft);
+              if (distance < nearestDistance) {
+                nearestDistance = distance;
+                nearest = i;
+              }
+            });
+            index = nearest;
+          }, 100);
+        }, { passive: true });
+      }
+
+      function runReviewFixPasses() {
+        /* Run twice so even a late-loading inherited script cannot reattach
+           the old looping handlers after this fix. */
+        window.setTimeout(initStableMobileReviews, 120);
+        window.setTimeout(initStableMobileReviews, 1200);
+      }
+
+      if (document.readyState === 'complete') {
+        runReviewFixPasses();
+      } else {
+        window.addEventListener('load', runReviewFixPasses, { once: true });
+      }
+    })();
+  </script>
+
 </body>
 </html>
