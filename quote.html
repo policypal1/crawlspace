@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Crawl Space Cleanout Estimate | Crawl Space Pros</title>
+  <meta name="description" content="Request a free crawl space cleanout estimate from Crawl Space Pros in Southwest Washington.">
+
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/b9c34fec-3561-472c-8195-e6789ea01a0d.png">
+
+  <style>
+    :root{
+      --navy:#031229;
+      --blue:#1A5A97;
+      --blue-dark:#124a80;
+      --muted:#607386;
+      --border:#dce6ef;
+      --bg:#f4f7fa;
+    }
+
+    *{box-sizing:border-box}
+
+    html,body{
+      margin:0;
+      min-height:100%;
+      background:var(--bg);
+      color:var(--navy);
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
+    .quote-header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(255,255,255,.98);
+      border-bottom:1px solid var(--border);
+      box-shadow:0 3px 14px rgba(3,18,41,.06);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .quote-header-inner{
+      width:min(760px,calc(100% - 28px));
+      min-height:70px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .brand{display:inline-flex;align-items:center;text-decoration:none}
+    .brand img{display:block;height:48px;width:auto;max-width:190px;object-fit:contain}
+
+    .back-link{
+      color:#526777;
+      text-decoration:none;
+      font-size:12px;
+      font-weight:850;
+      white-space:nowrap;
+    }
+
+    .page-shell{
+      width:min(620px,calc(100% - 28px));
+      margin:0 auto;
+      padding:34px 0 56px;
+    }
+
+    .quote-intro{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .quote-intro .eyebrow{
+      margin:0 0 8px;
+      color:var(--blue);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .quote-intro h1{
+      margin:0;
+      font-size:34px;
+      line-height:1.02;
+      letter-spacing:-.045em;
+      font-weight:950;
+    }
+
+    .quote-intro p{
+      max-width:520px;
+      margin:12px auto 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .estimate-card{
+      overflow:hidden;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:#fff;
+      box-shadow:0 16px 40px rgba(3,18,41,.10);
+    }
+
+    .progress-wrap{padding:22px 22px 0}
+    .progress-track{
+      height:10px;
+      overflow:hidden;
+      border:1px solid #bfd0de;
+      border-radius:999px;
+      background:#edf3f7;
+    }
+    .progress-fill{
+      display:block;
+      width:25%;
+      height:100%;
+      border-radius:999px;
+      background:var(--blue);
+      transition:width .2s ease;
+    }
+    .progress-copy{
+      margin-top:8px;
+      color:#7b8d9b;
+      font-size:11px;
+      font-weight:800;
+    }
+
+    .form-step{padding:24px 22px 26px}
+    .form-step[hidden]{display:none!important}
+
+    .form-step label{
+      display:block;
+      font-size:14px;
+      line-height:1.35;
+      font-weight:850;
+    }
+
+    .form-step input,
+    .form-step select{
+      width:100%;
+      min-height:58px;
+      margin-top:10px;
+      padding:0 15px;
+      border:1px solid #c9d7e2;
+      border-radius:10px;
+      background:#fff;
+      color:var(--navy);
+      font:inherit;
+      font-size:15px;
+      outline:none;
+    }
+
+    .form-step input:focus,
+    .form-step select:focus{
+      border-color:var(--blue);
+      box-shadow:0 0 0 3px rgba(26,90,151,.10);
+    }
+
+    .step-actions{
+      display:grid;
+      grid-template-columns:96px minmax(0,1fr);
+      gap:10px;
+      margin-top:20px;
+    }
+    .step-actions.single{grid-template-columns:1fr}
+
+    .back-btn,.next-btn,.submit-btn{
+      min-height:56px;
+      border-radius:10px;
+      font:inherit;
+      font-size:13px;
+      font-weight:950;
+      cursor:pointer;
+    }
+
+    .back-btn{
+      border:1px solid #cbd8e2;
+      background:#fff;
+      color:#526777;
+    }
+
+    .next-btn,.submit-btn{
+      border:0;
+      background:var(--blue);
+      color:#fff;
+    }
+
+    .next-btn:hover,.submit-btn:hover{background:var(--blue-dark)}
+
+    .form-status{
+      display:none;
+      margin:0 22px 22px;
+      padding:14px;
+      border-radius:10px;
+      font-size:13px;
+      line-height:1.45;
+      font-weight:800;
+      text-align:center;
+    }
+
+    .privacy-note{
+      margin:16px auto 0;
+      max-width:500px;
+      color:#7a8a97;
+      text-align:center;
+      font-size:11.5px;
+      line-height:1.45;
+    }
+
+    @media(max-width:390px){
+      .quote-intro h1{font-size:31px}
+      .brand img{height:44px;max-width:165px}
+      .page-shell{padding-top:26px}
+    }
+  </style>
+</head>
+<body>
+  <header class="quote-header">
+    <div class="quote-header-inner">
+      <a class="brand" href="crawlspace.html" aria-label="Back to Crawl Space Pros">
+        <img src="https://cdn.jsdelivr.net/gh/policypal1/crawlspace@76bbd0d19aaac5956c4bb5dbecc7d00f383407ba/Crawlspace-Logo-01.webp" alt="Crawl Space Pros">
+      </a>
+      <a class="back-link" href="crawlspace.html">← Back</a>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <div class="quote-intro">
+      <p class="eyebrow">Free Estimate</p>
+      <h1>Get Your Free Cleanout Estimate</h1>
+      <p>Answer four quick questions and we’ll follow up to schedule your crawl-space inspection and estimate.</p>
+    </div>
+
+    <div class="estimate-card">
+      <form id="cleanoutEstimateForm" novalidate>
+        <div class="progress-wrap" aria-label="Estimate form progress">
+          <div class="progress-track" aria-hidden="true"><span class="progress-fill" id="progressFill"></span></div>
+          <div class="progress-copy" id="progressCopy" aria-live="polite">Step 1 of 4</div>
+        </div>
+
+        <div class="form-step" data-step="1">
+          <label>
+            What’s your name?
+            <input type="text" name="name" autocomplete="name" placeholder="Your name" required>
+          </label>
+          <div class="step-actions single">
+            <button class="next-btn" type="button">Next →</button>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="2" hidden>
+          <label>
+            What’s the best phone number to reach you?
+            <input type="tel" name="phone" autocomplete="tel" placeholder="(360) 555-0123" required>
+          </label>
+          <div class="step-actions">
+            <button class="back-btn" type="button">← Back</button>
+            <button class="next-btn" type="button">Next →</button>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="3" hidden>
+          <label>
+            What’s the ZIP code for the property?
+            <input type="text" name="location" inputmode="numeric" autocomplete="postal-code" placeholder="98632" required>
+          </label>
+          <div class="step-actions">
+            <button class="back-btn" type="button">← Back</button>
+            <button class="next-btn" type="button">Next →</button>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="4" hidden>
+          <label>
+            What do you need cleaned out?
+            <select name="problem" required>
+              <option value="">Select the closest match</option>
+              <option value="Old or Dirty Insulation">Old or dirty insulation</option>
+              <option value="Old or Torn Vapor Barrier">Old or torn vapor barrier</option>
+              <option value="Rodent Mess or Contamination">Rodent mess or contamination</option>
+              <option value="Crawl Space Debris and Buildup">Debris and years of buildup</option>
+              <option value="Complete Crawl Space Cleanout">Complete crawl space cleanout</option>
+              <option value="Not Sure">Not sure yet</option>
+            </select>
+          </label>
+          <div class="step-actions">
+            <button class="back-btn" type="button">← Back</button>
+            <button class="submit-btn" type="submit">Request My Free Estimate</button>
+          </div>
+        </div>
+
+        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+
+    <p class="privacy-note">Your information is only used to follow up about your crawl-space estimate.</p>
+  </main>
+
+  <script>
+    (() => {
+      const form = document.getElementById('cleanoutEstimateForm');
+      if (!form) return;
+
+      const endpoint = 'https://script.google.com/macros/s/AKfycbzm5ZaVzeXJXtDjgMX0DtcKd3st0myj5Rp7qGQtQY_wu3lmVjb3Hvu2S7Si9OJXe9RR/exec';
+      const steps = Array.from(form.querySelectorAll('.form-step'));
+      const fill = document.getElementById('progressFill');
+      const copy = document.getElementById('progressCopy');
+      const status = document.getElementById('formStatus');
+      const submit = form.querySelector('.submit-btn');
+      const submitText = submit.textContent;
+      let current = 0;
+
+      function show(index){
+        current = Math.max(0,Math.min(index,steps.length - 1));
+        steps.forEach((step,i) => step.hidden = i !== current);
+        fill.style.width = (((current + 1) / steps.length) * 100) + '%';
+        copy.textContent = `Step ${current + 1} of ${steps.length}`;
+      }
+
+      function validateStep(){
+        const field = steps[current].querySelector('input,select');
+        if (!field) return true;
+        if (!field.checkValidity()){
+          field.reportValidity();
+          return false;
+        }
+        return true;
+      }
+
+      form.querySelectorAll('.next-btn').forEach(btn => {
+        btn.addEventListener('click',() => {
+          if (validateStep()) show(current + 1);
+        });
+      });
+
+      form.querySelectorAll('.back-btn').forEach(btn => {
+        btn.addEventListener('click',() => show(current - 1));
+      });
+
+      form.addEventListener('keydown',event => {
+        if (event.key !== 'Enter' || current === steps.length - 1) return;
+        event.preventDefault();
+        if (validateStep()) show(current + 1);
+      });
+
+      form.addEventListener('submit',async event => {
+        event.preventDefault();
+        if (!validateStep() || form.dataset.submitting === 'true') return;
+
+        form.dataset.submitting = 'true';
+        submit.disabled = true;
+        submit.textContent = 'Sending…';
+        status.style.display = 'none';
+
+        try{
+          const data = new FormData(form);
+          data.append('message','Crawl Space Pros quote.html cleanout estimate form');
+          const payload = new URLSearchParams();
+          data.forEach((value,key) => payload.append(key,String(value)));
+
+          await fetch(endpoint,{method:'POST',mode:'no-cors',body:payload});
+
+          form.reset();
+          show(0);
+          status.textContent = 'Thanks — your estimate request was sent. We’ll be in touch soon.';
+          status.style.display = 'block';
+          status.style.background = '#eaf7ef';
+          status.style.border = '1px solid #b8e0c5';
+          status.style.color = '#176336';
+          submit.textContent = 'Request Sent ✓';
+          window.setTimeout(() => submit.textContent = submitText,3500);
+        }catch(error){
+          status.textContent = 'Something went wrong. Please call or text (360) 470-4956.';
+          status.style.display = 'block';
+          status.style.background = '#fff0f0';
+          status.style.border = '1px solid #f0b8b8';
+          status.style.color = '#9f2424';
+          submit.textContent = submitText;
+        }finally{
+          form.dataset.submitting = 'false';
+          submit.disabled = false;
+        }
+      });
+
+      show(0);
+    })();
+  </script>
+</body>
+</html>

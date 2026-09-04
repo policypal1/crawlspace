@@ -106,12 +106,11 @@
       }
 
       .mobile-landing{display:block}
-      .future-form-anchor{display:block;height:1px;scroll-margin-top:82px}
 
       /* HERO */
       .mobile-hero{
         position:relative;
-        min-height:475px;
+        min-height:530px;
         overflow:hidden;
         background:#050505;
         isolation:isolate;
@@ -160,7 +159,7 @@
         min-height:475px;
         width:calc(100% - 28px);
         margin:0 auto;
-        padding:58px 0 24px;
+        padding:70px 0 30px;
         display:flex;
         flex-direction:column;
         justify-content:flex-start;
@@ -177,26 +176,32 @@
       }
 
       .hero-trust{
-        margin:0 0 11px;
+        margin:0 0 12px;
         display:flex;
+        align-items:center;
         flex-wrap:wrap;
-        gap:7px 8px;
-        color:#fff;
+        gap:0;
+        color:rgba(255,255,255,.62);
         font-size:10.5px;
-        line-height:1;
-        font-weight:900;
-        letter-spacing:.035em;
+        line-height:1.25;
+        font-weight:850;
+        letter-spacing:.055em;
         text-transform:uppercase;
       }
 
       .hero-trust span{
-        display:inline-flex;
-        align-items:center;
-        min-height:25px;
-        padding:0 9px;
-        border:1px solid rgba(255,255,255,.22);
-        border-radius:999px;
-        background:rgba(255,255,255,.08);
+        display:inline;
+        padding:0;
+        border:0;
+        border-radius:0;
+        background:none;
+      }
+
+      .hero-trust span:not(:last-child)::after{
+        content:"•";
+        display:inline-block;
+        margin:0 9px;
+        color:rgba(255,255,255,.32);
       }
 
       .hero-copy-card h1{
@@ -220,7 +225,7 @@
       .hero-primary{
         width:100%;
         min-height:58px;
-        margin-top:14px;
+        margin-top:24px;
         display:flex;
         align-items:center;
         justify-content:center;
@@ -238,7 +243,7 @@
 
     @media(max-width:390px){
       .hero-copy-card h1{font-size:31px}
-      .hero-inner{padding-top:48px}
+      .hero-inner{padding-top:58px}
       .brand-logo{height:44px;max-width:165px}
       .mobile-call{min-height:44px;padding:0 14px;font-size:12px}
     }
@@ -259,8 +264,8 @@
         <a href="#why-us">Why Us</a>
       </nav>
 
-      <a class="desktop-quote" href="#cleanout-form">Free Estimate</a>
-      <a class="mobile-call" href="tel:3604704956">Call Now</a>
+      <a class="desktop-quote" href="quote.html">Free Estimate</a>
+      <a class="mobile-call" href="quote.html">Get My Quote</a>
     </div>
   </header>
 
@@ -283,12 +288,10 @@
           <p>Old insulation, rodent mess, torn plastic or years of debris? We remove it, haul it away, and leave the crawl space clean.</p>
         </div>
 
-        <a class="hero-primary" href="#cleanout-form">Get My Free Cleanout Estimate</a>
+        <a class="hero-primary" href="quote.html">Get My Free Cleanout Estimate</a>
       </div>
     </section>
-
-    <span id="cleanout-form" class="future-form-anchor" aria-hidden="true"></span>
-    <!-- The visible estimate form will be added after the proof sections. -->
+    <!-- Next landing-page section will be added here. -->
   </main>
 
 </body>
